@@ -49,7 +49,7 @@ const Sidebar = () => {
     <>
       <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
         {routes?.map((item, index) => (
-          <Link href={item?.href}>
+          <Link href={item?.href} key={index}>
             <Button
               key={index}
               variant="ghost"
