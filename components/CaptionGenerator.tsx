@@ -136,10 +136,10 @@ const CaptionGenerator = () => {
             <ReactMarkdown
               components={{
                 pre: ({ node, ...props }: any) => (
-                  <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                  <div className=" w-full my-2 bg-black/10 p-2 rounded-lg">
                     <pre
                       {...props}
-                      className="text-sm font-mono text-slate-900 overflow-auto w-full"
+                      className="text-base  text-slate-900  w-full"
                     />
                   </div>
                 ),
@@ -147,7 +147,7 @@ const CaptionGenerator = () => {
                   <div>
                     <code
                       {...props}
-                      className="text-sm font-mono bg-black/10 rounded-lg p-1"
+                      className="text-base  bg-black/10 rounded-lg p-1"
                     />
                   </div>
                 ),

@@ -34,6 +34,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { UserButton, UserProfile } from "@clerk/nextjs";
 import Sidebar from "@/components/LayoutComponents/Sidebar";
+import { routes } from "@/lib/NavigationRoutes";
 
 export default function Dashboard({ children }: { children: React.ReactNode }) {
   return (
@@ -51,7 +52,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
             </Button>
           </div>
           <div className="flex-1">
-              <Sidebar />
+            <Sidebar />
           </div>
           <div className="mt-auto p-4">
             <Card x-chunk="dashboard-02-chunk-0">
@@ -92,6 +93,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                 >
                   <Package2 className="h-6 w-6" />
                   <span className="sr-only">Acme Inc</span>
+                  Kya Re Rudra
                 </Link>
                 <Link
                   href="#"
@@ -100,37 +102,16 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                   <Home className="h-5 w-5" />
                   Dashboard
                 </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                  Orders
-                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    6
-                  </Badge>
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Package className="h-5 w-5" />
-                  Products
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Users className="h-5 w-5" />
-                  Customers
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <LineChart className="h-5 w-5" />
-                  Analytics
-                </Link>
+                {routes?.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item?.href}
+                    className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
+                  >
+                    {<item.icon className="h-5 w-5" />}
+                    {item.label}
+                  </Link>
+                ))}
               </nav>
               <div className="mt-auto">
                 <Card>

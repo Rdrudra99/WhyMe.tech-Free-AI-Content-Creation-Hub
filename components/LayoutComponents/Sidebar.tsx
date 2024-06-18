@@ -13,7 +13,6 @@ import {
   Code,
   Captions,
 } from "lucide-react";
-import { playlists } from "@/lib/playlists";
 import { Button } from "../ui/button";
 
 const routes = [

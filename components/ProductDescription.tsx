@@ -118,9 +118,28 @@ const FormData = () => {
         <div className="relative flex h-full min-h-[50vh] flex-col rounded-xl bg-muted/100 p-4 lg:col-span-2">
           {productDescription && (
             <div className="p-4 bg-background rounded-lg border">
-              <ReactMarkdown>
-                {productDescription}
-              </ReactMarkdown>
+              <ReactMarkdown
+              components={{
+                pre: ({ node, ...props }: any) => (
+                  <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                    <pre
+                      {...props}
+                      className="text-sm font-mono text-slate-900 overflow-auto w-full"
+                    />
+                  </div>
+                ),
+                code: ({ node, ...props }: any) => (
+                  <div>
+                    <code
+                      {...props}
+                      className="text-sm font-mono bg-black/10 rounded-lg p-1"
+                    />
+                  </div>
+                ),
+              }}
+            >
+              {productDescription}
+            </ReactMarkdown>
             </div>
           )}
         </div>

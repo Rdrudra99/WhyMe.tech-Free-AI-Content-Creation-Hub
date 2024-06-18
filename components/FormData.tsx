@@ -21,10 +21,7 @@ import {
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Button } from "@/components/ui/button";
-
-import ReactMarkDown from 'react-markdown'
-
-
+import ReactMarkdown from "react-markdown";
 
 const FormData = () => {
   const [code, setCode] = useState("");
@@ -33,7 +30,6 @@ const FormData = () => {
   const [explanation, setExplanation] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -61,8 +57,7 @@ const FormData = () => {
     }
   };
 
-
-  console.log(explanation,"rudra")
+  console.log(explanation, "rudra");
   return (
     <div className="flex flex-col h-full">
       <main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
@@ -125,10 +120,9 @@ const FormData = () => {
                 </Select>
               </div>
               <div className="grid gap-3">
-                <Label htmlFor="concepts">concepts you want the explanation  
-                  <span className="text-slate-600">
-                  (Optional)
-                  </span>
+                <Label htmlFor="concepts">
+                  concepts you want the explanation
+                  <span className="text-slate-600">(Optional)</span>
                 </Label>
                 <Input
                   id="concepts"
@@ -155,23 +149,30 @@ const FormData = () => {
         </div>
 
         <div className="relative flex h-full min-h-[50vh] flex-col rounded-xl bg-muted/100 p-4 lg:col-span-2">
-
           {explanation && (
             <div className="p-4 bg-background rounded-lg border">
-                  <ReactMarkDown components={{
-                        pre: ({node , ...props}) => (
-                          <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
-                            <pre {...props} className="text-sm font-mono text-slate-900 overflow-auto w-full"/>
-                          </div>
-                        ),
-                        code: ({node , ...props})=> (
-                            <div>
-                              <code {...props} className="text-sm font-mono bg-black/10 rounded-lg p-1"/>
-                            </div>
-                        )
-                  }}>
-                    {explanation}
-                  </ReactMarkDown>
+              <ReactMarkdown
+                components={{
+                  pre: ({ node, ...props }: any) => (
+                    <div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">
+                      <pre
+                        {...props}
+                        className="text-sm font-mono text-slate-900 overflow-auto w-full"
+                      />
+                    </div>
+                  ),
+                  code: ({ node, ...props }: any) => (
+                    <div>
+                      <code
+                        {...props}
+                        className="text-sm font-mono bg-black/10 rounded-lg p-1"
+                      />
+                    </div>
+                  ),
+                }}
+              >
+                {explanation}
+              </ReactMarkdown>
             </div>
           )}
         </div>

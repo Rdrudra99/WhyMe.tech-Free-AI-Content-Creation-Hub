@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 import { CornerDownLeft, Rabbit, Bird, Turtle } from "lucide-react";
 
 const Blogs = () => {
@@ -27,7 +27,7 @@ const Blogs = () => {
         },
         body: JSON.stringify({
           topic,
-          seoKeywords
+          seoKeywords,
         }),
       });
       const data = await res.json();
@@ -46,10 +46,18 @@ const Blogs = () => {
   return (
     <div className="flex flex-col h-full">
       <main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
-        <div className="relative flex-col items-start gap-8 md:flex" x-chunk="dashboard-03-chunk-0">
-          <form className="grid w-full items-start gap-6" onSubmit={handleSubmit}>
+        <div
+          className="relative flex-col items-start gap-8 md:flex"
+          x-chunk="dashboard-03-chunk-0"
+        >
+          <form
+            className="grid w-full items-start gap-6"
+            onSubmit={handleSubmit}
+          >
             <fieldset className="grid gap-6 rounded-lg border p-4">
-              <legend className="-ml-1 px-1 text-sm font-medium">Blog Information</legend>
+              <legend className="-ml-1 px-1 text-sm font-medium">
+                Blog Information
+              </legend>
               <div className="grid gap-3">
                 <Label htmlFor="topic">Topic</Label>
                 <Input
@@ -67,7 +75,11 @@ const Blogs = () => {
                   placeholder="Enter SEO keywords (comma-separated)"
                   className="min-h-[9.5rem]"
                   value={seoKeywords.join(", ")}
-                  onChange={(e) => setSeoKeywords(e.target.value.split(",").map(keyword => keyword.trim()))}
+                  onChange={(e) =>
+                    setSeoKeywords(
+                      e.target.value.split(",").map((keyword) => keyword.trim())
+                    )
+                  }
                 />
               </div>
             </fieldset>
@@ -80,7 +92,26 @@ const Blogs = () => {
         <div className="relative flex h-full min-h-[50vh] flex-col rounded-xl bg-muted/100 p-4 lg:col-span-2">
           {blogContent && (
             <div className="p-4 bg-background rounded-lg border">
-              <ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  pre: ({ node, ...props }: any) => (
+                    <div className=" w-full my-2 bg-black/10 p-2 rounded-lg">
+                      <pre
+                        {...props}
+                        className="text-sm font-mono text-slate-900  w-full"
+                      />
+                    </div>
+                  ),
+                  code: ({ node, ...props }: any) => (
+                    <div>
+                      <code
+                        {...props}
+                        className="text-sm font-mono bg-black/10 rounded-lg p-1"
+                      />
+                    </div>
+                  ),
+                }}
+              >
                 {blogContent}
               </ReactMarkdown>
             </div>
@@ -91,4 +122,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs
+export default Blogs;
