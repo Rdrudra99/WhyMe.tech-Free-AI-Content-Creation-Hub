@@ -62,7 +62,7 @@ const FormData = () => {
     <div className="flex flex-col h-full">
       <main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
         <div
-          className="relative hidden flex-col items-start gap-8 md:flex"
+          className="relative  flex-col items-start gap-8 md:flex"
           x-chunk="dashboard-03-chunk-0"
         >
           <form
