@@ -21,9 +21,9 @@ export const routes = [
   //   icon: Code,
   //   href: "/code",
   // },
-  // {
-  //   label: "Caption",
-  //   icon: Captions,
-  //   href: "/caption",
-  // },
+  {
+    label: "Caption",
+    icon: Captions,
+    href: "/caption",
+  },
 ];

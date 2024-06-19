@@ -1,18 +1,6 @@
 import Link from "next/link";
-import {
-  Bell,
-  CircleUser,
-  Home,
-  LineChart,
-  Menu,
-  Package,
-  Package2,
-  Search,
-  ShoppingCart,
-  Users,
-} from "lucide-react";
+import { Package2 } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -21,19 +9,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { routes } from "@/lib/NavigationRoutes";
 import React from "react";
 import Navbar from "@/components/LayoutComponents/Navbar";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
 
 export default function Dashboard({ children }: { children: React.ReactNode }) {
   return (
@@ -52,10 +41,10 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                 return (
                   <React.Fragment key={index}>
                     <Link
-                      href="#"
-                      className="flex items-center gap-3  px-3 py-2 text-primary transition-all hover:text-primary"
+                      href={items?.href}
+                      className="flex items-center gap-3  px-3 py-2 transition-all hover:text-primary"
                     >
-                    {items.icon && <items.icon className="h-5 w-5" />}
+                      {items.icon && <items.icon className="h-5 w-5" />}
                       {items.label}
                     </Link>
                   </React.Fragment>
@@ -73,9 +62,23 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-                <Button size="sm" className="w-full">
-                  Upgrade
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button className="w-full">Upgrade Now</Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[425px]">
+                    <DialogHeader>
+                      <DialogTitle className="text-center">
+                        Just for You, My Darling 💖
+                      </DialogTitle>
+                      <DialogDescription className="text-center">
+                        This is my little gift to you. No need to pay, it's all
+                        yours for free. By the way, I'd love to keep in touch.
+                        How about you message me on Instagram :) @kya_re_rudra
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
               </CardContent>
             </Card>
           </div>

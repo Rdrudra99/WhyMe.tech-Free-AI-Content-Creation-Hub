@@ -4,13 +4,9 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { CornerDownLeft, SpaceIcon, Star, WandSparkles } from "lucide-react";
+import {WandSparkles } from "lucide-react";
 import highlight from "rehype-highlight";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "./ui/resizable";
+
 import { ScrollArea } from "./ui/scroll-area";
 import Nodata from "./LayoutComponents/Nodata";
 import Loader from "./Reuse/Loader";
