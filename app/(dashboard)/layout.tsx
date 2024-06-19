@@ -22,7 +22,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
 
 export default function Dashboard({ children }: { children: React.ReactNode }) {
   return (
@@ -72,8 +71,8 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                         Just for You, My Darling 💖
                       </DialogTitle>
                       <DialogDescription className="text-center">
-                        This is my little gift to you. No need to pay, it's all
-                        yours for free. By the way, I'd love to keep in touch.
+                        This is my little gift to you. No need to pay, it&apos;s all
+                        yours for free. By the way, I&apos;d love to keep in touch.
                         How about you message me on Instagram :) @kya_re_rudra
                       </DialogDescription>
                     </DialogHeader>
