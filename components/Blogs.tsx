@@ -4,13 +4,21 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import ReactMarkdown from "react-markdown";
-import { CornerDownLeft, Rabbit, Bird, Turtle } from "lucide-react";
-
+import { CornerDownLeft } from "lucide-react";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "./ui/resizable";
+import { ScrollArea } from "./ui/scroll-area";
+import Nodata from "./LayoutComponents/Nodata";
+import Loader from "./Reuse/Loader";
+import remarkGfm from "remark-gfm";
+import ReactMarkdown from 'react-markdown'
 const Blogs = () => {
   const [topic, setTopic] = useState("");
   const [seoKeywords, setSeoKeywords] = useState<string[]>([]);
-  const [blogContent, setBlogContent] = useState<string | null>(null);
+  const [blogContent, setBlogContent] = useState<any>(null); // Change type to any
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -43,82 +51,77 @@ const Blogs = () => {
     }
   };
 
+  const handleCopy = () => {
+    if (blogContent) {
+      navigator.clipboard
+        .writeText(blogContent)
+        .then(() => {
+          alert("Content copied to clipboard!");
+        })
+        .catch((err) => {
+          console.error("Failed to copy content: ", err);
+        });
+    }
+  };
+
   return (
-    <div className="flex flex-col h-full">
-      <main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
-        <div
-          className="relative flex-col items-start gap-8 md:flex"
-          x-chunk="dashboard-03-chunk-0"
-        >
+    <ResizablePanelGroup direction="horizontal" className="w-full space-x-5">
+      <ResizablePanel defaultSize={40}>
+        <ScrollArea className="flex items-start gap-8 md:flex h-full w-full ">
           <form
             className="grid w-full items-start gap-6"
             onSubmit={handleSubmit}
           >
-            <fieldset className="grid gap-6 rounded-lg border p-4">
-              <legend className="-ml-1 px-1 text-sm font-medium">
-                Blog Information
-              </legend>
-              <div className="grid gap-3">
-                <Label htmlFor="topic">Topic</Label>
-                <Input
-                  id="topic"
-                  type="text"
-                  placeholder="Enter blog topic"
-                  value={topic}
-                  onChange={(e) => setTopic(e.target.value)}
-                />
-              </div>
-              <div className="grid gap-3">
-                <Label htmlFor="seoKeywords">SEO Keywords</Label>
-                <Textarea
-                  id="seoKeywords"
-                  placeholder="Enter SEO keywords (comma-separated)"
-                  className="min-h-[9.5rem]"
-                  value={seoKeywords.join(", ")}
-                  onChange={(e) =>
-                    setSeoKeywords(
-                      e.target.value.split(",").map((keyword) => keyword.trim())
-                    )
-                  }
-                />
-              </div>
-            </fieldset>
-            <Button type="submit" size="sm" className="ml-auto gap-1.5">
+            <div className="grid gap-3">
+              <Label htmlFor="topic">Topic</Label>
+              <Input
+                id="topic"
+                type="text"
+                placeholder="Enter blog topic"
+                value={topic}
+                onChange={(e) => setTopic(e.target.value)}
+              />
+            </div>
+            <div className="grid gap-3">
+              <Label htmlFor="seoKeywords">SEO Keywords</Label>
+              <Textarea
+                id="seoKeywords"
+                placeholder="Enter SEO keywords (comma-separated)"
+                className="min-h-[9.5rem]"
+                value={seoKeywords.join(", ")}
+                onChange={(e) =>
+                  setSeoKeywords(
+                    e.target.value.split(",").map((keyword) => keyword.trim())
+                  )
+                }
+              />
+            </div>
+            <Button type="submit" size="sm" className="ml-auto gap-1.5 w-full">
               {loading ? "Loading..." : "Generate Blog"}
               <CornerDownLeft className="size-3.5" />
             </Button>
           </form>
-        </div>
-        <div className="relative flex h-full min-h-[50vh] flex-col rounded-xl bg-muted/100 p-4 lg:col-span-2">
-          {blogContent && (
-            <div className="p-4 bg-background rounded-lg border">
-              <ReactMarkdown
-                components={{
-                  pre: ({ node, ...props }: any) => (
-                    <div className=" w-full my-2 bg-black/10 p-2 rounded-lg">
-                      <pre
-                        {...props}
-                        className="text-sm font-mono text-slate-900  w-full"
-                      />
-                    </div>
-                  ),
-                  code: ({ node, ...props }: any) => (
-                    <div>
-                      <code
-                        {...props}
-                        className="text-sm font-mono bg-black/10 rounded-lg p-1"
-                      />
-                    </div>
-                  ),
-                }}
-              >
-                {blogContent}
-              </ReactMarkdown>
-            </div>
+        </ScrollArea>
+      </ResizablePanel>
+      <ResizableHandle withHandle />
+      <ResizablePanel>
+        <ScrollArea className="flex h-full flex-col px-2 lg:col-span-2 justify-center items-center">
+          {loading ? (
+            <Loader />
+          ) : (
+            <>
+              {blogContent ? (
+                <ReactMarkdown remarkPlugins={[[remarkGfm, { singleTilde: false }]]}>
+                  {blogContent}
+                </ReactMarkdown>
+              ) : (
+                <Nodata />
+              )}
+            </>
           )}
-        </div>
-      </main>
-    </div>
+        </ScrollArea>
+      </ResizablePanel>
+    </ResizablePanelGroup>
   );
 };
 

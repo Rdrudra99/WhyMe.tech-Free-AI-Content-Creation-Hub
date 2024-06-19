@@ -49,7 +49,7 @@ const CaptionGenerator = () => {
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="mx-auto w-full min-w-0">
       <main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-3">
         {/* form part */}
         <div className="relative flex-col items-start gap-8 md:flex md:col-span-1">
@@ -57,10 +57,6 @@ const CaptionGenerator = () => {
             className="grid w-full items-start gap-6"
             onSubmit={handleSubmit}
           >
-            <fieldset className="grid gap-6 rounded-lg border p-4">
-              <legend className="-ml-1 px-1 text-sm font-medium">
-                Caption Generator
-              </legend>
               <div className="grid gap-3">
                 <Label htmlFor="topic">Topic</Label>
                 <Input
@@ -124,7 +120,6 @@ const CaptionGenerator = () => {
                   </SelectContent>
                 </Select>
               </div>
-            </fieldset>
             <Button type="submit" size="sm" className="ml-auto gap-1.5">
               {loading ? "Loading..." : "Generate Caption"}
             </Button>

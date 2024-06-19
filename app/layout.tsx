@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/ThemeProvider";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -10,7 +11,8 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "Kya Re Rudra",
-  description: "Kya Re Rudra is a platform where you can generate captions, blog posts, and code explanations using AI. Get started now!",
+  description:
+    "Kya Re Rudra is a platform where you can generate captions, blog posts, and code explanations using AI. Get started now!",
 };
 
 export default function RootLayout({
@@ -27,7 +29,14 @@ export default function RootLayout({
             fontSans.variable
           )}
         >
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

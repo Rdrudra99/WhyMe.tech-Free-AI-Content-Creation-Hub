@@ -11,12 +11,12 @@ export async function POST(request: NextRequest) {
     const seoKeywordsText = seoKeywords.join(", ");
 
     // Construct dynamic prompt
-    const prompt = `Generate a blog post about ${topic} that:\n\nSEO Keywords:\n${seoKeywordsText}`;
+    const prompt = `Generate a blog post about ${topic} that:\n\nSEO Keywords:\n${seoKeywordsText} in MARKDOWN format`;
 
     return prompt;
   };
 
-  try {
+  try { 
     // Construct dynamic prompt using user input
     const baseMessage = constructPrompt();
 
@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
       messages: [
         {
           role: 'system',
-          content: `You are an AI assistant tasked with generating blog content. Please ensure that the content is engaging, informative, and optimized for SEO. The output should be well-structured and include the specified SEO keywords for better search engine visibility.`
+          content: `You are an AI assistant named "Rudra" and you generate blogs with proper SEO keywords and well-structured content on any topic. The format is only MARKDOWN.`
         },
         {
           role: 'user',
@@ -33,10 +33,10 @@ export async function POST(request: NextRequest) {
       ],
       model: 'llama3-8b-8192', // Adjust model according to availability and suitability for blog content
       temperature: 0.7, // Adjust temperature as needed for general tone
-      max_tokens: 1024,
-      top_p: 1,
-      stream: false,
-      stop: null
+      max_tokens: 1024, // Set maximum tokens for the response
+      top_p: 1, // Set top_p for nucleus sampling
+      stream: false, // Disable streaming responses
+      stop: null // No specific stop sequence
     });
 
     const blogContent = completion.choices[0].message.content;

@@ -3,7 +3,9 @@ import React from 'react'
 
 const page = () => {
   return (
-   <Blogs />
+   <div className='w-full h-full'>
+    <Blogs />
+   </div>
   )
 }
 
