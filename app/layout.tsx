@@ -10,10 +10,11 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Kya Re Rudra",
+  title: "S̅anR̅aya AI - AI Content Generation Platform",
   description:
-    "Kya Re Rudra is a platform where you can generate captions, blog posts, and code explanations using AI. Get started now!",
+    "S̅anR̅aya AI is a powerful platform using AI to generate captions, blog posts, and code explanations. Start creating now!",
 };
+
 
 export default function RootLayout({
   children,

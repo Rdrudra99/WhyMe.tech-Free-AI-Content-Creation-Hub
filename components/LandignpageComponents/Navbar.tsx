@@ -11,7 +11,7 @@ const Navbar = () => {
             <Link className="mr-6 flex items-center space-x-2" href="/">
               <Github className="w-6 h-6" />
               <span className="hidden font-bold md:inline-block">
-                Kya Re Rudra
+                
               </span>
             </Link>
           </div>

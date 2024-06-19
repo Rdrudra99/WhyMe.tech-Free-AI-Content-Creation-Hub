@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { Github } from "lucide-react";
+import { Github, Package2 } from "lucide-react";
 import { ScrollArea } from "../ui/scroll-area";
 import { routes } from "@/lib/NavigationRoutes";
 
@@ -55,11 +55,13 @@ export function MobileNav() {
       <SheetContent side="left" className="pr-0">
         <MobileLink
           href="/"
-          className="flex items-center"
+          className="flex items-center space-x-2"
           onOpenChange={setOpen}
         >
-          <Github className="mr-2 h-4 w-4" />
-          <span className="font-bold">Kya Re Rudra</span>
+          <Package2 className="h-6 w-6" />
+          <span className="font-bold">
+            <span className="">S̅anR̅aya AI</span>
+          </span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
           <div className="flex flex-col space-y-3">
