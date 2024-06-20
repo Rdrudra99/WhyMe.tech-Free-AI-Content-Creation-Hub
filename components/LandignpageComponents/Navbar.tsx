@@ -1,6 +1,7 @@
 import { ArrowLeftRight, GitBranch, Github } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
@@ -10,9 +11,7 @@ const Navbar = () => {
           <div className="mr-4 hidden md:flex">
             <Link className="mr-6 flex items-center space-x-2" href="/">
               <Github className="w-6 h-6" />
-              <span className="hidden font-bold md:inline-block">
-                
-              </span>
+              <span className="hidden font-bold md:inline-block"></span>
             </Link>
           </div>
 
@@ -42,7 +41,7 @@ const Navbar = () => {
             <div className="mt-20 grid grid-cols-1">
               <div className="flex flex-col items-center gap-6 pb-8 text-center">
                 <div>
-                  <a href="/docs/templates/portfolio">
+                  <Link href="/sign-up">
                     <div className="group relative mx-auto flex max-w-fit flex-row items-center justify-center rounded-2xl bg-white/40 px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-5px_10px_#8fdfff3f] dark:bg-black/40">
                       <div className="absolute inset-0 block h-full w-full animate-gradient bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:var(--bg-size)_100%] p-[1px] ![mask-composite:subtract] [border-radius:inherit] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]"></div>
                       <div className="absolute inset-0 block h-full w-full animate-gradient bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:var(--bg-size)_100%] [border-radius:inherit] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] p-[1px] ![mask-composite:subtract]"></div>
@@ -53,7 +52,7 @@ const Navbar = () => {
                         className="shrink-0 bg-border w-[1px] mx-2 h-4"
                       ></div>
                       <span className="animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent inline">
-                        Introducing \Portfolio Template
+                        Introducing \S̅anR̅aya AI
                       </span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -70,11 +69,21 @@ const Navbar = () => {
                         <path d="m9 18 6-6-6-6"></path>
                       </svg>
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 <h1 className="text-balance bg-gradient-to-br from-black from-30% to-black/60 bg-clip-text py-6 text-5xl font-semibold leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-6xl md:text-7xl lg:text-7xl">
-                  Kya Re Rudra 
+                  Your Ultimate Content Creation Partner
                 </h1>
+                <span className="max-w-[750px] text-center text-xl font-light text-foreground">
+                  SanRaya AI leverages advanced artificial intelligence to craft
+                  personalized content that captivates your audience, saves you
+                  time, and elevates your brand.
+                </span>
+                <Link href="/sign-up" className="w-full">
+                <Button className="w-1/6 animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%]  inline" size={"lg"}>
+                    Get Started
+                </Button>
+                </Link>
               </div>
             </div>
           </div>

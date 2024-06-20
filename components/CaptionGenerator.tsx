@@ -16,6 +16,7 @@ import Loader from "./Reuse/Loader";
 import highlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 import Nodata from "./LayoutComponents/Nodata";
+import { WandSparkles } from "lucide-react";
 
 const CaptionGenerator = () => {
   const [topic, setTopic] = useState("");
@@ -169,7 +170,7 @@ const CaptionGenerator = () => {
         <div className="w-full md:w-1/3 md:pr-4 h-full">
           <ScrollArea className="flex items-start gap-8 h-full">
             <fieldset className="grid gap-6 rounded-lg border p-4">
-              <legend className="-ml-1 px-1 text-sm font-medium">
+              <legend className="-ml-1 px-1 text-sm font-medium text-primary">
                 Generate Caption
               </legend>
               <form
@@ -242,9 +243,26 @@ const CaptionGenerator = () => {
                     </SelectContent>
                   </Select>
                 </div>
-                <Button type="submit" size="sm" className="ml-auto gap-1.5">
-                  {loading ? "Loading..." : "Generate Caption"}
-                </Button>
+                <Button type="submit" size="sm" className="ml-auto w-full">
+                {loading ? (
+                  <p className="flex justify-center items-center space-x-2">
+                    <span>
+                      <WandSparkles className="h-4 w-4 animate-spin" />
+                    </span>
+                    <span>Generating...</span>
+                  </p>
+                ) : (
+                  <>
+                    <p className="flex justify-center items-center space-x-2">
+                      <span>
+                        <WandSparkles className="h-4 w-4" />
+                      </span>
+                      <span>Generate</span>
+                    </p>
+                  </>
+                )}
+              </Button>
+
               </form>
             </fieldset>
           </ScrollArea>

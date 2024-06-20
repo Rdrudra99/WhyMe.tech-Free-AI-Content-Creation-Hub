@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
       messages: [
         {
           role: "system",
-          content: `As an AI assistant specialized in code explanation, your task is to provide clear and detailed explanations of code snippets. Ensure that your explanations are easy to follow, concise, and provide sufficient context for the reader to understand the code's functionality and purpose. Use HTML format for better readability and presentation.`,
+          content: `As an AI assistant specialized in code explanation, your task is to provide clear and detailed explanations of code snippets. Ensure that your explanations are easy to follow, concise, and provide sufficient context for the reader to understand the code's functionality and purpose. Use MARKDOWN format for better readability and presentation.`,
       },
         {
           role: 'user',

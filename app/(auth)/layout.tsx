@@ -7,8 +7,8 @@ export default function Auth({children}:{children:React.ReactNode}) {
             {children}
       </div>
       <div className="hidden bg-muted lg:block">
-        <Image
-          src="https://ui.shadcn.com/placeholder.svg"
+        <img
+          src="https://cdn.rareblocks.xyz/collection/celebration/images/hero/3/man-working-on-laptop.jpg"
           alt="Image"
           width="1920"
           height="1080"

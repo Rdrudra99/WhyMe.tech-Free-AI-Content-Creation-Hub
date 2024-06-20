@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Package2 } from "lucide-react";
+import { Package2, Snail } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -30,18 +30,18 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <Link href="/" className="flex items-center gap-2 font-semibold">
-              <Package2 className="h-6 w-6" />
+              <Snail className="h-6 w-6" />
               <span className="">S̅anR̅aya AI</span>
             </Link>
           </div>
-          <div className="flex-1 border-r">
+          <div className="flex-1 border-r overflow-auto">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
               {routes.map((items, index) => {
                 return (
                   <React.Fragment key={index}>
                     <Link
                       href={items?.href}
-                      className="flex items-center gap-3  px-3 py-2 transition-all hover:text-primary"
+                      className="flex items-center gap-3 px-3 py-2 transition-all hover:text-primary"
                     >
                       {items.icon && <items.icon className="h-5 w-5" />}
                       {items.label}
@@ -66,7 +66,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                     <Button className="w-full">Upgrade Now</Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px]">
-                    <DialogHeader>
+                    <DialogHeader className="space-y-4">
                       <DialogTitle className="text-center">
                         Just for You, My Darling 💖
                       </DialogTitle>
@@ -83,9 +83,9 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen overflow-auto">
         <Navbar />
-        <main className="flex flex-col gap-4 p-4 lg:gap-6 lg:p-6 h-full">
+        <main className="flex flex-col gap-4 p-4 lg:gap-6 lg:p-6 h-full overflow-auto">
           {children}
         </main>
       </div>

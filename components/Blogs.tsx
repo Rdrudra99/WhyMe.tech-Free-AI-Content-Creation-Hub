@@ -67,7 +67,7 @@ const Blogs = () => {
       <div className="w-full md:w-1/3 md:pr-4 h-full">
         <ScrollArea className="flex items-start gap-8 h-full">
           <fieldset className="grid gap-6 rounded-lg border p-4">
-            <legend className="-ml-1 px-1 text-sm font-medium">
+            <legend className="-ml-1 px-1 text-sm font-medium text-primary">
               Generate Blog
             </legend>
             <form className="grid w-full gap-6" onSubmit={handleSubmit}>
@@ -82,7 +82,7 @@ const Blogs = () => {
                 />
               </div>
               <div className="grid gap-3">
-                <Label htmlFor="seoKeywords">SEO Keywords</Label>
+                <Label htmlFor="seoKeywords">Seo Keywords</Label>
                 <Textarea
                   id="seoKeywords"
                   placeholder="Enter SEO keywords (comma-separated)"
@@ -121,7 +121,7 @@ const Blogs = () => {
 
       {/* Right Section */}
       <div className="w-full md:w-2/3 mt-4 md:mt-0 md:pl-4 h-full border-l">
-        <ScrollArea className="flex p-4 justify-center items-center  h-5/6">
+        <ScrollArea className="flex p-4 justify-center items-center h-5/6">
           {loading ? (
             <Loader />
           ) : (
@@ -174,7 +174,9 @@ const Blogs = () => {
                   {blogContent}
                 </ReactMarkdown>
               ) : (
-                <Nodata />
+                <div className="flex justify-center items-center">
+                  <Nodata />
+                </div>
               )}
             </>
           )}

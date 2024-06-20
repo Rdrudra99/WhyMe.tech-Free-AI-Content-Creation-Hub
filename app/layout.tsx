@@ -4,6 +4,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import NextTopLoader from 'nextjs-toploader';
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -32,10 +34,13 @@ export default function RootLayout({
         >
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
+             <NextTopLoader
+               color="#2299DD"
+              />
             {children}
           </ThemeProvider>
         </body>

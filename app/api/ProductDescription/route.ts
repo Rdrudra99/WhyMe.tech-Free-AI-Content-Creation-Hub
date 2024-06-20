@@ -3,7 +3,7 @@ import Groq from 'groq-sdk';
 
 export async function POST(request: NextRequest) {
   const groq = new Groq({ apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY });
-  const { productCategory, keyFeatures, uniqueSellingPoints, targetAudience, seoKeywords } = await request.json();
+  const { productCategory, keyFeatures, uniqueSellingPoints, targetAudience, seoKeywords , productTitle } = await request.json();
 
   // Function to construct the prompt dynamically
   const constructPrompt = () => {
@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     const seoKeywordsText = seoKeywords.join(", ");
 
     // Construct dynamic prompt
-    const prompt = `Generate a compelling product description for ${productCategory} that:\n\nKey Features:\n${keyFeaturesText}\n\nUnique Selling Points:\n${uspText}\n\nTarget Audience:\n- ${targetAudience}\n\nSEO Keywords:\n${seoKeywordsText}`;
+    const prompt = `Generate a compelling product description for product name ${productTitle} and product category ${productCategory} that:\n\nKey Features:\n${keyFeaturesText}\n\nUnique Selling Points:\n${uspText}\n\nTarget Audience:\n- ${targetAudience}\n\nSEO Keywords:\n${seoKeywordsText}`;
 
     return prompt;
   };
@@ -28,6 +28,10 @@ export async function POST(request: NextRequest) {
 
     const completion = await groq.chat.completions.create({
       messages: [
+        {
+          role: 'system',
+          content: `You are an AI assistant named "Rudra" and you generate Product Description with proper SEO keywords and well-structured Description on any Product. The format is only MARKDOWN.`
+        },
         {
           role: 'user',
           content: baseMessage
