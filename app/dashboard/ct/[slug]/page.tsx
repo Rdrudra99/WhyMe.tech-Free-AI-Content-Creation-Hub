@@ -4,6 +4,32 @@ import { TEMPLATE } from "@/app/dashboard/page";
 import Template from "@/app/(data)/Template";
 import FormSection from "@/components/FormSection";
 import EditorPart from "@/components/EditorPart";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Rabbit,
+  Bird,
+  Turtle,
+  CornerDownLeft,
+  Mic,
+  Paperclip,
+} from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 interface PROPS {
   params: {
@@ -11,7 +37,7 @@ interface PROPS {
   };
 }
 const OutcomeSection = (props: PROPS) => {
-  const [aioutput , setAioutput] = useState<string>("");
+  const [aioutput, setAioutput] = useState<string>("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const selectedTemplate: TEMPLATE | undefined = Template?.find(
@@ -36,34 +62,24 @@ const OutcomeSection = (props: PROPS) => {
         console.log(data.content);
         setAioutput(data.content);
       } else {
-          console.log("Error");
+        console.log("Error");
       }
-    } catch (error:any) {
+    } catch (error: any) {
       setError(error);
-    }
-    finally {
+    } finally {
       setLoading(false);
     }
   };
-  
-  return (
-    <div className="w-full flex flex-col md:flex-row h-full">
-      {/* Left Section */}
-      <div className="w-full md:w-1/3 md:pr-4 h-full">
-        <div className="flex items-start gap-8 h-full">
-          <FormSection
-            selectedTemplate={selectedTemplate}
-            userFormInput={(v: any) => generateAiContent(v)}
-            loading={loading}
-          />
-        </div>
-      </div>
 
-      {/* Right Section */}
-      <div className="w-full md:w-2/3 mt-4 md:mt-0 md:pl-4 h-full">
-        <EditorPart aioutput={aioutput} />
-      </div>
-    </div>
+  return (
+    <React.Fragment>
+      <FormSection
+        selectedTemplate={selectedTemplate}
+        userFormInput={(v: any) => generateAiContent(v)}
+        loading={loading}
+      />
+      <EditorPart aioutput={aioutput} loading={loading} />
+    </React.Fragment>
   );
 };
 

@@ -4,7 +4,7 @@ export default [
     desc: "An AI tool that generates blog titles based on your blog information.",
     category: "Blog",
     icon: "blog-icon.png", // Assuming you have an icon file, replace with appropriate path
-    prompt: `Provide 5 blog topic ideas in bullet points based on the given niche topic. Format the response in a rich text editor with proper headings (main and subheadings) and bullet points for each idea. Ensure clarity and coherence in the presentation of each topic idea.the forat should be Markdown format.`,
+    prompt: `Provide 5 blog topic ideas in MarkDown Format With Proper Heading and sub Heading`,
     slug: "generate-blog-title",
     form: [
       {

@@ -12,7 +12,7 @@ import { UserButton } from "@clerk/nextjs"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full bg-background/95 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className=" flex h-14 w-full px-4 items-center">
         {/* <MainNav /> */}
         <MobileNav />

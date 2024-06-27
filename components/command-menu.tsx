@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { useRouter } from "next/navigation"
-import { DialogProps } from "@radix-ui/react-alert-dialog"
 
 // import { docsConfig } from "@/config/docs"
 import { cn } from "@/lib/utils"
@@ -17,6 +16,7 @@ import {
 } from "@/components/ui/command"
 import { Button } from "./ui/button"
 import { CircleIcon, FileIcon, LaptopIcon, MoonIcon, SunIcon } from "lucide-react"
+import { DialogProps } from "@radix-ui/react-dialog"
 
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter()
