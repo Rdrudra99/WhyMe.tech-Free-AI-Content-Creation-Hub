@@ -12,7 +12,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { routes } from "@/lib/NavigationRoutes";
 import React from "react";
-import Navbar from "@/components/LayoutComponents/Navbar";
 import {
   Dialog,
   DialogContent,
@@ -22,10 +21,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { SiteHeader } from "@/components/LayoutComponents/site-header";
 
 export default function Dashboard({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+<div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <div className="hidden bg-muted/40 md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
@@ -84,7 +84,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
         </div>
       </div>
       <div className="flex flex-col h-screen overflow-auto">
-        <Navbar />
+        <SiteHeader />
         <main className="flex flex-col gap-4 p-4 lg:gap-6 lg:p-6 h-full overflow-auto">
           {children}
         </main>

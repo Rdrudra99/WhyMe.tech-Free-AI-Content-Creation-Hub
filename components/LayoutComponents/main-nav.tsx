@@ -3,9 +3,11 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Github } from "lucide-react";
+
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { routes } from "@/lib/NavigationRoutes";
+import { Icons } from "@/components/LayoutComponents/icons";
+import { Badge } from "@/components/ui/badge";
 
 export function MainNav() {
   const pathname = usePathname();
@@ -13,26 +15,29 @@ export function MainNav() {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Github className="h-6 w-6" />
-        <span className="hidden font-bold sm:inline-block">Kya Re Rudra</span>
+        <Icons.logo className="h-6 w-6" />
+        <span className="hidden font-bold sm:inline-block">Write by Rudra</span>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
-        {routes.map((items, index) => {
-          return (
-            <Link
-              key={index}
-              href={items?.href}
-              className={cn(
-                "transition-colors hover:text-foreground/80",
-                pathname === items.href
-                  ? "text-foreground"
-                  : "text-foreground/60"
-              )}
-            >
-              {items.label}
-            </Link>
-          );
-        })}
+        <Link
+          href="/blocks"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/blocks")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Blocks
+        </Link>
+        <Link
+          href={siteConfig.links.github}
+          className={cn(
+            "hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
+          )}
+        >
+          GitHub
+        </Link>
       </nav>
     </div>
   );

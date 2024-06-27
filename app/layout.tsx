@@ -4,7 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import NextTopLoader from 'nextjs-toploader';
+import NextTopLoader from "nextjs-toploader";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     "S̅anR̅aya AI is a powerful platform using AI to generate captions, blog posts, and code explanations. Start creating now!",
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +27,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased overflow-hidden",
+            "min-h-screen bg-background font-sans antialiased",
             fontSans.variable
           )}
         >
@@ -38,10 +37,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-             <NextTopLoader
-               color="#2299DD"
-              />
-            {children}
+            <NextTopLoader color="#2299DD" />
+            <div className="relative flex min-h-screen flex-col bg-background">
+              {children}
+            </div>
           </ThemeProvider>
         </body>
       </html>
