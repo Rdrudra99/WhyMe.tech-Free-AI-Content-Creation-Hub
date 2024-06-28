@@ -14,9 +14,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "S̅anR̅aya AI - AI Content Generation Platform",
+  title: "Only Content",
   description:
-    "S̅anR̅aya AI is a powerful platform using AI to generate captions, blog posts, and code explanations. Start creating now!",
+    "Only Content is a modern, fast, and lightweight content Generator tool website that helps you generate content for your website, blog, or social media.",
 };
 
 export default function RootLayout({
