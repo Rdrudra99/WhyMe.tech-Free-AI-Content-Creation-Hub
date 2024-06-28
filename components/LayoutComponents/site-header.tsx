@@ -12,9 +12,9 @@ import { UserButton } from "@clerk/nextjs"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full bg-background/95 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60 container mx-auto ">
       <div className=" flex h-14 w-full px-4 items-center">
-        {/* <MainNav /> */}
+        <MainNav />
         <MobileNav />
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
@@ -39,11 +39,6 @@ export function SiteHeader() {
               </div>
             </Link>
             <ModeToggle />
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-            >
               <div
                 className={cn(
                   buttonVariants({
@@ -54,7 +49,6 @@ export function SiteHeader() {
               >
               <UserButton />
               </div>
-            </Link>
           </nav>
         </div>
       </div>

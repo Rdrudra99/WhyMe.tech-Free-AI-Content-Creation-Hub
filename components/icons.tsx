@@ -473,7 +473,7 @@ export const Icons = {
   threeColumn: ThreeColumnOutlined,
   todo: Square,
   trash: Trash,
-  twitter: (props: IconProps) => (
+  instagram: (props: IconProps) => (
     <svg
       {...props}
       height="23"

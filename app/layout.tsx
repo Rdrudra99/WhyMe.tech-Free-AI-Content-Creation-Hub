@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import NextTopLoader from "nextjs-toploader";
+import { SiteHeader } from "@/components/LayoutComponents/site-header";
+import { SiteFooter } from "@/components/LayoutComponents/site-footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,7 +29,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
+            "min-h-screen bg-background font-sans antialiased overflow-hidden",
             fontSans.variable
           )}
         >
@@ -38,9 +40,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <NextTopLoader color="#2299DD" />
-            <div className="relative flex min-h-screen flex-col bg-background">
-              {children}
-            </div>
+            {children}
           </ThemeProvider>
         </body>
       </html>

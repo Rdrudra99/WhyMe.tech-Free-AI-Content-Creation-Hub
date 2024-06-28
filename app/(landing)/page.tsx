@@ -14,14 +14,14 @@ const page = () => {
                 <span>
                   <Link2 className="w-4 h-4" />
                 </span>
-                <span>Introducing Sanaya Content Writer</span>
+                <span>Introducing Only Content Writer</span>
               </p>
             </Link>
             <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1] hidden md:block">
-              Get started with Sanaya Content Writer
+              Get started with Only Content Content Writer
             </h1>
             <p className="max-w-[750px] text-center text-lg font-light text-foreground">
-              Sanaya Ai is a powerful AI tool that can help you with a variety
+              Only Content is a powerful AI tool that can help you with a variety
               of tasks. You can ask questions
             </p>
           </section>

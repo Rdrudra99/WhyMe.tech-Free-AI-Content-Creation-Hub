@@ -10,7 +10,6 @@ import Nodata from "./LayoutComponents/Nodata";
 import Loader from "./Reuse/Loader";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
-import { FORM, TEMPLATE } from "@/app/dashboard/page";
 import {
   Select,
   SelectContent,
@@ -20,6 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import { TEMPLATE } from "@/app/(dashboard)/dashboard/page";
 
 interface PROPS {
   selectedTemplate?: TEMPLATE;
@@ -57,7 +57,7 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
           {selectedTemplate?.title}
         </legend>
         <form className="grid w-full gap-6" onSubmit={handleSubmit}>
-          {selectedTemplate?.form?.map((items, index) => {
+          {selectedTemplate?.form?.map((items:any, index:number) => {
             return (
               <div className="grid gap-3" key={index}>
                 <Label htmlFor={items.name}>{items.label}</Label>
@@ -89,7 +89,7 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
                     <SelectContent>
                       <SelectGroup>
                         <SelectLabel>{items.label}</SelectLabel>
-                        {items.options?.map((option, index) => (
+                        {items.options?.map((option:any, index:number) => (
                           <SelectItem key={index} value={option}>
                             {option}
                           </SelectItem>

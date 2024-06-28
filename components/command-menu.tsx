@@ -17,6 +17,7 @@ import {
 import { Button } from "./ui/button"
 import { CircleIcon, FileIcon, LaptopIcon, MoonIcon, SunIcon } from "lucide-react"
 import { DialogProps } from "@radix-ui/react-dialog"
+import { docsConfig } from "@/config/docs"
 
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter()
@@ -70,7 +71,7 @@ export function CommandMenu({ ...props }: DialogProps) {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Links">
-            {/* {docsConfig.mainNav
+            {docsConfig.mainNav
               .filter((navitem) => !navitem.external)
               .map((navItem) => (
                 <CommandItem
@@ -83,9 +84,9 @@ export function CommandMenu({ ...props }: DialogProps) {
                   <FileIcon className="mr-2 h-4 w-4" />
                   {navItem.title}
                 </CommandItem>
-              ))} */}
+              ))}
           </CommandGroup>
-          {/* {docsConfig.sidebarNav.map((group) => (
+          {docsConfig.sidebarNav.map((group) => (
             <CommandGroup key={group.title} heading={group.title}>
               {group.items.map((navItem:any) => (
                 <CommandItem
@@ -102,22 +103,7 @@ export function CommandMenu({ ...props }: DialogProps) {
                 </CommandItem>
               ))}
             </CommandGroup>
-          ))} */}
-          <CommandSeparator />
-          <CommandGroup heading="Theme">
-            <CommandItem >
-              <SunIcon className="mr-2 h-4 w-4" />
-              Light
-            </CommandItem>
-            <CommandItem >
-              <MoonIcon className="mr-2 h-4 w-4" />
-              Dark
-            </CommandItem>
-            <CommandItem >
-              <LaptopIcon className="mr-2 h-4 w-4" />
-              System
-            </CommandItem>
-          </CommandGroup>
+          ))}
         </CommandList>
       </CommandDialog>
     </>

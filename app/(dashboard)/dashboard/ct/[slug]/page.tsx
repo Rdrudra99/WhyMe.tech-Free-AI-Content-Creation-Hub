@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { TEMPLATE } from "@/app/dashboard/page";
 import Template from "@/app/(data)/Template";
 import FormSection from "@/components/FormSection";
 import EditorPart from "@/components/EditorPart";
@@ -30,6 +29,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { TEMPLATE } from "../../page";
 
 interface PROPS {
   params: {
@@ -72,14 +72,20 @@ const OutcomeSection = (props: PROPS) => {
   };
 
   return (
-    <React.Fragment>
-      <FormSection
-        selectedTemplate={selectedTemplate}
-        userFormInput={(v: any) => generateAiContent(v)}
-        loading={loading}
-      />
-      <EditorPart aioutput={aioutput} loading={loading} />
-    </React.Fragment>
+    <div className="relative py-4 lg:gap-10 lg:py-4 lg:grid lg:grid-cols-3 h-full">
+      {/* Form section part */}
+      <div className="mx-auto w-full min-w-0 col-span-1">
+        <FormSection
+          selectedTemplate={selectedTemplate}
+          userFormInput={(v: any) => generateAiContent(v)}
+          loading={loading}
+        />
+      </div>
+      {/* Editor part */}
+      <div className="text-sm xl:block col-span-2">
+        <EditorPart aioutput={aioutput} loading={loading} />
+      </div>
+    </div>
   );
 };
 

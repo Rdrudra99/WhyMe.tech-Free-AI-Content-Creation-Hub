@@ -1,12 +1,11 @@
 export const siteConfig = {
-  name: "shadcn/ui",
-  url: "https://ui.shadcn.com",
-  ogImage: "https://ui.shadcn.com/og.jpg",
-  description:
-    "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+  name: "OnlyContent",
+  url: "https://kya-re-rudra.vercel.app",
+  ogImage: "",
+  description: "An Ai powered content generator Website",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
+    instagram: "https://instagram.com/kya_re_rudra",
+    github: "https://github.com/Rdrudra99",
   },
 }
 
