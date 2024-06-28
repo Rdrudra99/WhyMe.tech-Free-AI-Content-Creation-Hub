@@ -22,10 +22,218 @@ export default [
     ],
   },
   {
+    title: "Product Description Generator",
+    desc: "Generates compelling product descriptions based on features, benefits, and target audience.",
+    category: "E-commerce Tools",
+    icon: "product-icon.png",
+    prompt: `Create product descriptions for new products based on provided specifications.`,
+    slug: "generate-product-description",
+    form: [
+      {
+        label: "Product Name",
+        field: "input",
+        name: "productName",
+        required: true,
+      },
+      {
+        label: "Product Features",
+        field: "textarea",
+        name: "features",
+        required: true,
+      },
+      {
+        label: "Target Audience",
+        field: "input",
+        name: "targetAudience",
+        required: false,
+      },
+    ],
+  },
+  {
+    title: "SEO Product Title Optimizer",
+    desc: "Optimizes product titles for search engines by analyzing keyword relevance and click-through potential.",
+    category: "E-commerce Tools",
+    icon: "seo-icon.png",
+    prompt: `Optimize product titles for SEO to improve search engine visibility and click-through rates.`,
+    slug: "seo-product-title-optimizer",
+    form: [
+      {
+        label: "Current Product Title",
+        field: "input",
+        name: "currentTitle",
+        required: true,
+      },
+      {
+        label: "Keywords",
+        field: "textarea",
+        name: "keywords",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Review Sentiment Analyzer",
+    desc: "Analyzes customer reviews to determine sentiment (positive, negative, neutral) and extract key insights.",
+    category: "Customer Feedback Analysis",
+    icon: "sentiment-icon.png",
+    prompt: `Analyze customer reviews for sentiment and provide a summary of key insights.`,
+    slug: "review-sentiment-analyzer",
+    form: [
+      {
+        label: "Customer Reviews",
+        field: "textarea",
+        name: "reviews",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Price Monitoring and Competitive Analysis",
+    desc: "Monitors competitor prices and analyzes market trends to optimize pricing strategy.",
+    category: "Market Analysis",
+    icon: "price-icon.png",
+    prompt: `Monitor competitor prices and provide analysis to optimize pricing strategy.`,
+    slug: "price-monitoring",
+    form: [
+      {
+        label: "Competitor Products",
+        field: "textarea",
+        name: "competitorProducts",
+        required: true,
+      },
+      {
+        label: "Market Trends",
+        field: "textarea",
+        name: "marketTrends",
+        required: false,
+      },
+    ],
+  },
+  {
+    title: "Personalized Product Recommendation Engine",
+    desc: "Recommends products to customers based on their browsing history, purchase behavior, and preferences.",
+    category: "Personalization",
+    icon: "recommendation-icon.png",
+    prompt: `Generate personalized product recommendations for customers based on their past interactions.`,
+    slug: "product-recommendation-engine",
+    form: [
+      {
+        label: "Customer ID",
+        field: "input",
+        name: "customerId",
+        required: true,
+      },
+      {
+        label: "Recent Purchases",
+        field: "textarea",
+        name: "recentPurchases",
+        required: false,
+      },
+    ],
+  },
+  {
+    title: "Inventory Management Assistant",
+    desc: "Assists in managing inventory levels by predicting demand trends and suggesting reorder quantities.",
+    category: "Inventory Management",
+    icon: "inventory-icon.png",
+    prompt: `Predict demand trends and suggest optimal reorder quantities for inventory management.`,
+    slug: "inventory-management-assistant",
+    form: [
+      {
+        label: "Current Inventory Data",
+        field: "textarea",
+        name: "inventoryData",
+        required: true,
+      },
+      {
+        label: "Demand Forecast",
+        field: "textarea",
+        name: "demandForecast",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Customer Support Ticket Classifier",
+    desc: "Classifies customer support tickets into categories (e.g., product issues, shipping inquiries) for efficient handling.",
+    category: "Customer Support",
+    icon: "ticket-icon.png",
+    prompt: `Classify customer support tickets into appropriate categories and provide summaries for each category.`,
+    slug: "ticket-classifier",
+    form: [
+      {
+        label: "Customer Support Ticket",
+        field: "textarea",
+        name: "supportTicket",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Promotional Campaign Content Generator",
+    desc: "Generates content for promotional campaigns, including email newsletters, social media posts, and product advertisements.",
+    category: "Marketing Tools",
+    icon: "campaign-icon.png",
+    prompt: `Create content for an upcoming promotional campaign, including email newsletters and social media posts.`,
+    slug: "promotional-campaign-generator",
+    form: [
+      {
+        label: "Campaign Theme",
+        field: "input",
+        name: "campaignTheme",
+        required: true,
+      },
+      {
+        label: "Products to Promote",
+        field: "textarea",
+        name: "products",
+        required: false,
+      },
+    ],
+  },
+  {
+    title: "Product Comparison Tool",
+    desc: "Compares features, specifications, and customer reviews of similar products to assist shoppers in making informed decisions.",
+    category: "Product Comparison",
+    icon: "comparison-icon.png",
+    prompt: `Compare features and specifications of two products in your catalog to help customers make a choice.`,
+    slug: "product-comparison-tool",
+    form: [
+      {
+        label: "Product 1",
+        field: "input",
+        name: "product1",
+        required: true,
+      },
+      {
+        label: "Product 2",
+        field: "input",
+        name: "product2",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Return and Refund Policy Generator",
+    desc: "Generates comprehensive return and refund policies based on industry standards and legal requirements.",
+    category: "Legal Tools",
+    icon: "legal-icon.png",
+    prompt: `Create a return and refund policy for your e-commerce store, considering industry standards and legal requirements.`,
+    slug: "return-refund-policy-generator",
+    form: [
+      {
+        label: "Store Information",
+        field: "textarea",
+        name: "storeInfo",
+        required: true,
+      },
+    ],
+  },
+  {
     title: "Code Generator",
     desc: "An AI tool that generates code snippets based on your input specifications.",
     category: "Development",
-    icon: "code-icon.png", // Replace with the appropriate path to your icon file
+    icon: "code-icon.png",
     prompt: `Provide a detailed description of the code you need. Specify the programming language, functionality, and any particular requirements.`,
     slug: "generate-code",
     form: [
@@ -47,7 +255,7 @@ export default [
     title: "SEO Keywords Generator",
     desc: "An AI tool that generates SEO keywords based on your website content.",
     category: "SEO",
-    icon: "seo-icon.png", // Assuming you have an icon file, replace with appropriate path
+    icon: "seo-icon.png",
     prompt: `Generate a list of 10 SEO keywords in bullet points based on the provided website content.`,
     slug: "generate-seo-keywords",
     form: [
@@ -63,7 +271,7 @@ export default [
     title: "Email Subject Line Generator",
     desc: "An AI tool that generates catchy email subject lines.",
     category: "Email Marketing",
-    icon: "email-icon.png", // Assuming you have an icon file, replace with appropriate path
+    icon: "email-icon.png",
     prompt: `Generate 5 catchy email subject lines in bullet points based on the provided email content and purpose.`,
     slug: "generate-email-subject",
     form: [
@@ -85,7 +293,7 @@ export default [
     title: "Social Media Post Ideas Generator",
     desc: "An AI tool that generates engaging social media post ideas.",
     category: "Social Media",
-    icon: "social-media-icon.png", // Assuming you have an icon file, replace with appropriate path
+    icon: "social-media-icon.png",
     prompt: `Generate 5 engaging social media post ideas in bullet points based on the provided topic and platform.`,
     slug: "generate-social-post-ideas",
     form: [
@@ -108,7 +316,7 @@ export default [
     title: "Ad Copy Generator",
     desc: "An AI tool that generates compelling ad copy for various platforms.",
     category: "Advertising",
-    icon: "ad-icon.png", // Assuming you have an icon file, replace with appropriate path
+    icon: "ad-icon.png",
     prompt: `Generate 3 compelling ad copy variations in bullet points based on the provided product details and target audience.`,
     slug: "generate-ad-copy",
     form: [
@@ -131,8 +339,7 @@ export default [
     desc: "An AI tool that rewrites text to improve clarity and coherence.",
     category: "Text Rewriting",
     icon: "text-rewriter-icon.png",
-    prompt:
-      "Rewrite the provided sentence to enhance clarity and coherence and give it with a structured way also the format is Rich Text Editor Format.",
+    prompt: `Rewrite the provided sentence to enhance clarity and coherence and give it in a structured format.`,
     slug: "text-rewriter",
     form: [
       {

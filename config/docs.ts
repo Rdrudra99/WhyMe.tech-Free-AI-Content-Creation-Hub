@@ -14,6 +14,62 @@ export const docsConfig: DocsConfig = {
   ],
   sidebarNav: [
     {
+      title: "Ecommerce",
+      items: [
+        {
+          title: "Product Description Generator",
+          href: "/dashboard/ct/generate-product-description",
+          items: [],
+        },
+        {
+          title: "SEO Product Title Optimizer",
+          href: "/dashboard/ct/seo-product-title-optimizer",
+          items: [],
+          label: "new",
+        },
+        {
+          title: "Review Sentiment Analyzer",
+          href: "/dashboard/ct/review-sentiment-analyzer",
+          items: [],
+        },
+        {
+          title: "Price Monitoring and Competitive Analysis",
+          href: "/dashboard/ct/price-monitoring",
+          items: [],
+        },
+        {
+          title: "Personalized Product Recommendation Engine",
+          href: "/dashboard/ct/product-recommendation-engine",
+          items: [],
+        },
+        {
+          title: "Inventory Management Assistant",
+          href: "/dashboard/ct/inventory-management-assistant",
+          items: [],
+        },
+        {
+          title: "Customer Support Ticket Classifier",
+          href: "/dashboard/ct/ticket-classifier",
+          items: [],
+        },
+        {
+          title: "Promotional Campaign Content Generator",
+          href: "/dashboard/ct/promotional-campaign-generator",
+          items: [],
+        },
+        {
+          title: "Product Comparison Tool",
+          href: "/dashboard/ct/product-comparison-tool",
+          items: [],
+        },
+        {
+          title: "Return and Refund Policy Generator",
+          href: "/dashboard/ct/return-refund-policy-generator",
+          items: [],
+        },
+      ],
+    },
+    {
       title: "Blog",
       items: [
         {
@@ -80,7 +136,7 @@ export const docsConfig: DocsConfig = {
           title: "Text Rewriter Tool",
           href: "/dashboard/ct/text-rewriter",
           items: [],
-          label:"new"
+          label: "new",
         },
       ],
     },
