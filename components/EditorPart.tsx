@@ -37,7 +37,7 @@ const EditorPart = ({ aioutput, loading }: Props) => {
                     }: any) => {
                       const match = /language-(\w+)/.exec(className || "");
                       return !inline && match ? (
-                        <pre className="rounded-sm p-2 bg-gray-800 text-gray-100 overflow-auto">
+                        <pre className="rounded-sm p-2 font-thin italic border overflow-auto">
                           <code className={`language-${match[1]}`}>
                             {children}
                           </code>

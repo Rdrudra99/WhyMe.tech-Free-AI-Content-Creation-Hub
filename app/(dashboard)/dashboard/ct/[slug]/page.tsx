@@ -50,20 +50,6 @@ const OutcomeSection = (props: PROPS) => {
     <div className="relative py-4 lg:gap-10 lg:py-4 lg:grid lg:grid-cols-3 h-full">
       {/* Form section part */}
       <div className="mx-auto w-full min-w-0 col-span-1 space-y-4 h-1/2 md:h-full">
-      <div className="space-y-2">
-        <h3 className="scroll-m-20 text-xl font-bold tracking-wide">
-            {
-              selectedTemplate?.title
-            }
-        </h3>
-        <p className="text-base text-muted-foreground">
-          <span>
-            {
-              selectedTemplate?.desc
-            }
-          </span>
-        </p>
-      </div>
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => generateAiContent(v)}
