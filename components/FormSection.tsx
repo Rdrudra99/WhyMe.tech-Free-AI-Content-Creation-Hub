@@ -3,7 +3,7 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { WandSparkles } from "lucide-react";
+import { WandSparkles, Zap } from "lucide-react";
 
 import { ScrollArea } from "./ui/scroll-area";
 import Nodata from "./LayoutComponents/Nodata";
@@ -53,9 +53,9 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
   return (
     <ScrollArea className="h-full w-full">
       <fieldset className="grid gap-6 rounded-lg border p-4">
-        <legend className="-ml-1 px-1 text-sm font-medium text-primary">
+        {/* <legend className="-ml-1 px-1 text-sm font-medium text-primary">
           {selectedTemplate?.title}
-        </legend>
+        </legend> */}
         <form className="grid w-full gap-6" onSubmit={handleSubmit}>
           {selectedTemplate?.form?.map((items:any, index:number) => {
             return (
@@ -106,9 +106,9 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
             {loading ? (
               <p className="flex justify-center items-center space-x-2">
                 <span>
-                  <WandSparkles className="h-4 w-4 animate-spin" />
+                  <Zap strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4 animate-spin" />
                 </span>
-                <span>Generating...</span>
+                <span>Thinking...</span>
               </p>
             ) : (
               <p className="flex justify-center items-center space-x-2">

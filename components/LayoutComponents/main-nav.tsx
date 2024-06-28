@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/LayoutComponents/icons";
 import { Badge } from "@/components/ui/badge";
+import { Zap } from "lucide-react";
 
 export function MainNav() {
   const pathname = usePathname();
@@ -15,10 +16,8 @@ export function MainNav() {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Icons.logo className="h-6 w-6" />
-        <span className="hidden font-bold sm:inline-block">
-            Only Content
-        </span>
+        <Zap strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
+        <span className="hidden font-bold sm:inline-block">Only Content</span>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
         <Link

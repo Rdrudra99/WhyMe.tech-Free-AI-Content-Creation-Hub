@@ -22,8 +22,8 @@ const EditorPart = ({ aioutput, loading }: Props) => {
           {loading ? (
             <Loader />
           ) : (
-            <aside className="top-14 z-30   h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
-              <ScrollArea className="h-full pb-10">
+            <aside className="top-14 z-30 h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
+              <ScrollArea className="h-full px-4">
                 <ReactMarkdown
                   remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
                   rehypePlugins={[highlight]}
@@ -37,7 +37,7 @@ const EditorPart = ({ aioutput, loading }: Props) => {
                     }: any) => {
                       const match = /language-(\w+)/.exec(className || "");
                       return !inline && match ? (
-                        <pre className="rounded-md p-2 bg-gray-800 text-gray-100 overflow-auto">
+                        <pre className="rounded-sm p-2 bg-gray-800 text-gray-100 overflow-auto">
                           <code className={`language-${match[1]}`}>
                             {children}
                           </code>
@@ -49,13 +49,13 @@ const EditorPart = ({ aioutput, loading }: Props) => {
                       );
                     },
                     h1: ({ node, ...props }) => (
-                      <h1 className="text-3xl mt-4 mb-2" {...props} />
+                      <h1 className="text-2xl mt-4 mb-2" {...props} />
                     ),
                     h2: ({ node, ...props }) => (
-                      <h2 className="text-2xl mt-4 mb-2" {...props} />
+                      <h2 className="text-xl mt-4 mb-2" {...props} />
                     ),
                     h3: ({ node, ...props }) => (
-                      <h3 className="text-xl mt-4 mb-2" {...props} />
+                      <h3 className="text-lg mt-4 mb-2" {...props} />
                     ),
                     p: ({ node, ...props }) => (
                       <p className="my-2" {...props} />
