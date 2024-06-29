@@ -5,8 +5,7 @@ import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import NextTopLoader from "nextjs-toploader";
-import { SiteHeader } from "@/components/LayoutComponents/site-header";
-import { SiteFooter } from "@/components/LayoutComponents/site-footer";
+import { Toaster } from "@/components/ui/toaster"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -29,7 +28,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased md:overflow-hidden overflow-auto",
+            "h-screen bg-background font-sans antialiased overflow-y-hidden",
             fontSans.variable
           )}
         >
@@ -38,9 +37,10 @@ export default function RootLayout({
             defaultTheme="dark"
             disableTransitionOnChange
           >
-            <NextTopLoader color="#2299DD" />
+            <NextTopLoader color="#2299DD" showSpinner={false} speed={400}/>
             {children}
           </ThemeProvider>
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

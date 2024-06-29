@@ -4,7 +4,26 @@ export default [
     desc: "An AI tool that generates blog titles based on your blog information.",
     category: "Blog",
     icon: "blog-icon.png", // Assuming you have an icon file, replace with appropriate path
-    prompt: `Provide 5 blog topic ideas in MarkDown Format With Proper Heading and sub Heading`,
+    prompt: `
+    Please provide 5 blog topic ideas in Markdown format with proper headings and subheadings. 
+
+### Blog Topic Ideas
+
+1. #### The Art of Mindful Eating
+    - Dive deep into how practicing mindful eating can transform your relationship with food and improve overall well-being.
+
+2. #### Traveling on a Budget: Tips and Tricks
+    - Explore creative ways to travel on a budget without compromising on experiences or comfort.
+
+3. #### Mastering the Art of Productivity
+    - Learn effective strategies and tools to boost productivity and achieve your goals efficiently.
+
+4. #### Sustainable Fashion Trends for Every Season
+    - Discover the latest sustainable fashion trends and how you can incorporate them into your wardrobe sustainably.
+
+5. #### Exploring the Benefits of Outdoor Exercise
+    - Uncover the numerous physical and mental health benefits of exercising outdoors and how it can enhance your fitness journey.
+`,
     slug: "generate-blog-title",
     form: [
       {
@@ -19,6 +38,14 @@ export default [
         name: "outline",
         required: false, // Optional field
       },
+      {
+        label: "Type",
+        field: "select",
+        name: "type",
+        options: [ "Clickbait 📢", "Funny 😄", "Educational 🎓", "News 📰", "Personal 🧑‍💻"],
+        required: true,
+        initialValue: "Type"
+      }      
     ],
   },
   {
