@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "@/components/ui/toaster"
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -12,9 +14,9 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Only Content",
+  title: "Vākya AI",
   description:
-    "Only Content is a modern, fast, and lightweight content Generator tool website that helps you generate content for your website, blog, or social media.",
+    "Vākya AI is a modern, fast, and lightweight content Generator tool website that helps you generate content for your website, blog, or social media.",
 };
 
 export default function RootLayout({
@@ -37,6 +39,8 @@ export default function RootLayout({
           >
             <NextTopLoader color="#2299DD" showSpinner={false} speed={400}/>
             {children}
+            <Analytics />
+            <SpeedInsights />
           </ThemeProvider>
           <Toaster />
         </body>

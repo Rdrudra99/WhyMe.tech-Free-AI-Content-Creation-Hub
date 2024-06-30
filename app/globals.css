@@ -431,3 +431,7 @@
     }
   } */
   
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
