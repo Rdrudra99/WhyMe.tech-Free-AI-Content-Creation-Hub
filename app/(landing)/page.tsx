@@ -36,7 +36,7 @@ export default async function FloatingNavDemo() {
     },
     {
       id: 3,
-      name: "Priyanshu bBej",
+      name: "Priyanshu Bej",
       designation: "Software Developer Exicutive",
       image:
         "https://instagram.fbbi5-3.fna.fbcdn.net/v/t51.2885-19/447034917_831788538828293_3255311599294477075_n.jpg?_nc_ht=instagram.fbbi5-3.fna.fbcdn.net&_nc_cat=105&_nc_ohc=nOwbLzunNHoQ7kNvgEVkpzJ&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYCyGDH-ESXPL1SNjH08QS0Kj4fk6SJxUS1yNQsM_MuLLw&oe=6686F3D1&_nc_sid=8f1549",

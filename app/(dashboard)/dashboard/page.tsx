@@ -62,12 +62,12 @@ export default async function PlaceholdersAndVanishInputDemo() {
             </button>
           </div>
         </Link>
-        <Link href="/dashboard/ct/generate-email-subject">
+        <Link href="dashboard/ct/generate-concept-simplifier">
           <div className="flex max-w-3xl flex-wrap items-stretch justify-center gap-4">
             <button className="relative flex w-40 flex-col gap-2 rounded-2xl border border-token-border-light px-3 pb-4 pt-3 text-start align-top text-[15px] shadow-xxs transition enabled:hover:bg-token-main-surface-secondary disabled:cursor-not-allowed">
               <MailOpen />
               <div className="line-clamp-3 text-balance text-gray-600 dark:text-gray-500 break-word">
-                Write An Email
+              Concept Simplifier
               </div>
             </button>
           </div>

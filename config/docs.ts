@@ -28,43 +28,28 @@ export const docsConfig: DocsConfig = {
           label: "new",
         },
         {
-          title: "Review Sentiment Analyzer",
-          href: "/dashboard/ct/review-sentiment-analyzer",
+          title: "Tagline Generator",
+          href: "/dashboard/ct/generate-tagline",
           items: [],
         },
         {
-          title: "Price Monitoring and Competitive Analysis",
-          href: "/dashboard/ct/price-monitoring",
+          title: "Amazon Product Description",
+          href: "/dashboard/ct/generate-amazon-description",
           items: [],
         },
         {
-          title: "Personalized Product Recommendation Engine",
-          href: "/dashboard/ct/product-recommendation-engine",
+          title: "Product Comparisons",
+          href: "/dashboard/ct/compare-products",
           items: [],
         },
         {
-          title: "Inventory Management Assistant",
-          href: "/dashboard/ct/inventory-management-assistant",
+          title: "Thank You Note Generator",
+          href: "/dashboard/ct/generate-thank-you-note",
           items: [],
         },
         {
-          title: "Customer Support Ticket Classifier",
-          href: "/dashboard/ct/ticket-classifier",
-          items: [],
-        },
-        {
-          title: "Promotional Campaign Content Generator",
-          href: "/dashboard/ct/promotional-campaign-generator",
-          items: [],
-        },
-        {
-          title: "Product Comparison Tool",
-          href: "/dashboard/ct/product-comparison-tool",
-          items: [],
-        },
-        {
-          title: "Return and Refund Policy Generator",
-          href: "/dashboard/ct/return-refund-policy-generator",
+          title: "Refund/Return/Exchange Response Email",
+          href: "/dashboard/ct/generate-return-response-email",
           items: [],
         },
       ],
@@ -75,6 +60,21 @@ export const docsConfig: DocsConfig = {
         {
           title: "Blog Title Generator",
           href: "/dashboard/ct/generate-blog-title",
+          items: [],
+        },
+        {
+          title: "Quick 1-Click Blog Post",
+          href: "/dashboard/ct/generate-blog-post",
+          items: [],
+        },
+        {
+          title: "Rewrite Article with Keywords",
+          href: "/dashboard/ct/rewrite-article-with-keywords",
+          items: [],
+        },
+        {
+          title: "Human Written Blog Post",
+          href: "/dashboard/ct/generate-human-blog-post",
           items: [],
         },
       ],
@@ -93,38 +93,63 @@ export const docsConfig: DocsConfig = {
       title: "SEO",
       items: [
         {
-          title: "SEO Keywords Generator",
-          href: "/dashboard/ct/generate-seo-keywords",
+          title: "Meta Title and Description",
+          href: "/dashboard/ct/generate-meta-title-description",
+          items: [],
+        },
+        {
+          title: "Clickbait Title Generator",
+          href: "/dashboard/ct/clickbait-title-generator",
           items: [],
         },
       ],
     },
     {
-      title: "Email Marketing",
+      title: "HR Tools",
       items: [
         {
-          title: "Email Subject Line Generator",
-          href: "/dashboard/ct/generate-email-subject",
+          title: "Job Description Generator",
+          href: "/dashboard/ct/generate-job-description",
+          items: [],
+        },
+        {
+          title: "Interview Scheduling Email Generator",
+          href: "/dashboard/ct/generate-interview-email",
+          items: [],
+        },
+        {
+          title: "Job Rejection Email Generator",
+          href: "/dashboard/ct/generate-job-rejection-email",
+          items: [],
+        },
+        {
+          title: "Relieving Letter Generator",
+          href: "/dashboard/ct/generate-relieving-letter",
           items: [],
         },
       ],
     },
     {
-      title: "Social Media",
+      title: "Education",
       items: [
         {
-          title: "Social Media Post Ideas Generator",
-          href: "/dashboard/ct/generate-social-post-ideas",
+          title: "Concept Simplifier",
+          href: "/dashboard/ct/generate-concept-simplifier",
+          items: [],
+        },
+        {
+          title: "Reading Passage Generator",
+          href: "/dashboard/ct/generate-reading-passage",
           items: [],
         },
       ],
     },
     {
-      title: "Advertising",
+      title: "Support",
       items: [
         {
-          title: "Ad Copy Generator",
-          href: "/dashboard/ct/generate-ad-copy",
+          title: "FAQ Generator",
+          href: "/dashboard/ct/generate-faqs",
           items: [],
         },
       ],

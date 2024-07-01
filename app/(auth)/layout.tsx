@@ -26,7 +26,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="w-full lg:grid h-screen lg:grid-cols-2">
       <div className="flex items-center justify-center py-12">
-        <div className="mx-auto grid w-[350px] gap-6">{children}</div>
+        <div className="mx-auto grid  gap-6">{children}</div>
       </div>
       <div className="hidden bg-muted lg:block">
         <div className="h-[40rem] flex flex-col justify-center  items-center px-4">
