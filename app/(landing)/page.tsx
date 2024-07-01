@@ -1,10 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
-  LoginLink,
-  RegisterLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
-import {
   ArrowDown,
   GitBranch,
   Home,
@@ -19,14 +15,9 @@ import { FloatingNav } from "@/components/ui/floating-navbar";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { redirect } from "next/navigation";
-import {getKindeServerSession} from "@kinde-oss/kinde-auth-nextjs/server";
-
 
 export default async function FloatingNavDemo() {
-  const { isAuthenticated } = getKindeServerSession();
-  if ((await isAuthenticated())) {
-    redirect("/dashboard");
-  }
+
 
   const people = [
     {
@@ -34,7 +25,7 @@ export default async function FloatingNavDemo() {
       name: "Rudra Narayan Boitei",
       designation: "Software Developer Exicutive",
       image:
-        "https://instagram.fbbi5-1.fna.fbcdn.net/v/t51.2885-19/449265901_1519873001964092_7106194856602058354_n.jpg?_nc_ht=instagram.fbbi5-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=IotDtFjq_lMQ7kNvgHQG1Rk&edm=AFg4Q8wBAAAA&ccb=7-5&oh=00_AYBvBfjkx51epv2uROamt-55PWPDzri_IZeGQ-cwIiCSpg&oe=6686F81F&_nc_sid=0b30b7",
+        "https://media.licdn.com/dms/image/D5603AQHyTl9FBaQiaw/profile-displayphoto-shrink_800_800/0/1718244811587?e=1725494400&v=beta&t=eSxqNaULO3oIFqdAqb8tKSRwhKI6qWWFfNPi07Aca2Q",
     },
     {
       id: 2,
@@ -45,33 +36,21 @@ export default async function FloatingNavDemo() {
     },
     {
       id: 3,
-      name: "Jane Smith",
-      designation: "Data Scientist",
-      image:
-        "https://instagram.fbbi5-3.fna.fbcdn.net/v/t51.2885-15/409683750_388307436968111_7892502297624787248_n.jpg?stp=c0.248.640.640a_dst-jpg_e15_s150x150&_nc_ht=instagram.fbbi5-3.fna.fbcdn.net&_nc_cat=111&_nc_ohc=0uHZjidNRPkQ7kNvgGj31VU&edm=AGFyKLkBAAAA&ccb=7-5&oh=00_AYCnu9PQN8l9cU1x1g7DB01kbnUHVjEkI9b2Qn_bWrB_qw&oe=6686D7E1&_nc_sid=5a0a6d",
-    },
-    {
-      id: 4,
       name: "Priyanshu bBej",
-      designation: "Android Developer",
+      designation: "Software Developer Exicutive",
       image:
         "https://instagram.fbbi5-3.fna.fbcdn.net/v/t51.2885-19/447034917_831788538828293_3255311599294477075_n.jpg?_nc_ht=instagram.fbbi5-3.fna.fbcdn.net&_nc_cat=105&_nc_ohc=nOwbLzunNHoQ7kNvgEVkpzJ&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYCyGDH-ESXPL1SNjH08QS0Kj4fk6SJxUS1yNQsM_MuLLw&oe=6686F3D1&_nc_sid=8f1549",
     },
     {
-      id: 5,
-      name: "Tyler Durden",
-      designation: "Soap Developer",
+      id: 4,
+      name: "Deepak Pradhan",
+      designation: "Software Developer Exicutive",
       image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
+        "https://media.licdn.com/dms/image/D5603AQH25yBxgSdkTw/profile-displayphoto-shrink_800_800/0/1714365694678?e=1725494400&v=beta&t=rwb2-956FqPI752k6toUvl_HDJqD7Hzz-iH-bxUwT3A",
     },
-    {
-      id: 6,
-      name: "Dora",
-      designation: "The Explorer",
-      image:
-        "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
-    },
+
   ];
+
   return (
     <div className="relative  w-full ">
       <nav className="max-w-7xl  fixed top-4  mx-auto inset-x-0 z-50 w-[95%] lg:w-full">
@@ -84,19 +63,17 @@ export default async function FloatingNavDemo() {
               >
                 <Zap strokeWidth={3} className="text-black dark:text-white" />
                 <span className="font-medium text-black dark:text-white">
-                  Vākya AI
+                Vyākhyā AI
                 </span>
               </Link>
             </div>
             <div className="flex space-x-2 items-center">
-              <p className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl">
-                <LoginLink postLoginRedirectURL="/dashboard">Sign in</LoginLink>
-              </p>
-              <p className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]">
-                <RegisterLink postLoginRedirectURL="/dashboard">
-                  Sign up
-                </RegisterLink>
-              </p>
+              <Link href="/sign-in" className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl">
+                Sign in
+              </Link>
+              <Link href="/sign-up" className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]">
+                Sign up
+              </Link>
             </div>
           </div>
         </div>

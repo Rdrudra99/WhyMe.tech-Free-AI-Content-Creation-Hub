@@ -26,7 +26,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { DocsSidebarNav } from "@/components/sidebar-nav";
 import { docsConfig } from "@/config/docs";
 import { SiteFooter } from "@/components/LayoutComponents/site-footer";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 // export default function Dashboard({ children }: { children: React.ReactNode }) {
 //   return (
@@ -53,10 +52,7 @@ export default async function Dashboard({
 }: {
   children: React.ReactNode;
 }) {
-  const { isAuthenticated } = getKindeServerSession();
-  if (!(await isAuthenticated())) {
-    redirect("/");
-  }
+
   return (
     <React.Fragment>
       <SiteHeader />

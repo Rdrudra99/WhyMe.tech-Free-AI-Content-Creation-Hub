@@ -8,7 +8,6 @@ import { MainNav } from "./main-nav"
 import { MobileNav } from "./mobile-nav"
 import { buttonVariants } from "../ui/button"
 import { ModeToggle } from "../ModeToggle"
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components"
 import { UserNav } from "./user-nav"
 
 export function SiteHeader() {
