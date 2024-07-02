@@ -345,21 +345,7 @@ Generates compelling product descriptions based on features, benefits, and targe
 ## Context
 Creating attractive and informative product descriptions is crucial for e-commerce success. This prompt helps generate detailed descriptions by focusing on product features, benefits, and the target audience.
 
-## Instructions
-1. **Product Name**: Provide the name of the product.
-2. **Product Features**: List the key features of the product.
-3. **Target Audience**: Optionally specify the target audience for the product.
-
 ## Examples
-
-### Input
-**Product Name**: UltraSoft Pillow  
-**Product Features**:
-- Made with memory foam
-- Hypoallergenic material
-- Ergonomic design
-**Target Audience**: People with sleep issues
-
 ### Output
 #### Product Description for UltraSoft Pillow
 
@@ -415,18 +401,8 @@ Optimizes product titles for search engines by analyzing keyword relevance and c
 ## Context
 A well-optimized product title can significantly improve search engine visibility and attract more potential customers. This prompt assists in refining product titles by incorporating relevant keywords and ensuring they are compelling for users.
 
-## Instructions
-1. **Current Product Title**: Provide the current title of the product.
-2. **Keywords**: List the key terms that should be included in the optimized title.
-
 ## Examples
 
-### Input
-**Current Product Title**: UltraSoft Memory Foam Pillow  
-**Keywords**:
-- Memory foam pillow
-- Comfortable sleep
-- Hypoallergenic
 
 ### Output
 #### Optimized Product Title
@@ -527,21 +503,6 @@ This tool helps you quickly create appealing and effective Amazon product descri
 ## Context
 A well-crafted product description can significantly impact sales on Amazon by highlighting key features, benefits, and appealing to the target audience. This prompt assists in generating detailed and persuasive descriptions tailored for Amazon listings.
 
-## Instructions
-1. **Product Name**: Enter the name of your product (e.g., iPhone 12, Samsung Galaxy Note 20).
-2. **Product Description**: Provide a detailed description of your product, including key features, benefits, and any other relevant details.
-3. **Target Audience**: Optionally specify the target audience for your product.
-
-## Examples
-
-### Input
-**Product Name**: UltraSoft Memory Foam Pillow  
-**Product Description**:
-- Experience ultimate comfort with our premium memory foam pillow.
-- Hypoallergenic material for a healthier sleep environment.
-- Ergonomic design supports proper spinal alignment.
-**Target Audience**: Individuals with allergies or seeking better sleep quality.
-
 ### Output
 #### Amazon Product Description
 
@@ -601,25 +562,8 @@ This tool simplifies product comparisons by outlining the pros and cons, determi
 ## Context
 Comparing products can be daunting without a structured approach. This prompt assists in comparing two products by providing detailed information on their features, pros, and cons to aid decision-making.
 
-## Instructions
-1. **Product A**
-   - **Enter the name of Product A**: Name of the first product (e.g., Samsung Galaxy S22).
-   - **Details of Product A (Optional)**: Provide additional details about Product A, such as key features or specifications.
-   
-2. **Product B**
-   - **Enter the name of Product B**: Name of the second product (e.g., Google Pixel).
-   - **Details of Product B (Optional)**: Provide additional details about Product B, if available.
 
 ## Examples
-
-### Input
-**Product A**
-- **Name**: Samsung Galaxy S22
-- **Details**: It is a 5G mobile phone with a high-resolution display and advanced camera features.
-
-**Product B**
-- **Name**: Google Pixel
-- **Details**: Known for its exceptional camera quality and pure Android experience.
 
 ### Output
 #### Product Comparison
@@ -710,15 +654,6 @@ This tool creates heartfelt thank you notes to express your gratitude with ease.
 ## Context
 Sending a thank you note is a thoughtful gesture that strengthens relationships and acknowledges appreciation. This prompt helps generate personalized thank you notes based on the product or service purchased and the preferred mode of sending.
 
-## Instructions
-1. **Product or Service Purchased**: Describe the product or service that was purchased (e.g., Enter your product or service details).
-2. **Mode of Sending Note**: Select how you would like to send the thank you note (e.g., Social Media DM, Handwritten, Email).
-
-## Examples
-
-### Input
-**Product they purchased**: UltraSoft Memory Foam Pillow  
-**Mode of sending note**: Email
 
 ### Output
 #### Generated Thank You Note
@@ -780,18 +715,7 @@ This tool helps you to generate a professional return/exchange response email. A
 ## Context
 Handling return or exchange requests requires clear and professional communication. This prompt assists in drafting response emails by providing details about the product or service, noting the customer's message (if available), and crafting a suitable response.
 
-## Instructions
-1. **Product/Service Description**: Describe your product or service, including its main features, benefits, and what makes it unique.
-2. **Customer's Message**: Optionally, provide the message you received from the customer regarding the return or exchange of the product.
-3. **Response/Answer**: Provide your response to the customer's message regarding returns or exchanges.
-
 ## Examples
-
-### Input
-**Product/Service Description**:
-- Our UltraSoft Memory Foam Pillow offers superior comfort and support with its premium memory foam construction.
-- Hypoallergenic cover suitable for allergy-prone individuals.
-- 30-day satisfaction guarantee for peace of mind.
 
 **Customer's Message**:
 - "I received the wrong pillow cover with my order."
