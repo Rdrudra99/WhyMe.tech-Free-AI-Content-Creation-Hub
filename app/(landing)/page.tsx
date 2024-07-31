@@ -18,7 +18,6 @@ import { redirect } from "next/navigation";
 
 export default async function FloatingNavDemo() {
 
-
   const people = [
     {
       id: 1,

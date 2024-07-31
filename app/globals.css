@@ -100,7 +100,7 @@
       --ring: 128 87% 59%;
       --radius: 0.5rem;
     }
-  
+
     .dark {
       --background: 128 40% 2%;
       --foreground: 128 20% 99%;
@@ -123,7 +123,7 @@
       --ring: 128 87% 59%;
     }
   } */
-  
+
 
   @layer base {
     :root {
@@ -148,7 +148,7 @@
       --ring: 142.1 76.2% 36.3%;
       --radius: 0.5rem;
     }
-  
+
     .dark {
       --background: 20 14.3% 4.1%;
       --foreground: 0 0% 95%;
@@ -171,12 +171,12 @@
       --ring: 142.4 71.8% 29.2%;
     }
   }
-  
-  
+
+
   .overflow-y-auto {
     overflow-y: auto;
   }
-  
+
   .sticky {
     position: -webkit-sticky;
     position: sticky;
@@ -208,7 +208,7 @@
       --ring: 153 100% 50%;
       --radius: 0.5rem;
     }
-  
+
     .dark {
       --background: 153 56% 4%;
       --foreground: 153 19% 100%;
@@ -231,7 +231,7 @@
       --ring: 153 100% 50%;
     }
   } */
-  
+
 
 
   /* @layer base {
@@ -257,7 +257,7 @@
       --ring: 142.1 76.2% 36.3%;
       --radius: 1rem;
     }
-  
+
     .dark {
       --background: 20 14.3% 4.1%;
       --foreground: 0 0% 95%;
@@ -280,8 +280,8 @@
       --ring: 142.4 71.8% 29.2%;
     }
   } */
-  
-  
+
+
 
 
 
@@ -359,7 +359,7 @@
       --ring: 262.1 83.3% 57.8%;
       --radius: 1rem;
     }
-  
+
     .dark {
       --background: 224 71.4% 4.1%;
       --foreground: 210 20% 98%;
@@ -382,7 +382,7 @@
       --ring: 263.4 70% 50.4%;
     }
   } */
-  
+
 
   /* @layer base {
     :root {
@@ -407,7 +407,7 @@
       --ring: 262.1 83.3% 57.8%;
       --radius: 1rem;
     }
-  
+
     .dark {
       --background: 224 71.4% 4.1%;
       --foreground: 210 20% 98%;
@@ -430,8 +430,19 @@
       --ring: 263.4 70% 50.4%;
     }
   } */
-  
+
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+
+  .tiptap.ProseMirror {
+    outline: none !important;
+  }
+
+
+
+  .prose{
+    max-width: 100% !important;
   }

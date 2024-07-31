@@ -7,81 +7,7 @@ export default [
     desc: "An AI tool that generates blog titles based on your blog information.",
     category: "Blog",
     icon: "blog-icon.png",
-    prompt: `
-      # Structured Prompt for Blog Topic Ideas
-
-## Title
-Generate 5 Blog Topic Ideas
-
-## Description
-This prompt helps you generate five blog topic ideas using a given niche, blog outline, and additional options. The output will be formatted in Markdown with proper headings and subheadings.
-
-## Context
-Creating engaging blog content requires interesting and relevant topics. This prompt will assist in brainstorming topic ideas based on the provided niche and outline, making it easier to plan and organize your content.
-
-## Instructions
-1. **Niche**: Specify the niche or general subject area for the blog topics.
-2. **Blog Outline**: Provide a brief outline or structure for the blog posts.
-3. **Options**: Include any additional preferences or requirements, such as target audience, tone, or specific keywords.
-
-## Examples
-
-### Input
-**Niche**: Health and Wellness  
-**Blog Outline**:
-- Introduction
-- Benefits
-- Tips and Tricks
-- Conclusion
-**Options**: Targeting beginners, friendly tone, include keywords like "healthy habits" and "well-being"
-
-### Output
-#### Blog Topic Ideas for Health and Wellness
-
-1. **10 Simple Healthy Habits to Start Your Day Right**
-   - Introduction
-   - Benefits of Healthy Morning Habits
-   - Tips and Tricks for Implementing Morning Routines
-   - Conclusion
-
-2. **The Ultimate Guide to Maintaining Well-Being for Beginners**
-   - Introduction
-   - Understanding Well-Being
-   - Essential Tips for Beginners
-   - Conclusion
-
-3. **How to Incorporate Exercise into Your Daily Routine**
-   - Introduction
-   - Benefits of Daily Exercise
-   - Practical Tips for Staying Active
-   - Conclusion
-
-4. **Healthy Eating: Easy Tips for Beginners**
-   - Introduction
-   - Importance of a Balanced Diet
-   - Simple Meal Ideas and Recipes
-   - Conclusion
-
-5. **Mindfulness Practices for Improved Well-Being**
-   - Introduction
-   - Benefits of Mindfulness
-   - Tips for Practicing Mindfulness Daily
-   - Conclusion
-
-## Parameters
-- **Niche**: (e.g., Health and Wellness, Technology, Personal Finance)
-- **Blog Outline**: (e.g., Introduction, Main Points, Conclusion)
-- **Options**: (e.g., Target Audience, Tone, Keywords)
-
-## Output Format
-The output will be a list of five blog topic ideas with headings and subheadings formatted in Markdown.
-
-## Notes
-- Ensure the topics are relevant to the specified niche.
-- Follow the provided blog outline structure.
-- Consider any additional options to tailor the topics to the target audience.
-
-`,
+    prompt: ``,
     slug: "generate-blog-title",
     form: [
       {
@@ -119,60 +45,7 @@ The output will be a list of five blog topic ideas with headings and subheadings
     desc: "One-click tool for generating detailed, SEO-friendly blog articles in your language, complete with an outline, engaging content, and FAQs.",
     category: "Content Generation",
     icon: "blog-post-icon.png",
-    prompt: `# Structured Prompt for Quick 1-Click Blog Post
-
-## Title
-Quick 1-Click Blog Post
-
-## Description
-One-click tool for generating detailed, SEO-friendly blog articles in your language, complete with an outline, engaging content, and FAQs.
-
-## Context
-Creating SEO-friendly blog articles quickly is essential for content creators. This prompt facilitates the generation of detailed blog articles by specifying the blog title and selecting the language for content generation.
-
-## Examples
-
-### Input
-**Blog Title**: "Top 10 Tips for Better Sleep"
-**Language**: English
-
-### Output
-#### Generated Blog Article
-
-## Introduction
-In today's fast-paced world, getting quality sleep is more important than ever. Here are ten tips to help you achieve better sleep and wake up refreshed every morning.
-
-## Tips for Better Sleep
-
-1. **Establish a Consistent Sleep Schedule**: Go to bed and wake up at the same time every day, even on weekends.
-2. **Create a Relaxing Bedtime Routine**: Incorporate calming activities like reading or meditating before bedtime.
-3. **Limit Exposure to Screens**: Avoid using smartphones or watching TV at least an hour before bedtime.
-
-...
-
-## Conclusion
-Incorporate these tips into your nightly routine to improve your sleep quality and overall well-being. Remember, a good night's sleep is the foundation of a productive day!
-
-## FAQs (Frequently Asked Questions)
-
-### What are the best foods for promoting sleep?
-- Include foods rich in tryptophan like turkey, nuts, and seeds in your diet.
-
-### How many hours of sleep should adults aim for?
-- Adults should aim for 7-9 hours of sleep per night for optimal health and well-being.
-
-## Parameters
-- **Blog Title**: (e.g., Top 10 Tips for Better Sleep, Beginner's Guide to SEO)
-- **Language**: (e.g., English, Hindi, Odia)
-
-## Output Format
-The output will be a detailed blog article tailored to the specified title and language, including an introduction, tips, conclusion, and FAQs for enhanced engagement and SEO optimization.
-
-## Notes
-- Customize the article content to fit your target audience and style preferences.
-- Ensure the content is informative, engaging, and optimized for search engines to attract and retain readers.
-- Review and edit the generated article as needed to refine the content and ensure accuracy.
-`,
+    prompt: `Generate a blog post based on the provided title, ensuring the content is formatted in HTML. The HTML should include appropriate tags such as <h1>, <p>, <strong>, <em>, and <a> for headings, paragraphs, bold text, italicized text, and links respectively. Ensure the content is well-structured and ready to be used directly in a rich text editor.`,
     slug: "generate-blog-post",
     form: [
       {
@@ -573,20 +446,20 @@ Comparing products can be daunting without a structured approach. This prompt as
 - **Features Comparison**:
   - Samsung Galaxy S22: 5G connectivity, high-resolution display, advanced camera.
   - Google Pixel: Exceptional camera quality, pure Android experience.
-  
+
 - **Pros and Cons**:
   - Samsung Galaxy S22:
     - Pros: 5G connectivity, high-resolution display.
     - Cons: Higher price point compared to Google Pixel.
-  
+
   - Google Pixel:
     - Pros: Exceptional camera quality, pure Android experience.
     - Cons: May lack some advanced features found in Samsung Galaxy S22.
-  
+
 - **Suitability**:
   - Samsung Galaxy S22: Ideal for users seeking cutting-edge technology and features.
   - Google Pixel: Suitable for photography enthusiasts and those preferring a pure Android experience.
-  
+
 - **Best Value**:
   - Based on the comparison, Samsung Galaxy S22 offers superior technology, but Google Pixel provides better value for camera quality.
 
@@ -1016,9 +889,9 @@ Looking forward to meeting you!
 
 Best regards,
 
-[Your Name]  
-[Your Position]  
-ABC Company  
+[Your Name]
+[Your Position]
+ABC Company
 
 ## Parameters
 - **Company Name**: (e.g., ABC Company)
@@ -1118,9 +991,9 @@ Thank you once again for considering a career with ABC Company. We wish you all 
 
 Best regards,
 
-[Your Name]  
-[Your Position]  
-ABC Company  
+[Your Name]
+[Your Position]
+ABC Company
 
 ## Parameters
 - **Company Name**: (e.g., ABC Company)
@@ -1198,8 +1071,8 @@ We wish you all the best in your future endeavors.
 
 Sincerely,
 
-[HR Manager's Name]  
-[HR Manager's Position]  
+[HR Manager's Name]
+[HR Manager's Position]
 [Company Name]
 
 ## Parameters
@@ -1287,9 +1160,9 @@ Thank you once again for considering a career with ABC Company. We wish you all 
 
 Best regards,
 
-[Your Name]  
-[Your Position]  
-ABC Company  
+[Your Name]
+[Your Position]
+ABC Company
 
 ## Parameters
 - **Company Name**: (e.g., ABC Company)
@@ -1423,22 +1296,22 @@ Creating FAQs that are tailored to specific topics and contexts is essential for
 ## Examples
 
 ### Input
-**Main Topic or Subject**: Online Payment Methods  
+**Main Topic or Subject**: Online Payment Methods
 **Usage Context**: E-commerce website
 
 ### Output
 #### Generated FAQs
 
-**Main Topic or Subject**: Online Payment Methods  
+**Main Topic or Subject**: Online Payment Methods
 **Usage Context**: E-commerce website
 
 **FAQs**:
 1. **Q:** What payment methods are accepted on our e-commerce platform?
    **A:** We accept Visa, MasterCard, American Express, PayPal, and Apple Pay.
-   
+
 2. **Q:** How secure are online transactions on our platform?
    **A:** We use industry-standard encryption and security protocols to ensure your transactions are safe and secure.
-   
+
 3. **Q:** How can I update my payment information?
    **A:** You can update your payment information by logging into your account and navigating to the payment settings section.
 
