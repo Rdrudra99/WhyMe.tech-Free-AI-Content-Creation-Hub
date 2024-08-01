@@ -47,17 +47,29 @@ const OutcomeSection = (props: PROPS) => {
   };
 
   return (
-    <div className="relative py-4 lg:gap-10 lg:py-4 lg:grid lg:grid-cols-3 h-full">
-      {/* Form section part */}
-      <div className="mx-auto w-full min-w-0 col-span-1 space-y-4 h-full sticky top-0">
+    // <div className="relative py-4 lg:gap-10 lg:py-4 lg:grid lg:grid-cols-3 h-full">
+    //   {/* Form section part */}
+    //   <div className="mx-auto w-full min-w-0 col-span-1 space-y-4 h-full sticky top-0">
+    //     <FormSection
+    //       selectedTemplate={selectedTemplate}
+    //       userFormInput={(v: any) => generateAiContent(v)}
+    //       loading={loading}
+    //     />
+    //   </div>
+    //   {/* Editor part */}
+    //   <div className="text-sm xl:block col-span-2 h-full overflow-y-auto">
+    //     <EditorPart aioutput={aioutput} loading={loading} />
+    //   </div>
+    // </div>
+    <div className="md:flex block justify-between space-x-10">
+      <div className="flex md:w-1/2 w-full">
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => generateAiContent(v)}
           loading={loading}
         />
       </div>
-      {/* Editor part */}
-      <div className="text-sm xl:block col-span-2 h-full overflow-y-auto">
+      <div className="w-full">
         <EditorPart aioutput={aioutput} loading={loading} />
       </div>
     </div>

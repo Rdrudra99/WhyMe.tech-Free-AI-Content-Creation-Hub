@@ -3,6 +3,8 @@
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import React, { useEffect } from 'react';
+import { ScrollArea } from './ui/scroll-area';
+
 
 interface Props {
   aioutput: string;
@@ -23,9 +25,9 @@ const EditorPart = ({ aioutput, loading }: Props) => {
   }, [aioutput, loading, editor]);
 
   return (
-    <div className='prose w-full'>
+    <ScrollArea className='prose h-screen overflow-hidden px-5'>
         <EditorContent editor={editor} />
-    </div>
+    </ScrollArea>
   );
 };
 
