@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Skeleton } from "../ui/skeleton"; // Adjust the import according to your project structure
-import { Zap } from "lucide-react";
+import { Vegan, Zap } from "lucide-react";
 
 const Loader = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -20,7 +20,7 @@ const Loader = () => {
     <div className="space-y-4 p-4 w-full h-full">
       <div className="flex flex-col items-center justify-center space-y-2 mb-4">
         <span className="text-primary">
-          <Zap size={24} className="animate-bounce" />
+          <Vegan size={24} className="animate-bounce" />
         </span>
         <span className="text-primary text-sm">{texts[currentTextIndex]}</span>
       </div>

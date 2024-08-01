@@ -2,10 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
   ArrowDown,
+  ArrowRightIcon,
   GitBranch,
   Home,
   Link2,
   MoveRight,
+  Vegan,
   Zap,
 } from "lucide-react";
 import Link from "next/link";
@@ -16,6 +18,7 @@ import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { redirect } from "next/navigation";
 import MarqueeDemo from "@/components/LandingPageComponent/Marque";
+import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 export default async function FloatingNavDemo() {
 
@@ -61,9 +64,9 @@ export default async function FloatingNavDemo() {
                 className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20"
                 href="/"
               >
-                <Zap strokeWidth={3} className="text-primary dark:text-white" />
+                <Vegan strokeWidth={3} className="text-primary dark:text-white" />
                 <span className="font-medium text-primary dark:text-white">
-                Vyākhyā AI
+                  Vyākhyā AI
                 </span>
               </Link>
             </div>
@@ -81,16 +84,10 @@ export default async function FloatingNavDemo() {
       <section className="max-w-7xl mx-auto px-4 flex h-full  flex-col items-center justify-between">
         <div className="flex flex-col h-full  pt-20 md:pt-40 relative overflow-hidden">
           <div className="flex justify-center">
-            <button className="bg-neutral-50 dark:bg-neutral-700 no-underline group cursor-pointer relative md:shadow-2xl shadow-zinc-900 rounded-full p-px text-[10px] sm:text-xs font-semibold leading-6  text-neutral-700 dark:text-neutral-300 inline-block w-fit mx-auto">
-              <span className="absolute inset-0 overflow-hidden rounded-full">
-                <span className="absolute inset-0 rounded-full  opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
-              </span>
-              <div className="relative flex space-x-2 items-center z-10 rounded-full bg-neutral-100 dark:bg-neutral-800 py-1.5 px-4 ring-1 ring-white/10 ">
-                <span>Give Me A Star On Github</span>
-                <ArrowDown className="w-4 h-4" />
-              </div>
-              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-neutral-400/0 via-neutral-400/90 to-neutral-400/0 transition-opacity duration-500 group-hover:opacity-40"></span>
-            </button>
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <span>✨ Introducing Vyākhyā AI</span>
+              <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+            </AnimatedShinyText>
           </div>
           <h1 className="text-2xl md:text-4xl lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10 text-black dark:text-white">
             Powerful <span className="text-primary">Vyākhyā AI</span>
@@ -109,16 +106,16 @@ export default async function FloatingNavDemo() {
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+              className="dark:bg-black bg-primary text-black dark:text-white flex items-center space-x-2"
             >
-              <Zap strokeWidth={3} />
+              <Vegan strokeWidth={3} />
               <span>Get Started</span>
             </HoverBorderGradient>
           </Link>
         </div>
       </section>
       <section className="w-full h-full container mx-auto">
-          <MarqueeDemo />
+        <MarqueeDemo />
       </section>
     </div>
   );

@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/LayoutComponents/icons";
 import { Badge } from "@/components/ui/badge";
-import { Zap } from "lucide-react";
+import { Vegan, Zap } from "lucide-react";
 
 export function MainNav() {
   const pathname = usePathname();
@@ -16,10 +16,10 @@ export function MainNav() {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Zap strokeWidth={3} absoluteStrokeWidth className=" text-primary mr-2 w-8 h-8" />
+        <Vegan strokeWidth={3} absoluteStrokeWidth className=" text-primary mr-2 w-8 h-8 animate-bounce" />
         <span className="hidden text-xl text-primary font-bold sm:inline-block">Vyākhyā AI</span>
       </Link>
-      <nav className="flex items-center gap-4 text-sm lg:gap-6">
+      {/* <nav className="flex items-center gap-4 text-sm lg:gap-6">
         <Link
           href="/dashboard"
           className={cn(
@@ -39,7 +39,7 @@ export function MainNav() {
         >
           Tech Stack
         </Link>
-      </nav>
+      </nav> */}
     </div>
   );
 }

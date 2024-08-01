@@ -6,7 +6,7 @@ import { CommandMenu } from "@/components/command-menu"
 import { Icons } from "@/components/LayoutComponents/icons"
 import { MainNav } from "./main-nav"
 import { MobileNav } from "./mobile-nav"
-import { buttonVariants } from "../ui/button"
+import { Button, buttonVariants } from "../ui/button"
 import { ModeToggle } from "../ModeToggle"
 import { UserNav } from "./user-nav"
 
@@ -21,24 +21,6 @@ export function SiteHeader() {
             <CommandMenu />
           </div>
           <nav className="flex items-center">
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={cn(
-                  buttonVariants({
-                    variant: "ghost",
-                  }),
-                  "w-9 px-0"
-                )}
-              >
-                <Icons.gitHub className="h-4 w-4" />
-                <span className="sr-only">GitHub</span>
-              </div>
-            </Link>
-            <ModeToggle />
               <div
                 className={cn(
                   buttonVariants({

@@ -47,31 +47,19 @@ const OutcomeSection = (props: PROPS) => {
   };
 
   return (
-    // <div className="relative py-4 lg:gap-10 lg:py-4 lg:grid lg:grid-cols-3 h-full">
-    //   {/* Form section part */}
-    //   <div className="mx-auto w-full min-w-0 col-span-1 space-y-4 h-full sticky top-0">
-    //     <FormSection
-    //       selectedTemplate={selectedTemplate}
-    //       userFormInput={(v: any) => generateAiContent(v)}
-    //       loading={loading}
-    //     />
-    //   </div>
-    //   {/* Editor part */}
-    //   <div className="text-sm xl:block col-span-2 h-full overflow-y-auto">
-    //     <EditorPart aioutput={aioutput} loading={loading} />
-    //   </div>
-    // </div>
-    <div className="md:flex block justify-between space-x-10">
-      <div className="flex md:w-1/2 w-full">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-6 lg:gap-10">
+      <main className="py-4 lg:py-4 col-span-1 w-full h-full overflow-hidden">
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => generateAiContent(v)}
           loading={loading}
         />
-      </div>
-      <ScrollArea className='prose h-screen overflow-hidden w-full'>
-        <EditorPart aioutput={aioutput} loading={loading} />
-      </ScrollArea>
+      </main>
+      <aside className="h-screen md:full block md:sticky md:top-14 md:h-[calc(100vh-3.5rem)] col-span-2 w-full">
+        <ScrollArea className="h-full md:full py-6 pr-6 lg:py-8 prose overflow-y-scroll">
+          <EditorPart aioutput={aioutput} loading={loading} />
+        </ScrollArea>
+      </aside>
     </div>
   );
 };

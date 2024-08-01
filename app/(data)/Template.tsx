@@ -7,7 +7,36 @@ export default [
     desc: "An AI tool that generates blog titles based on your blog information.",
     category: "Blog",
     icon: "blog-icon.png",
-    prompt: ``,
+    prompt: `Generate engaging blog titles based on the provided blog information. Use the following HTML tags for formatting:
+
+- <h1> for the blog title examples.
+- <p> for any additional instructions or notes.
+
+Instructions:
+
+1. **Title Generation:**
+   - Create several compelling blog titles that align with the specified niche, blog outline (if provided), and type.
+
+2. **Example Structure:**
+
+<h1>Blog Title Examples:</h1>
+
+<p><strong>Blog Niche:</strong> Technology</p>
+<p><strong>Blog Outline:</strong> Exploring the latest trends in AI and machine learning.</p>
+<p><strong>Type:</strong> Clickbait 📢</p>
+
+<p>1. "You Won't Believe These 10 AI Trends Shaping the Future!"</p>
+<p>2. "The Top AI Innovations of 2024 That Will Blow Your Mind!"</p>
+
+<p><strong>Blog Niche:</strong> Personal Finance</p>
+<p><strong>Blog Outline:</strong> Tips for saving money and managing expenses effectively.</p>
+<p><strong>Type:</strong> Educational 🎓</p>
+
+<p>1. "10 Proven Strategies to Save More Money Each Month"</p>
+<p>2. "How to Create a Budget That Works: Essential Tips for Financial Success"</p>
+
+<p>Ensure the blog titles are relevant to the niche, outline, and type selected.</p>
+`,
     slug: "generate-blog-title",
     form: [
       {
@@ -80,48 +109,37 @@ and do not use markdown format
     desc: "A tool designed to rewrite your articles, ensuring they are 100% unique and SEO-optimized.",
     category: "Content Optimization",
     icon: "article-rewrite-icon.png",
-    prompt: `# Structured Prompt for Rewrite Article with Keywords
+    prompt: `
+    Rewrite the provided article to ensure it is 100% unique and optimized for SEO. Incorporate the provided focus keywords into the rewritten content. Use the following HTML tags for formatting:
 
-## Title
-Rewrite Article with Keywords
+- <h1> for the article title.
+- <h2> for section headings.
+- <p> for paragraphs of the rewritten content.
 
-## Description
-A tool designed to rewrite your articles, ensuring they are 100% unique and SEO-optimized.
+Instructions:
 
-## Context
-Rewriting articles with focus keywords helps improve SEO and ensures content uniqueness. This prompt assists in rewriting your existing article by incorporating specified focus keywords for better search engine optimization.
+1. **Title:**
+   - Use <h1> to format the title of the rewritten article, such as "SEO-Optimized Article Example."
 
-## Instructions
-1. **Existing Article**: Paste your existing article content into the text area provided.
-2. **Focus Keyword 1**: Enter your primary focus keyword for SEO optimization.
-3. **Focus Keyword 2 (Optional)**: Optionally, enter a second focus keyword to further optimize your article.
+2. **Content:**
+   - Use <h2> for section headings.
+   - Use <p> for the main content of the rewritten article.
+   - Ensure the focus keywords are integrated naturally and effectively into the text.
 
-## Examples
+3. **Example Structure:**
 
-### Input
-**Existing Article**:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis urna ac libero placerat aliquet.
+<h1>SEO-Optimized Article on Healthy Eating</h1>
 
-**Focus Keyword 1**: "best memory foam pillow"
-**Focus Keyword 2**: "buy memory foam pillow"
+<h2>Introduction to Healthy Eating</h2>
+<p>Healthy eating is essential for maintaining good health and well-being. By incorporating a balanced diet, rich in fruits and vegetables, you can improve your overall quality of life.</p>
 
-### Output
-#### Rewritten Article with Keywords
+<h2>Benefits of a Balanced Diet</h2>
+<p>A balanced diet provides numerous benefits, including enhanced energy levels and better mental clarity. It helps in maintaining a healthy weight and reducing the risk of chronic diseases.</p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis urna ac libero placerat aliquet. Curabitur sagittis, best memory foam pillow, lorem vitae volutpat. Fusce sed metus at mauris consequat efficitur. In id justo sit amet est maximus fermentum. Nulla vel dapibus ante. Proin lacinia, buy memory foam pillow, orci sed feugiat mollis.
+<p>Focus Keywords: "Healthy Eating," "Balanced Diet"</p>
 
-## Parameters
-- **Existing Article**: (e.g., Paste your existing article content)
-- **Focus Keyword 1**: (e.g., best memory foam pillow, SEO tools, digital marketing)
-- **Focus Keyword 2**: (Optional) Second focus keyword for further optimization.
+<p>Ensure the rewritten article maintains clarity and coherence while seamlessly incorporating the focus keywords.</p>
 
-## Output Format
-The output will be a rewritten version of your article, incorporating the specified focus keywords to enhance SEO and ensure content uniqueness.
-
-## Notes
-- Ensure the rewritten article maintains coherence and clarity while incorporating the focus keywords naturally.
-- Verify the uniqueness of the rewritten content to avoid plagiarism and maintain SEO effectiveness.
-- Review and edit the output as needed to align with your specific content requirements and style.
 `,
     slug: "rewrite-article-with-keywords",
     form: [
@@ -155,48 +173,42 @@ The output will be a rewritten version of your article, incorporating the specif
     desc: "Use this tool to generate an entire new blog post which is plagiarism-free and can bypass AI detectors. If you still find AI content detected in any of the outputs, re-generate the outputs or use 'Rewrite Article (Extreme AI Bypass)' tool.",
     category: "Content Generation",
     icon: "human-blog-icon.png",
-    prompt: `# Structured Prompt for Rewrite Article with Keywords
+    prompt: `Generate a human-written blog post in HTML format. The post should be original, engaging, and free from plagiarism. The content should also be crafted to bypass AI detectors, ensuring it reads naturally and is optimized for SEO. Use the following HTML tags for proper formatting:
 
-## Title
-Rewrite Article with Keywords
+- <h1> for the main blog title.
+- <h2> for major sections and subheadings within the blog post.
+- <p> for paragraphs of text to present detailed information.
+- <strong> to emphasize key points and important information.
+- <em> to highlight specific terms or concepts that require emphasis.
+- <ul> and <li> for bullet points to list key items or features clearly.
+- <ol> and <li> for numbered lists where necessary.
+- <a> for hyperlinks to related content or additional resources.
 
-## Description
-A tool designed to rewrite your articles, ensuring they are 100% unique and SEO-optimized.
+Instructions:
 
-## Context
-Rewriting articles with focus keywords helps improve SEO and ensures content uniqueness. This prompt assists in rewriting your existing article by incorporating specified focus keywords for better search engine optimization.
+1. Blog Title:
+   - Begin with the blog title using <h1>. Make sure it is engaging and accurately reflects the content of the post.
 
-## Instructions
-1. **Existing Article**: Paste your existing article content into the text area provided.
-2. **Focus Keyword 1**: Enter your primary focus keyword for SEO optimization.
-3. **Focus Keyword 2 (Optional)**: Optionally, enter a second focus keyword to further optimize your article.
+2. Introduction:
+   - Write an engaging introduction in <p> that captures the reader’s interest and sets the stage for the rest of the post.
 
-## Examples
+3. Main Content:
+   - Organize the main content with <h2> for major sections and <h3> for subsections as needed.
+   - Use <p> to provide detailed information and insights.
+   - Employ <strong> to highlight significant points and <em> for terms or concepts that need special attention.
 
-### Input
-**Existing Article**:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis urna ac libero placerat aliquet.
+4. Lists and Structure:
+   - Utilize <ul> and <li> for bullet points to present key information succinctly.
+   - Use <ol> and <li> for ordered lists to outline steps or sequences.
 
-**Focus Keyword 1**: "best memory foam pillow"
-**Focus Keyword 2**: "buy memory foam pillow"
+5. Additional Elements:
+   - Add relevant <a> links to provide context or direct readers to additional resources.
 
-### Output
-#### Rewritten Article with Keywords
+6. Conclusion and Call-to-Action:
+   - Conclude with a summary or final thoughts in <p>.
+   - Include a call-to-action in <p> encouraging readers to engage further, such as by commenting, sharing, or exploring related content.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis urna ac libero placerat aliquet. Curabitur sagittis, best memory foam pillow, lorem vitae volutpat. Fusce sed metus at mauris consequat efficitur. In id justo sit amet est maximus fermentum. Nulla vel dapibus ante. Proin lacinia, buy memory foam pillow, orci sed feugiat mollis.
-
-## Parameters
-- **Existing Article**: (e.g., Paste your existing article content)
-- **Focus Keyword 1**: (e.g., best memory foam pillow, SEO tools, digital marketing)
-- **Focus Keyword 2**: (Optional) Second focus keyword for further optimization.
-
-## Output Format
-The output will be a rewritten version of your article, incorporating the specified focus keywords to enhance SEO and ensure content uniqueness.
-
-## Notes
-- Ensure the rewritten article maintains coherence and clarity while incorporating the focus keywords naturally.
-- Verify the uniqueness of the rewritten content to avoid plagiarism and maintain SEO effectiveness.
-- Review and edit the output as needed to align with your specific content requirements and style.
+Ensure the HTML content is well-structured, readable, and optimized for search engines while appearing natural and human-written to effectively engage your audience.
 `,
     slug: "generate-human-blog-post",
     form: [
@@ -217,35 +229,40 @@ The output will be a rewritten version of your article, incorporating the specif
     desc: "Generates compelling product descriptions based on features, benefits, and target audience.",
     category: "E-commerce Tools",
     icon: "product-icon.png",
-    prompt: `# Structured Prompt for Product Description Generator
+    prompt: `
+Generate a compelling product description in HTML format. The description should be well-structured and optimized for readability and SEO. Use the following HTML tags to format the content appropriately:
 
-## Title
-Product Description Generator
+- <h1> for the product name.
+- <h2> for major sections such as "Features" and "Benefits."
+- <p> for paragraphs to describe the product and its attributes.
+- <strong> to emphasize important features or benefits.
+- <em> to add emphasis to key aspects or unique selling points.
+- <ul> and <li> for listing features or benefits in bullet points.
+- <a> for any hyperlinks to related products or additional information.
 
-## Description
-Generates compelling product descriptions based on features, benefits, and target audience. This tool is perfect for e-commerce platforms looking to create engaging and informative product descriptions.
+Instructions:
 
-## Context
-Creating attractive and informative product descriptions is crucial for e-commerce success. This prompt helps generate detailed descriptions by focusing on product features, benefits, and the target audience.
+1. Product Name:
+   - Use <h1> for the product name at the top of the description.
 
-## Examples
-### Output
-#### Product Description for UltraSoft Pillow
+2. Description:
+   - Write a detailed product description in <p> paragraphs. Include essential information about the product, such as its purpose, key features, and unique aspects.
 
-Experience the ultimate comfort with the UltraSoft Pillow, designed to give you the best night's sleep. Made with premium memory foam, this pillow adapts to your head and neck for perfect support. Its hypoallergenic material ensures a clean and healthy sleeping environment, making it ideal for those with allergies. The ergonomic design promotes proper spinal alignment, reducing neck and back pain. Perfect for anyone struggling with sleep issues, the UltraSoft Pillow is your solution to a restful night.
+3. Features and Benefits:
+   - Create a section with <h2> titled "Features" and another with <h2> titled "Benefits."
+   - List key features using <ul> and <li> for bullet points.
+   - Highlight important features and benefits with <strong> and use <em> for emphasis on particularly significant details.
 
-## Parameters
-- **Product Name**: (e.g., UltraSoft Pillow, SmartWatch Pro)
-- **Product Features**: (e.g., Memory foam, Hypoallergenic, Ergonomic design)
-- **Target Audience**: (e.g., People with sleep issues, Fitness enthusiasts)
+4. Additional Information:
+   - Add any relevant additional details in <p> paragraphs.
+   - Include <a> links to related products, reviews, or further information if applicable.
 
-## Output Format
-The output will be a detailed product description highlighting the product's features, benefits, and target audience.
+5. Call-to-Action:
+   - End with a persuasive call-to-action in <p>, encouraging potential buyers to make a purchase or seek more information.
 
-## Notes
-- Ensure the product description is engaging and highlights the key features and benefits.
-- Tailor the description to appeal to the specified target audience if provided.
-`,
+Ensure that the HTML content is well-organized, easy to read, and optimized for search engines to attract and engage potential customers.
+
+  `,
     slug: "generate-product-description",
     form: [
       {
@@ -274,34 +291,22 @@ The output will be a detailed product description highlighting the product's fea
     desc: "Optimizes product titles for search engines by analyzing keyword relevance and click-through potential.",
     category: "E-commerce Tools",
     icon: "seo-icon.png",
-    prompt: `# Structured Prompt for SEO Product Title Optimizer
-## Title
-SEO Product Title Optimizer
+    prompt: `
+    Optimize a product title for search engines. Use the following HTML tags for formatting:
 
-## Description
-Optimizes product titles for search engines by analyzing keyword relevance and click-through potential. This tool helps enhance product visibility and increase click-through rates on e-commerce platforms.
+- <h1> for the optimized title.
+- <p> for a brief description of the optimization process and keyword relevance.
 
-## Context
-A well-optimized product title can significantly improve search engine visibility and attract more potential customers. This prompt assists in refining product titles by incorporating relevant keywords and ensuring they are compelling for users.
+Instructions:
 
-## Examples
+1. **Product Title:**
+   - Start with the optimized product title using <h1>.
 
+2. **Description:**
+   - Provide a brief explanation in <p> about how the title was optimized based on keyword relevance and click-through potential.
 
-### Output
-#### Optimized Product Title
+Ensure the title is clear, keyword-rich, and designed to attract clicks while following SEO best practices.
 
-"UltraSoft Memory Foam Pillow - Hypoallergenic, Comfortable Sleep Solution"
-
-## Parameters
-- **Current Product Title**: (e.g., UltraSoft Memory Foam Pillow, Smart Fitness Tracker)
-- **Keywords**: (e.g., Memory foam pillow, Comfortable sleep, Hypoallergenic)
-
-## Output Format
-The output will be an optimized product title that includes relevant keywords and is designed to improve search engine visibility and click-through rates.
-
-## Notes
-- Ensure the optimized title is clear, concise, and includes the most important keywords.
-- The title should be attractive to potential customers and accurately represent the product.
 `,
     slug: "seo-product-title-optimizer",
     form: [
@@ -326,30 +331,22 @@ The output will be an optimized product title that includes relevant keywords an
     desc: "Struggling to find the perfect tagline for your brand? Let our AI tool assist you in creating a tagline that stands out.",
     category: "Marketing",
     icon: "tagline-icon.png",
-    prompt: `# Structured Prompt for Tagline Generator
-## Title
-Tagline Generator
+    prompt: `
+    Generate a catchy tagline for your brand or product. Use the following HTML tags for formatting:
 
-## Description
-Struggling to find the perfect tagline for your brand? Let our AI tool assist you in creating a tagline that stands out. This tool generates compelling taglines based on the product or brand details you provide.
+- <h1> for the generated tagline.
+- <p> for a brief explanation of how the tagline aligns with your brand or product features.
 
-## Context
-A great tagline can capture the essence of your brand and make a lasting impression on your audience. This prompt helps create engaging and memorable taglines by focusing on the key features of your product or service.
+Instructions:
 
-## Examples
+1. **Tagline:**
+   - Display the tagline using <h1>.
 
-### Output
-#### Generated Tagline
+2. **Explanation:**
+   - Provide a short explanation in <p> of how the tagline reflects the key features or unique aspects of the product or brand.
 
-"UltraSoft Pillow - Your Gateway to a Restful Night's Sleep"
+Ensure the tagline is memorable, engaging, and representative of the brand’s essence.
 
-## Output Format
-The output will be a short, compelling tagline that effectively captures the essence of your product or brand.
-
-## Notes
-- Ensure the tagline is concise and memorable.
-- Highlight the unique selling points of the product or brand.
-- Tailor the tagline to appeal to the target audience.
 `,
     slug: "generate-tagline",
     form: [
@@ -375,34 +372,29 @@ The output will be a short, compelling tagline that effectively captures the ess
     desc: "This tool helps you quickly create appealing and effective Amazon product descriptions, boosting your product's visibility and appeal to customers.",
     category: "E-commerce",
     icon: "amazon-icon.png",
-    prompt: `# Structured Prompt for Amazon Product Description
+    prompt: `
+    Create an engaging Amazon product description. Use the following HTML tags for formatting:
 
-## Title
-Amazon Product Description Generator
+- <h1> for the product name.
+- <h2> for key features and benefits.
+- <p> for detailed product descriptions and any additional information.
+- <strong> to emphasize key features and benefits.
 
-## Description
-This tool helps you quickly create appealing and effective Amazon product descriptions, boosting your product's visibility and appeal to customers. Perfect for enhancing your product listings on Amazon.
+Instructions:
 
-## Context
-A well-crafted product description can significantly impact sales on Amazon by highlighting key features, benefits, and appealing to the target audience. This prompt assists in generating detailed and persuasive descriptions tailored for Amazon listings.
+1. **Product Name:**
+   - Use <h1> for the product name.
 
-### Output
-#### Amazon Product Description
+2. **Product Description:**
+   - Detail the product in <p> paragraphs, including key features and benefits.
+   - Use <h2> to separate sections for key features and benefits if needed.
+   - Highlight important points with <strong>.
 
-Transform your sleep with the UltraSoft Memory Foam Pillow. Crafted from premium memory foam, it offers unparalleled comfort and support. Its hypoallergenic cover ensures a clean and healthy sleep environment, ideal for individuals with allergies. Designed with ergonomic principles, this pillow promotes proper spinal alignment, reducing neck and back pain. Elevate your sleep experience with the UltraSoft Memory Foam Pillow today.
+3. **Target Audience (Optional):**
+   - If applicable, include a brief note on the target audience in <p>.
 
-## Parameters
-- **Product Name**: (e.g., UltraSoft Memory Foam Pillow, Smart Fitness Tracker)
-- **Product Description**: (e.g., Key features, Benefits, Relevant details)
-- **Target Audience**: (e.g., Individuals with allergies, Fitness enthusiasts)
+Ensure the description is clear, persuasive, and optimized to enhance visibility and appeal on Amazon.
 
-## Output Format
-The output will be a detailed Amazon product description that highlights key features, benefits, and appeals to potential customers.
-
-## Notes
-- Ensure the description is clear, informative, and persuasive.
-- Tailor the description to emphasize unique selling points and benefits.
-- Consider optimizing for keywords to enhance searchability on Amazon.
 `,
     slug: "generate-amazon-description",
     form: [
@@ -434,58 +426,35 @@ The output will be a detailed Amazon product description that highlights key fea
     desc: "This tool simplifies product comparisons by outlining the pros and cons, determining suitability, and helping you find the best value for your money.",
     category: "Comparison",
     icon: "comparison-icon.png",
-    prompt: `# Structured Prompt for Product Comparisons
+    prompt: `
+ Generate a detailed comparison between two products. Use the following HTML tags for formatting:
 
-## Title
-Product Comparisons
+- <h1> for the comparison title.
+- <h2> for each product name.
+- <h3> for pros and cons of each product.
+- <p> for detailed descriptions of each product’s features and suitability.
+- <ul> and <li> for listing pros and cons.
 
-## Description
-This tool simplifies product comparisons by outlining the pros and cons, determining suitability, and helping you find the best value for your money. Compare two products effectively with detailed insights.
+Instructions:
 
-## Context
-Comparing products can be daunting without a structured approach. This prompt assists in comparing two products by providing detailed information on their features, pros, and cons to aid decision-making.
+1. **Comparison Title:**
+   - Use <h1> for the comparison title, such as "Product Comparison: Product A vs. Product B."
 
+2. **Product A:**
+   - Use <h2> for "Product A."
+   - Provide a description of Product A’s features and details in <p>.
+   - List the pros and cons of Product A using <ul> and <li>.
 
-## Examples
+3. **Product B:**
+   - Use <h2> for "Product B."
+   - Provide a description of Product B’s features and details in <p>.
+   - List the pros and cons of Product B using <ul> and <li>.
 
-### Output
-#### Product Comparison
+4. **Conclusion:**
+   - Summarize the comparison in <p>, including suitability and best value for money.
 
-**Samsung Galaxy S22 vs. Google Pixel**
+Ensure the comparison is clear, balanced, and helps the reader make an informed decision.
 
-- **Features Comparison**:
-  - Samsung Galaxy S22: 5G connectivity, high-resolution display, advanced camera.
-  - Google Pixel: Exceptional camera quality, pure Android experience.
-
-- **Pros and Cons**:
-  - Samsung Galaxy S22:
-    - Pros: 5G connectivity, high-resolution display.
-    - Cons: Higher price point compared to Google Pixel.
-
-  - Google Pixel:
-    - Pros: Exceptional camera quality, pure Android experience.
-    - Cons: May lack some advanced features found in Samsung Galaxy S22.
-
-- **Suitability**:
-  - Samsung Galaxy S22: Ideal for users seeking cutting-edge technology and features.
-  - Google Pixel: Suitable for photography enthusiasts and those preferring a pure Android experience.
-
-- **Best Value**:
-  - Based on the comparison, Samsung Galaxy S22 offers superior technology, but Google Pixel provides better value for camera quality.
-
-## Parameters
-- **Product A Name**: (e.g., Samsung Galaxy S22, MacBook Pro)
-- **Product A Details**: (e.g., Key features, Specifications)
-- **Product B Name**: (e.g., Google Pixel, Surface Laptop)
-- **Product B Details**: (e.g., Key features, Specifications)
-
-## Output Format
-The output will be a detailed comparison of the two products, highlighting their features, pros and cons, suitability, and best value considerations.
-
-## Notes
-- Ensure the comparison is fair and objective.
-- Consider including user reviews or expert opinions for a more comprehensive analysis.
-- Tailor the comparison based on the specific needs or preferences of the comparison context.
 `,
     slug: "compare-products",
     form: [
@@ -526,39 +495,36 @@ The output will be a detailed comparison of the two products, highlighting their
     desc: "This tool creates heartfelt thank you notes to express your gratitude with ease.",
     category: "Communication",
     icon: "thank-you-icon.png",
-    prompt: `# Structured Prompt for Thank You Note Generator
+    prompt: `
+    Create a heartfelt thank you note to express gratitude. Use the following HTML tags for formatting:
 
-## Title
-Thank You Note Generator
+- <p> for the body of the thank you note.
+- <strong> for emphasizing key points or names.
+- <br> for line breaks to separate sections.
 
-## Description
-This tool creates heartfelt thank you notes to express your gratitude with ease. Perfect for personal or business use to send thank you messages via social media, handwritten notes, or email.
+Instructions:
 
-## Context
-Sending a thank you note is a thoughtful gesture that strengthens relationships and acknowledges appreciation. This prompt helps generate personalized thank you notes based on the product or service purchased and the preferred mode of sending.
+1. **Opening:**
+   - Begin with a warm greeting and express gratitude for the purchase. Use <p> for this opening statement.
 
+2. **Product Mention:**
+   - Mention the product or service purchased using <strong> to highlight it.
 
-### Output
-#### Generated Thank You Note
+3. **Personal Touch:**
+   - Include a personalized message based on the mode of sending the note. Tailor the message for Social Media DM, Handwritten, or Email.
 
-"Dear [Customer's Name],
+4. **Closing:**
+   - End with a sincere thank you and well-wishes. Use <p> for the closing statement.
 
-Thank you so much for purchasing our UltraSoft Memory Foam Pillow. We hope it brings you comfort and restful nights. Your support means a lot to us. Please feel free to reach out if you have any questions or feedback.
+Example:
 
-Best regards,
-[Your Name]"
+<p>Dear [Customer Name],</p>
+<p>Thank you so much for purchasing [Product Name] from us! We are thrilled to have you as a customer and hope you are enjoying your new [Product Name].</p>
+<p>We appreciate your support and look forward to serving you again in the future.</p>
+<p>Warm regards,<br>[Your Name/Company]</p>
 
-## Parameters
-- **Product or Service Purchased**: (e.g., UltraSoft Memory Foam Pillow, Web Design Service)
-- **Mode of Sending Note**: (e.g., Social Media DM, Handwritten, Email)
+Ensure the note feels personal and expresses genuine appreciation.
 
-## Output Format
-The output will be a personalized thank you note tailored to the product or service purchased and the selected mode of sending.
-
-## Notes
-- Customize the thank you note to reflect your brand's tone and style.
-- Personalize the note with the customer's name and specific details related to their purchase.
-- Ensure the note is genuine and heartfelt to convey sincere appreciation.
 `,
     slug: "generate-thank-you-note",
     form: [
@@ -587,53 +553,48 @@ The output will be a personalized thank you note tailored to the product or serv
     desc: "This tool helps you to generate a professional return/exchange response email. A useful tool for efficiently managing your return and exchange emails.",
     category: "Customer Service",
     icon: "email-icon.png",
-    prompt: `# Structured Prompt for Refund/Return/Exchange Response Email
+    prompt: `
+    Generate a professional email response for a return, refund, or exchange request. Use the following HTML tags for formatting:
 
-## Title
-Refund/Return/Exchange Response Email Generator
+- <h1> for the email subject.
+- <p> for the body of the email.
+- <strong> to emphasize key points.
+- <ul> and <li> for listing steps or options.
 
-## Description
-This tool helps you to generate a professional return/exchange response email. A useful tool for efficiently managing your return and exchange requests, ensuring clear communication with customers.
+Instructions:
 
-## Context
-Handling return or exchange requests requires clear and professional communication. This prompt assists in drafting response emails by providing details about the product or service, noting the customer's message (if available), and crafting a suitable response.
+1. **Subject:**
+   - Use <h1> for the email subject, such as "Return/Refund/Exchange Request Response."
 
-## Examples
+2. **Greeting:**
+   - Start with a polite greeting in <p>.
 
-**Customer's Message**:
-- "I received the wrong pillow cover with my order."
+3. **Acknowledgment:**
+   - Acknowledge the customer's message or request. Summarize the product or issue described using <strong> if necessary.
 
-**Response/Answer**:
-- We apologize for the inconvenience caused. Please return the incorrect pillow cover using our prepaid shipping label, and we will promptly send you the correct one. Thank you for bringing this to our attention.
+4. **Response:**
+   - Provide a clear and professional response to the request. Use <p> for detailed information on the return, refund, or exchange process.
+   - If applicable, list steps or options using <ul> and <li>.
 
-### Output
-#### Generated Response Email
+5. **Closing:**
+   - Close with a courteous sign-off in <p>.
 
-Dear [Customer's Name],
+Example:
 
-Thank you for reaching out to us regarding the issue with your order. We apologize for any inconvenience caused.
+<h1>Return/Refund/Exchange Request Response</h1>
+<p>Dear [Customer Name],</p>
+<p>Thank you for reaching out regarding your recent request about [Product/Service Name]. We understand your concern about [briefly describe the issue].</p>
+<p>To proceed with your request, please follow these steps:</p>
+<ul>
+  <li>[Step 1]</li>
+  <li>[Step 2]</li>
+  <li>[Step 3]</li>
+</ul>
+<p>If you have any further questions, feel free to contact us.</p>
+<p>Best regards,<br>[Your Name/Company]</p>
 
-Our UltraSoft Memory Foam Pillow is designed to provide exceptional comfort and support, and we regret that you did not receive the correct pillow cover with your order. We are committed to resolving this issue promptly for you.
+Ensure the email is professional, clear, and provides all necessary information for processing the return, refund, or exchange.
 
-Please use the prepaid shipping label enclosed to return the incorrect pillow cover. Once we receive it, we will immediately send you the correct one.
-
-If you have any further questions or concerns, please don't hesitate to contact us. We appreciate your understanding and patience in this matter.
-
-Best regards,
-[Your Name]
-
-## Parameters
-- **Product/Service Description**: (e.g., UltraSoft Memory Foam Pillow, Web Design Service)
-- **Customer's Message**: (e.g., Details of customer's issue or request)
-- **Response/Answer**: (e.g., Steps to resolve the issue, Apology and reassurance)
-
-## Output Format
-The output will be a professionally drafted response email tailored to the customer's return or exchange request, ensuring clear communication and resolution.
-
-## Notes
-- Personalize the email with the customer's name and specific details related to their issue.
-- Ensure the tone of the email is empathetic and professional.
-- Include any necessary instructions or next steps for the customer to proceed with the return or exchange.
 `,
     slug: "generate-return-response-email",
     form: [
@@ -671,44 +632,25 @@ The output will be a professionally drafted response email tailored to the custo
     desc: "Get your perfect title and description for your blog or website. It's SEO-friendly and easy to use.",
     category: "SEO",
     icon: "meta-icon.png",
-    prompt: `# Structured Prompt for Meta Title and Description
+    prompt: `Generate an SEO-friendly meta title and description for your blog or website. Use the following HTML tags for formatting:
 
-## Title
-Meta Title and Description Generator
+- <title> for the meta title.
+- <meta name="description"> for the meta description.
 
-## Description
-Get your perfect title and description for your blog or website. It's SEO-friendly and easy to use, enhancing your search engine visibility.
+Instructions:
 
-## Context
-An SEO-friendly meta title and description are essential for improving your website's search engine ranking and attracting more visitors. This prompt assists in generating optimized meta titles and descriptions based on your target keyword.
+1. **Meta Title:**
+   - Use <title> to create a concise and compelling meta title that includes the target keyword. Keep it under 60 characters.
 
-## Instructions
-1. **Target Keyword**: Enter your target keyword for which you want to optimize the meta title and description.
+2. **Meta Description:**
+   - Use <meta name="description"> to write a meta description that provides a summary of the content and includes the target keyword. Aim for 150-160 characters.
 
-## Examples
+Example:
 
-### Input
-**Target Keyword**: "best memory foam pillow"
+<title>Your Target Keyword - Engaging and SEO-Friendly Title</title>
+<meta name="description" content="This is a concise description of your content, including the target keyword. It summarizes what readers can expect and encourages clicks.">
 
-### Output
-#### Generated Meta Title and Description
-
-**Meta Title**:
-"Best Memory Foam Pillow 2024 | Top Rated Comfort & Support"
-
-**Meta Description**:
-"Discover the best memory foam pillow for 2024. Our top-rated pillows offer superior comfort and support. Find your perfect pillow today!"
-
-## Parameters
-- **Target Keyword**: (e.g., best memory foam pillow, SEO tools, digital marketing)
-
-## Output Format
-The output will be an SEO-friendly meta title and description tailored to your target keyword, designed to enhance search engine visibility and attract more visitors.
-
-## Notes
-- Ensure the meta title is under 60 characters and the meta description under 160 characters for optimal display in search engine results.
-- Include relevant keywords naturally in the meta title and description to improve SEO.
-- Craft a compelling meta description that encourages users to click through to your website.
+Ensure both the title and description are clear, relevant, and optimized for search engines.
 `,
     slug: "generate-meta-title-description",
     form: [
@@ -726,7 +668,30 @@ The output will be an SEO-friendly meta title and description tailored to your t
     desc: "A tool that crafts catchy, clickbait-style blog post titles and enhance transactional search term visibility.",
     category: "SEO",
     icon: "clickbait-icon.png",
-    prompt: `Create a clickbait title using the provided keywords and numbers. Structure the title in a compelling format with bullet points.`,
+    prompt: `Create compelling clickbait-style titles using the provided keywords. Format each title to grab attention and drive clicks. Use the following HTML tags for formatting:
+
+- <h1> for the generated titles.
+- <ul> and <li> for listing multiple titles.
+
+Instructions:
+
+1. **Title Generation:**
+   - Use <h1> to format each clickbait title.
+   - Structure titles to be eye-catching and enticing, incorporating the provided keywords and numbers.
+
+2. **Listing Titles:**
+   - List each title using <ul> and <li> to separate them clearly.
+
+Example:
+
+<ul>
+  <li><h1>10 Secrets You Didn’t Know About [Keyword]</h1></li>
+  <li><h1>Why [Keyword] Is Taking the Internet by Storm!</h1></li>
+  <li><h1>7 Shocking Facts About [Keyword] You Won’t Believe</h1></li>
+</ul>
+
+Ensure the titles are engaging and designed to boost click-through rates.
+`,
     slug: "clickbait-title-generator",
     form: [
       {
@@ -753,62 +718,48 @@ The output will be an SEO-friendly meta title and description tailored to your t
     desc: "This AI-tool crafts comprehensive job descriptions for LinkedIn, based on the role, company, and requirements you specify.",
     category: "HR",
     icon: "job-description-icon.png",
-    prompt: `# Structured Prompt for Job Description Generator
+    prompt: `
+Generate a detailed job description for LinkedIn. Use the following HTML tags for formatting:
 
-## Title
-Job Description Generator
+- <h1> for the job title.
+- <h2> for company information and role details.
+- <p> for detailed descriptions and requirements.
+- <ul> and <li> for listing requirements and responsibilities.
 
-## Description
-This AI-tool crafts comprehensive job descriptions for LinkedIn, based on the role, company, and requirements you specify.
+Instructions:
 
-## Context
-Crafting detailed and compelling job descriptions is crucial for attracting qualified candidates. This prompt facilitates the creation of job descriptions tailored to the role, company, and specific requirements.
+1. **Job Title:**
+   - Use <h1> to format the job title, such as "Full Stack Developer."
 
-## Instructions
-1. **Role**: Enter the title of the job role (e.g., Full Stack Developer).
-2. **Company Name**: Provide the name of your company.
-3. **Tell about your Company**: Describe your company, including its industry, products, and any unique aspects.
-4. **Requirements**: Specify the skills, qualifications, and experience necessary for the role.
+2. **Company Information:**
+   - Use <h2> for the company name and description.
+   - Include a brief overview of the company in <p>.
 
-## Examples
+3. **Role Description:**
+   - Use <h2> for the role description.
+   - Provide detailed information about the role in <p>.
 
-### Input
-**Role**: Full Stack Developer
-**Company Name**: ABC Company
-**Tell about your Company**:
-ABC Company specializes in creating SaaS products focused on AI-based content generation. We are dedicated to innovation and fostering a collaborative work environment.
-**Requirements**:
-- Strong proficiency in JavaScript, HTML, CSS
-- Experience with backend frameworks like Node.js
-- Familiarity with cloud technologies such as AWS
-- Excellent problem-solving skills and attention to detail
+4. **Requirements:**
+   - Use <h2> for requirements.
+   - List the required skills, qualifications, and experience using <ul> and <li>.
 
-### Output
-#### Generated Job Description
+Example:
 
-**Job Title**: Full Stack Developer
+<h1>Full Stack Developer</h1>
+<h2>Company: ABC Company</h2>
+<p>We are a leading firm specializing in SaaS products focused on AI-based content generation. Join our dynamic team to work on innovative projects.</p>
+<h2>Role Description</h2>
+<p>As a Full Stack Developer, you will be responsible for developing and maintaining web applications, collaborating with cross-functional teams, and ensuring high-quality code.</p>
+<h2>Requirements</h2>
+<ul>
+  <li>Proficiency in JavaScript, HTML, and CSS</li>
+  <li>Experience with React and Node.js</li>
+  <li>Strong problem-solving skills</li>
+  <li>Excellent communication and teamwork abilities</li>
+</ul>
 
-**Company**: ABC Company
+Ensure the job description is clear, engaging, and accurately represents the role and company.
 
-**About Us**:
-ABC Company specializes in creating SaaS products focused on AI-based content generation. We are dedicated to innovation and fostering a collaborative work environment.
-
-**Job Description**:
-We are seeking a talented Full Stack Developer to join our team at ABC Company. In this role, you will be responsible for developing and maintaining our web applications. You should have a strong background in JavaScript, HTML, CSS, and experience with backend frameworks like Node.js. Familiarity with cloud technologies such as AWS is a plus. The ideal candidate will possess excellent problem-solving skills, attention to detail, and a passion for creating innovative solutions.
-
-## Parameters
-- **Role**: (e.g., Full Stack Developer, Marketing Manager)
-- **Company Name**: (e.g., ABC Company)
-- **Tell about your Company**: (Describe your company briefly)
-- **Requirements**: (Specify skills, qualifications, and experience required)
-
-## Output Format
-The output will be a comprehensive job description tailored to the specified role, company, and requirements, ideal for posting on LinkedIn or other job platforms.
-
-## Notes
-- Ensure the job description accurately reflects the role's responsibilities and company culture.
-- Highlight key skills and qualifications to attract qualified candidates.
-- Review and customize the generated job description to align with your specific hiring needs and company standards.
 `,
     slug: "generate-job-description",
     form: [
@@ -850,73 +801,44 @@ The output will be a comprehensive job description tailored to the specified rol
     desc: "Organize your interviews smoothly with MeetEase. It's an AI tool that helps you draft professional interview scheduling emails in no time.",
     category: "HR",
     icon: "interview-email-icon.png",
-    prompt: `# Structured Prompt for Interview Scheduling Email Generator
+    prompt: `
+    Generate a professional interview scheduling email. Use the following HTML tags for formatting:
 
-## Title
-Interview Scheduling Email Generator
+- <h1> for the email subject.
+- <p> for the body of the email.
+- <strong> for emphasizing important details like the date, time, and role.
 
-## Description
-Organize your interviews smoothly with MeetEase. It's an AI tool that helps you draft professional interview scheduling emails in no time.
+Instructions:
 
-## Context
-Efficiently scheduling interviews requires clear and professional communication. This prompt assists in drafting interview scheduling emails tailored to the company, role, interview details, and mode.
+1. **Subject:**
+   - Use <h1> for the email subject, such as "Interview Scheduling for [Role] at [Company Name]."
 
-## Instructions
-1. **Company Name**: Enter the name of your company.
-2. **Role**: Specify the role for which the interview is scheduled (e.g., Full Stack Developer).
-3. **Interview date and time**: Provide the date and time for the interview (e.g., October 19, 11:00AM).
-4. **Interview address (Optional)**: Optionally, enter the physical location address for offline interviews.
-5. **Interview mode**: Select the mode of the interview (Offline or Online).
+2. **Greeting:**
+   - Start with a polite greeting in <p>.
 
-## Examples
+3. **Interview Details:**
+   - Include the role, interview date and time in <strong> to highlight these details.
+   - If applicable, mention the interview address and mode (offline or online) in <p>.
 
-### Input
-**Company Name**: ABC Company
-**Role**: Full Stack Developer
-**Interview date and time**: October 19, 11:00AM
-**Interview address (Optional)**: 1600 Pennsylvania Avenue NW, Washington, DC, 20500
-**Interview mode**: Offline
+4. **Additional Information:**
+   - Provide any additional instructions or details regarding the interview process in <p>.
 
-### Output
-#### Generated Interview Scheduling Email
+5. **Closing:**
+   - End with a courteous sign-off in <p>.
 
-**Subject**: Invitation to Interview for Full Stack Developer Position at ABC Company
+Example:
 
-**Dear [Candidate's Name],**
+<h1>Interview Scheduling for Full Stack Developer at ABC Company</h1>
+<p>Dear [Candidate Name],</p>
+<p>We are pleased to invite you to an interview for the Full Stack Developer position at ABC Company. Please find the details below:</p>
+<p><strong>Date and Time:</strong> October 19, 11:00 AM</p>
+<p><strong>Mode:</strong> [Online/Offline]</p>
+<p><strong>Address:</strong> [1600 Pennsylvania Avenue NW, Washington, DC, 20500] (if applicable)</p>
+<p>Please confirm your availability for the scheduled time. We look forward to discussing this opportunity with you.</p>
+<p>Best regards,<br>[Your Name/Company]</p>
 
-I hope this message finds you well. We are pleased to invite you for an interview for the Full Stack Developer position at ABC Company.
+Ensure the email is clear, professional, and provides all necessary details for the interview.
 
-**Interview Details:**
-- **Role**: Full Stack Developer
-- **Company**: ABC Company
-- **Date and Time**: October 19, 11:00AM
-- **Location**: 1600 Pennsylvania Avenue NW, Washington, DC, 20500 (Offline)
-- **Interview Mode**: Offline
-
-Please confirm your availability for the scheduled interview by replying to this email. Should you have any questions or need further information, feel free to contact us.
-
-Looking forward to meeting you!
-
-Best regards,
-
-[Your Name]
-[Your Position]
-ABC Company
-
-## Parameters
-- **Company Name**: (e.g., ABC Company)
-- **Role**: (e.g., Full Stack Developer, Marketing Manager)
-- **Interview date and time**: (Specify the date and time)
-- **Interview address (Optional)**: (Provide the address for offline interviews)
-- **Interview mode**: (Select Offline or Online)
-
-## Output Format
-The output will be a professionally drafted email for scheduling an interview, including all necessary details tailored to the specified role, company, and interview logistics.
-
-## Notes
-- Customize the email content to include additional instructions or specifics relevant to your company's interview process.
-- Ensure the email is clear, concise, and includes all relevant information to facilitate a smooth interview scheduling process.
-- Review and edit the generated email as needed to align with your company's communication style and guidelines.
 `,
     slug: "generate-interview-email",
     form: [
@@ -963,59 +885,39 @@ The output will be a professionally drafted email for scheduling an interview, i
     desc: "An AI tool designed to generate kind yet firm job rejection emails.",
     category: "HR",
     icon: "job-rejection-icon.png",
-    prompt: `# Structured Prompt for Job Rejection Email Generator
+    prompt: `Generate a professional and considerate job rejection email. Use the following HTML tags for formatting:
 
-## Title
-Job Rejection Email Generator
+- <h1> for the email subject.
+- <p> for the body of the email.
+- <strong> to emphasize key points.
 
-## Description
-An AI tool designed to generate kind yet firm job rejection emails.
+Instructions:
 
-## Context
-Sending respectful and empathetic job rejection emails is crucial for maintaining a positive employer brand. This prompt helps in generating job rejection emails that convey appreciation while delivering the rejection message.
+1. **Subject:**
+   - Use <h1> for the email subject, such as "Regarding Your Application for [Role] at [Company Name]."
 
-## Instructions
-1. **Company Name**: Enter the name of your company.
-2. **Role**: Specify the role for which the candidate is being rejected.
+2. **Greeting:**
+   - Start with a polite greeting in <p>.
 
-## Examples
+3. **Rejection Message:**
+   - Clearly but kindly inform the candidate of the decision using <p>.
+   - Use <strong> to emphasize the company name and role.
 
-### Input
-**Company Name**: ABC Company
-**Role**: Full Stack Developer
+4. **Encouragement (Optional):**
+   - If appropriate, offer encouragement or suggest staying in touch for future opportunities in <p>.
 
-### Output
-#### Generated Job Rejection Email
+5. **Closing:**
+   - End with a respectful sign-off in <p>.
 
-**Subject**: Job Application Update: Full Stack Developer Position at ABC Company
+Example:
 
-Dear [Candidate's Name],
+<h1>Regarding Your Application for [Role] at [Company Name]</h1>
+<p>Dear [Candidate Name],</p>
+<p>Thank you for your interest in the [Role] position at [Company Name]. After careful consideration, we regret to inform you that we have decided to move forward with another candidate for this role.</p>
+<p>We appreciate the time you took to interview with us and encourage you to apply for future openings that match your skills and experience.</p>
+<p>Best regards,<br>[Your Name/Company]</p>
 
-Thank you for taking the time to interview with us for the Full Stack Developer position at ABC Company. We truly appreciate your interest in our company and the effort you put into the interview process.
-
-After careful consideration, we have decided to move forward with another candidate whose skills and experience closely match our requirements for this role. This decision was a difficult one, as we were impressed with your qualifications and enthusiasm.
-
-We encourage you to keep an eye on our career page for future opportunities that may align more closely with your background and career goals.
-
-Thank you once again for considering a career with ABC Company. We wish you all the best in your job search and future endeavors.
-
-Best regards,
-
-[Your Name]
-[Your Position]
-ABC Company
-
-## Parameters
-- **Company Name**: (e.g., ABC Company)
-- **Role**: (e.g., Full Stack Developer, Marketing Manager)
-
-## Output Format
-The output will be a professionally crafted job rejection email that communicates appreciation and respect while delivering the rejection message kindly and clearly.
-
-## Notes
-- Customize the email content to reflect your company's tone and values.
-- Ensure the email is empathetic and acknowledges the candidate's efforts during the interview process.
-- Review and edit the generated email as needed to maintain a positive candidate experience and uphold your employer brand.
+Ensure the email is respectful, clear, and empathetic.
 `,
     slug: "generate-job-rejection-email",
     form: [
@@ -1041,62 +943,39 @@ The output will be a professionally crafted job rejection email that communicate
     desc: "This tool helps you to create a formal way of communicating to the employee that the resignation has been accepted.",
     category: "HR",
     icon: "relieving-letter-icon.png",
-    prompt: `# Structured Prompt for Relieving Letter Generator
+    prompt: `
+    Generate a formal relieving letter to communicate that an employee's resignation has been accepted. Use the following HTML tags for formatting:
 
-## Title
-Relieving Letter Generator
+- <h1> for the letter title.
+- <p> for the body of the letter.
+- <strong> to emphasize key details such as job title and dates.
 
-## Description
-This tool helps you to create a formal way of communicating to the employee that the resignation has been accepted.
+Instructions:
 
-## Context
-Issuing a relieving letter is a formal process in HR to communicate acceptance of an employee's resignation. This prompt assists in generating relieving letters that include essential details such as job title, last working date, and optional additional sections.
+1. **Title:**
+   - Use <h1> to format the letter title, such as "Relieving Letter."
 
-## Instructions
-1. **Job Title**: Enter the job title of the employee (e.g., Researcher, Developer).
-2. **Employee's Relieving/Last Working Date**: Specify the date when the employee will be relieved or their last working day (e.g., 10-12-2021).
-3. **Additional Details**: Optionally, include any specific sections or details you want to add to the relieving letter.
+2. **Greeting:**
+   - Start with a polite greeting in <p>.
 
-## Examples
+3. **Content:**
+   - Use <p> to state that the resignation has been accepted.
+   - Include the employee’s job title and last working date using <strong> to highlight these details.
+   - If there are any additional details or sections specified, include them in <p>.
 
-### Input
-**Job Title**: Developer
-**Employee's Relieving/Last Working Date**: 10-12-2021
-**Additional Details**: None
+4. **Closing:**
+   - End with a courteous closing statement in <p>.
 
-### Output
-#### Generated Relieving Letter
+Example:
 
-**Date: [Current Date]**
+<h1>Relieving Letter</h1>
+<p>Dear [Employee Name],</p>
+<p>This is to formally acknowledge that your resignation from the position of <strong>[Job Title]</strong> has been accepted. Your last working day with [Company Name] was <strong>[Last Working Date]</strong>.</p>
+<p>We appreciate your contributions during your tenure with us and wish you success in your future endeavors.</p>
+<p>Best regards,<br>[Your Name/Company]</p>
 
-Dear [Employee's Name],
+Ensure the letter is formal, clear, and includes all necessary details.
 
-Subject: Relieving Letter
-
-This is to confirm that we have accepted your resignation from the position of Developer at [Company Name], effective from your last working date of 10-12-2021. We appreciate your contributions during your tenure with us.
-
-As per company policy, you are requested to complete all pending tasks and hand over your responsibilities to [Name of the Responsible Person]. Please ensure all company property and documents are returned before your last working day.
-
-We wish you all the best in your future endeavors.
-
-Sincerely,
-
-[HR Manager's Name]
-[HR Manager's Position]
-[Company Name]
-
-## Parameters
-- **Job Title**: (e.g., Researcher, Developer)
-- **Employee's Relieving/Last Working Date**: (Specify the date)
-- **Additional Details**: (Optional, specify any additional sections or details)
-
-## Output Format
-The output will be a formal relieving letter confirming acceptance of the employee's resignation, including essential details and optionally additional sections as specified.
-
-## Notes
-- Customize the content to comply with your company's policies and procedures.
-- Ensure the letter is respectful and professional in tone.
-- Review and edit the generated letter to reflect accurate information and maintain legal compliance.
 `,
     slug: "generate-relieving-letter",
     form: [
@@ -1132,59 +1011,37 @@ The output will be a formal relieving letter confirming acceptance of the employ
     desc: "This tool simplifies complex topics to make them easy to understand for everyone, from kids to experts, by explaining things in a way that's just right for them.",
     category: "Education",
     icon: "concept-simplifier-icon.png",
-    prompt: `# Structured Prompt for Job Rejection Email Generator
+    prompt: `
+    Simplify complex concepts to make them understandable for different levels of expertise. Use the following HTML tags for formatting:
 
-## Title
-Job Rejection Email Generator
+- <h1> for the concept title.
+- <p> for the explanation.
+- <ul> and <li> for listing key points if needed.
 
-## Description
-An AI tool designed to generate kind yet firm job rejection emails.
+Instructions:
 
-## Context
-Sending respectful and empathetic job rejection emails is crucial for maintaining a positive employer brand. This prompt helps in generating job rejection emails that convey appreciation while delivering the rejection message.
+1. **Concept Title:**
+   - Use <h1> to format the title of the concept or topic being explained.
 
-## Instructions
-1. **Company Name**: Enter the name of your company.
-2. **Role**: Specify the role for which the candidate is being rejected.
+2. **Explanation:**
+   - Use <p> to provide a clear and simplified explanation of the concept, tailored to the chosen difficulty level.
+   - For beginner explanations, use simple language and examples.
+   - For intermediate and advanced levels, include more details and technical terms, but keep explanations clear.
+   - For expert-level explanations, focus on in-depth analysis and technical precision.
 
-## Examples
+3. **Key Points (Optional):**
+   - Use <ul> and <li> to list key points or summary aspects of the concept.
 
-### Input
-**Company Name**: ABC Company
-**Role**: Full Stack Developer
+Example:
 
-### Output
-#### Generated Job Rejection Email
+<h1>Quantum Physics</h1>
+<p>For <strong>Beginners:</strong> Quantum physics is the study of very small particles, like atoms and photons. It's like a new set of rules that particles follow, which can be very different from what we see in everyday life.</p>
+<p>For <strong>Intermediate:</strong> Quantum physics explores the behavior of particles at the quantum level, where traditional physics no longer applies. It includes concepts like wave-particle duality and quantum entanglement.</p>
+<p>For <strong>Advanced:</strong> Quantum physics involves mathematical frameworks such as quantum mechanics and quantum field theory. It examines phenomena like superposition and quantum decoherence.</p>
+<p>For <strong>Experts:</strong> Quantum physics, or quantum mechanics, is a fundamental theory describing the physical properties of nature at the scale of atoms and subatomic particles. It includes the Schrödinger equation, Heisenberg's uncertainty principle, and quantum electrodynamics (QED).</p>
 
-**Subject**: Job Application Update: Full Stack Developer Position at ABC Company
+Ensure the explanation matches the selected difficulty level and is appropriate for the target audience.
 
-Dear [Candidate's Name],
-
-Thank you for taking the time to interview with us for the Full Stack Developer position at ABC Company. We truly appreciate your interest in our company and the effort you put into the interview process.
-
-After careful consideration, we have decided to move forward with another candidate whose skills and experience closely match our requirements for this role. This decision was a difficult one, as we were impressed with your qualifications and enthusiasm.
-
-We encourage you to keep an eye on our career page for future opportunities that may align more closely with your background and career goals.
-
-Thank you once again for considering a career with ABC Company. We wish you all the best in your job search and future endeavors.
-
-Best regards,
-
-[Your Name]
-[Your Position]
-ABC Company
-
-## Parameters
-- **Company Name**: (e.g., ABC Company)
-- **Role**: (e.g., Full Stack Developer, Marketing Manager)
-
-## Output Format
-The output will be a professionally crafted job rejection email that communicates appreciation and respect while delivering the rejection message kindly and clearly.
-
-## Notes
-- Customize the email content to reflect your company's tone and values.
-- Ensure the email is empathetic and acknowledges the candidate's efforts during the interview process.
-- Review and edit the generated email as needed to maintain a positive candidate experience and uphold your employer brand.
 `,
     slug: "generate-concept-simplifier",
     form: [
@@ -1211,47 +1068,34 @@ The output will be a professionally crafted job rejection email that communicate
     desc: "This powerful tool helps you to create engaging and informative reading passages effortlessly.",
     category: "Education",
     icon: "reading-passage-icon.png",
-    prompt: `# Structured Prompt for Concept Simplifier
+    prompt: `
+    Create an engaging and informative reading passage based on the specified grade level and topic. Use the following HTML tags for formatting:
 
-## Title
-Concept Simplifier
+- <h1> for the passage title.
+- <p> for the main content.
+- <ul> and <li> for listing key points or sections if needed.
 
-## Description
-This tool simplifies complex topics to make them easy to understand for everyone, from kids to experts, by explaining things in a way that's just right for them.
+Instructions:
 
-## Context
-Explaining complex concepts in simple terms is essential for effective education and learning. This prompt helps in generating explanations tailored to different difficulty levels, ensuring clarity and understanding.
+1. **Title:**
+   - Use <h1> to format the title of the reading passage, such as "The Moon Landing."
 
-## Instructions
-1. **Concept or Topic**: Enter the complex concept or topic you would like explained (e.g., Quantum Physics, Machine Learning).
-2. **Explanation Style**: Select the difficulty level that matches the audience's understanding (Beginner, Intermediate, Advanced, Expert).
+2. **Passage Content:**
+   - Use <p> to deliver the content of the passage, tailored to the specified grade level.
+   - For younger grades, use simpler language and shorter paragraphs.
+   - For higher grades, include more detailed and complex information.
 
-## Examples
+3. **Preferences (Optional):**
+   - Include any specified preferences or requirements, such as passage length or additional sections, in <p>.
 
-### Input
-**Concept or Topic**: Machine Learning
-**Explanation Style**: Intermediate
+Example:
 
-### Output
-#### Simplified Explanation
+<h1>The Moon Landing</h1>
+<p>For <strong>5th Grade:</strong> On July 20, 1969, astronauts Neil Armstrong and Buzz Aldrin landed on the moon. They were part of NASA's Apollo 11 mission. Armstrong was the first person to walk on the moon and famously said, "That's one small step for man, one giant leap for mankind."</p>
+<p>For <strong>High School:</strong> The Apollo 11 mission, launched by NASA, marked a significant achievement in space exploration. On July 20, 1969, astronauts Neil Armstrong and Edwin "Buzz" Aldrin became the first humans to set foot on the lunar surface. Armstrong's iconic words, "That's one small step for man, one giant leap for mankind," underscored the monumental significance of the event. The mission provided critical data on lunar geology and marked the beginning of sustained human space exploration.</p>
 
-**Concept**: Machine Learning
+<p>Ensure the passage is engaging, educational, and appropriate for the specified grade level and topic.</p>
 
-**Difficulty Level**: Intermediate
-
-Machine Learning is a branch of artificial intelligence that involves teaching machines to learn from data and make decisions. At the intermediate level, we focus on understanding algorithms like regression, decision trees, and neural networks. These algorithms help computers learn patterns from data and make predictions or decisions without being explicitly programmed.
-
-## Parameters
-- **Concept or Topic**: (e.g., Quantum Physics, Machine Learning)
-- **Explanation Style**: (Select from Beginner, Intermediate, Advanced, Expert)
-
-## Output Format
-The output will be a simplified explanation of the concept or topic chosen, tailored to the selected difficulty level (Beginner, Intermediate, Advanced, Expert).
-
-## Notes
-- Customize the explanation to match the complexity appropriate for the selected difficulty level.
-- Ensure clarity and coherence in the explanation to facilitate understanding for the intended audience.
-- Review and adjust the generated explanation as needed to ensure accuracy and educational value.
 `,
     slug: "generate-reading-passage",
     form: [
@@ -1288,54 +1132,37 @@ The output will be a simplified explanation of the concept or topic chosen, tail
     desc: "This tool efficiently guides you in creating tailored FAQs, ensuring your questions and answers are directly relevant and clearly structured for any specific topic and context.",
     category: "Customer Support",
     icon: "faq-icon.png",
-    prompt: `# Structured Prompt for FAQ Generator
+    prompt: `
+    Create a set of FAQs tailored to the specified topic and usage context. Use the following HTML tags for formatting:
 
-## Title
-FAQ Generator
+- <h1> for the FAQ title.
+- <h2> for each question.
+- <p> for the answer to each question.
 
-## Description
-This tool efficiently guides you in creating tailored FAQs, ensuring your questions and answers are directly relevant and clearly structured for any specific topic and context.
+Instructions:
 
-## Context
-Creating FAQs that are tailored to specific topics and contexts is essential for providing clear and useful information to users. This prompt helps in generating FAQs that address common queries and provide informative answers.
+1. **Title:**
+   - Use <h1> for the title of the FAQ section, such as "Frequently Asked Questions."
 
-## Instructions
-1. **Main Topic or Subject**: Specify the main topic or subject for which you want to create FAQs (e.g., Online Payment Methods, Using a Mobile Banking App).
-2. **Usage Context**: Specify where these FAQs will be used (e.g., E-commerce website, Banking App help section).
+2. **FAQ Questions and Answers:**
+   - Use <h2> to format each question.
+   - Use <p> to provide clear and concise answers to each question.
 
-## Examples
+3. **Example Structure:**
 
-### Input
-**Main Topic or Subject**: Online Payment Methods
-**Usage Context**: E-commerce website
+<h1>Frequently Asked Questions</h1>
 
-### Output
-#### Generated FAQs
+<h2>What is [Topic]?</h2>
+<p>[Provide a clear and relevant explanation about the topic.]</p>
 
-**Main Topic or Subject**: Online Payment Methods
-**Usage Context**: E-commerce website
+<h2>How can I use [Topic]?</h2>
+<p>[Describe how to use the topic or its features effectively.]</p>
 
-**FAQs**:
-1. **Q:** What payment methods are accepted on our e-commerce platform?
-   **A:** We accept Visa, MasterCard, American Express, PayPal, and Apple Pay.
+<h2>Where can I find more information about [Topic]?</h2>
+<p>[Guide users on where to find additional information or resources.]</p>
 
-2. **Q:** How secure are online transactions on our platform?
-   **A:** We use industry-standard encryption and security protocols to ensure your transactions are safe and secure.
+Ensure the FAQs are well-structured, directly relevant to the topic, and easy to understand for the intended usage context.
 
-3. **Q:** How can I update my payment information?
-   **A:** You can update your payment information by logging into your account and navigating to the payment settings section.
-
-## Parameters
-- **Main Topic or Subject**: (e.g., Online Payment Methods, Using a Mobile Banking App)
-- **Usage Context**: (e.g., E-commerce website, Banking App help section)
-
-## Output Format
-The output will be a set of tailored FAQs structured around the specified main topic or subject and usage context.
-
-## Notes
-- Ensure that the FAQs are relevant and address common queries related to the specified topic.
-- Structure the FAQs in a clear and easy-to-navigate format for users.
-- Review and update the generated FAQs based on user feedback and evolving needs.
 `,
     slug: "generate-faqs",
     form: [
@@ -1365,7 +1192,33 @@ The output will be a set of tailored FAQs structured around the specified main t
     desc: "An AI tool that generates code snippets based on your input specifications.",
     category: "Development",
     icon: "code-icon.png",
-    prompt: `Provide a detailed description of the code you need. Specify the programming language, functionality, and any particular requirements.`,
+    prompt: `Generate code snippets based on your specifications. Use the following HTML tags for formatting:
+
+- <h1> for the title of the code snippet.
+- <pre> for the code itself, to preserve formatting.
+- <code> to highlight the code within <pre>.
+
+Instructions:
+
+1. **Title:**
+   - Use <h1> for the title or brief description of the code snippet, such as "JavaScript Function for Sorting Arrays."
+
+2. **Code Block:**
+   - Use <pre> and <code> to format the code snippet clearly. Ensure the code is properly indented and formatted for readability.
+
+3. **Example Structure:**
+
+<h1>Python Function to Calculate Factorial</h1>
+<pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+print(factorial(5))  # Output: 120</code></pre>
+
+<p>Ensure the code snippet meets the described functionality and adheres to the specified programming language.</p>
+`,
     slug: "generate-code",
     form: [
       {
@@ -1388,42 +1241,29 @@ The output will be a set of tailored FAQs structured around the specified main t
     desc: "An AI tool that rewrites text to improve clarity and coherence.",
     category: "Text Rewriting",
     icon: "text-rewriter-icon.png",
-    prompt: `# Structured Prompt for Text Rewriter Tool
+    prompt: `
+    Rewrite the provided text to enhance its clarity and coherence, according to the specified tone. Use the following HTML tags for formatting:
 
-## Title
-Text Rewriter Tool
+- <h1> for the title of the rewritten text.
+- <p> for the rewritten content.
 
-## Description
-An AI tool that rewrites text to improve clarity and coherence.
+Instructions:
 
-## Context
-Enhancing the clarity and coherence of text is essential for effective communication across various tones and styles. This prompt helps in rewriting provided sentences to align with specific tones, ensuring the text meets desired communication objectives.
+1. **Title:**
+   - Use <h1> to format the title or brief description of the rewritten text, such as "Rewritten Text Example."
 
-## Instructions
-1. **Text to Rewrite**: Paste or enter the text that you want to be rewritten for improved clarity and coherence.
-2. **Tone**: Select the tone or style for the rewritten text from the following options: Professional, Friendly, Casual, Formal, Humorous, Academic, Technical.
+2. **Rewritten Content:**
+   - Use <p> to present the rewritten text clearly.
 
-## Examples
+3. **Example Structure:**
 
-### Input
-**Text to Rewrite**: "The company's new strategy aims to leverage emerging technologies for enhanced market penetration."
-**Tone**: Professional
+<h1>Rewritten Text Example</h1>
+<p>Original Text: "The meeting will be held at the conference room at noon tomorrow. It is important that everyone attends." </p>
 
-### Output
-#### Rewritten Text
+<p>Rewritten Text (Professional): "The meeting is scheduled to take place in the conference room at 12:00 PM tomorrow. Your attendance is required and highly appreciated."</p>
 
-**Text to Rewrite**: "The company's latest strategy focuses on using cutting-edge technologies to expand its market presence."
+<p>Ensure the rewritten text improves clarity and coherence while matching the chosen tone.</p>
 
-## Parameters
-- **Text to Rewrite**: (Paste or enter the text to be rewritten)
-- **Tone**: (Select one of the available tones)
-
-## Output Format
-The output will be a rewritten version of the provided text, adjusted to match the selected tone or style.
-
-## Notes
-- Review the rewritten text to ensure it maintains clarity and coherence while aligning with the chosen tone.
-- Adjust the rewriting process based on specific audience preferences or communication requirements.
 `,
     slug: "text-rewriter",
     form: [

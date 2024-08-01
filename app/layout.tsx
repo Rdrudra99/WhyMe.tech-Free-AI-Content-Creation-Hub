@@ -14,7 +14,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Vyākhyā AI",
+  title: "Vyākhyā AI • Rdrudra99",
   description:
     "Vyākhyā AI is a modern, fast, and lightweight content Generator tool website that helps you generate content for your website, blog, or social media.",
     keywords: [
@@ -60,7 +60,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "h-screen bg-background font-sans antialiased overflow-y-auto",
+            "h-screen bg-background font-sans antialiased overflow-hidden",
             fontSans.variable
           )}
         >
@@ -69,7 +69,7 @@ export default function RootLayout({
             defaultTheme="dark"
             disableTransitionOnChange
           >
-            <NextTopLoader color="#2299DD" showSpinner={false} speed={400} />
+            {/* <NextTopLoader color="#2299DD" showSpinner={false} speed={400} /> */}
             {children}
             <Analytics />
             <SpeedInsights />
