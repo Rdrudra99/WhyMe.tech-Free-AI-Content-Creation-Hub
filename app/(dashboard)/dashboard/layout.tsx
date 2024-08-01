@@ -62,7 +62,7 @@ export default async function Dashboard({
             <DocsSidebarNav items={docsConfig.sidebarNav} />
           </ScrollArea>
         </aside>
-        <main className="relative py-4 lg:gap-10 lg:py-4 w-full h-full overflow-hidden">
+        <main className=" py-4 lg:gap-10 lg:py-4 w-full h-full overflow-hidden">
           {children}
         </main>
       </div>

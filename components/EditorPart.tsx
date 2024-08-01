@@ -25,9 +25,7 @@ const EditorPart = ({ aioutput, loading }: Props) => {
   }, [aioutput, loading, editor]);
 
   return (
-    <ScrollArea className='prose h-screen overflow-hidden px-5'>
         <EditorContent editor={editor} />
-    </ScrollArea>
   );
 };
 

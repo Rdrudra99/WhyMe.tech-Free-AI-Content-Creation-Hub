@@ -69,9 +69,9 @@ const OutcomeSection = (props: PROPS) => {
           loading={loading}
         />
       </div>
-      <div className="w-full">
+      <ScrollArea className='prose h-screen overflow-hidden w-full'>
         <EditorPart aioutput={aioutput} loading={loading} />
-      </div>
+      </ScrollArea>
     </div>
   );
 };

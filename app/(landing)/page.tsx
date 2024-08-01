@@ -15,6 +15,7 @@ import { FloatingNav } from "@/components/ui/floating-navbar";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { redirect } from "next/navigation";
+import MarqueeDemo from "@/components/LandingPageComponent/Marque";
 
 export default async function FloatingNavDemo() {
 
@@ -60,8 +61,8 @@ export default async function FloatingNavDemo() {
                 className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20"
                 href="/"
               >
-                <Zap strokeWidth={3} className="text-black dark:text-white" />
-                <span className="font-medium text-black dark:text-white">
+                <Zap strokeWidth={3} className="text-primary dark:text-white" />
+                <span className="font-medium text-primary dark:text-white">
                 Vyākhyā AI
                 </span>
               </Link>
@@ -70,15 +71,15 @@ export default async function FloatingNavDemo() {
               <Link href="/sign-in" className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl">
                 Sign in
               </Link>
-              <Link href="/sign-up" className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]">
+              <Link href="/sign-up" className="bg-primary relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]">
                 Sign up
               </Link>
             </div>
           </div>
         </div>
       </nav>
-      <section className="max-w-7xl mx-auto px-4 flex min-h-screen flex-col items-center justify-between">
-        <div className="flex flex-col min-h-screen pt-20 md:pt-40 relative overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 flex h-full  flex-col items-center justify-between">
+        <div className="flex flex-col h-full  pt-20 md:pt-40 relative overflow-hidden">
           <div className="flex justify-center">
             <button className="bg-neutral-50 dark:bg-neutral-700 no-underline group cursor-pointer relative md:shadow-2xl shadow-zinc-900 rounded-full p-px text-[10px] sm:text-xs font-semibold leading-6  text-neutral-700 dark:text-neutral-300 inline-block w-fit mx-auto">
               <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -92,7 +93,7 @@ export default async function FloatingNavDemo() {
             </button>
           </div>
           <h1 className="text-2xl md:text-4xl lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10 text-black dark:text-white">
-            Powerful <span className="text-green-600">Vyākhyā AI</span>
+            Powerful <span className="text-primary">Vyākhyā AI</span>
           </h1>
           <p className="text-center mt-6 text-base md:text-xl text-dark dark:text-muted-dark max-w-3xl mx-auto relative z-10">
             <span>
@@ -101,33 +102,6 @@ export default async function FloatingNavDemo() {
               content creation with our advanced AI tools.
             </span>
           </p>
-          <div className="flex flex-row items-center justify-center mt-10 w-full">
-            <AnimatedTooltip items={people} />
-            <div className="flex justify-center ml-6">
-              {[1, 2, 3, 4, 5].map((index) => {
-                return (
-                  <svg
-                    key={index}
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 16 16"
-                    className="h-4 w-4 text-yellow-400 mx-1"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
-                  </svg>
-                );
-              })}
-            </div>
-          </div>
-          <div className="text-center w-full flex justify-center items-center mt-4 -ml-14">
-            <p className="text-neutral-400 text-sm ml-8 relative z-40 lg:text-left text-center">
-              Trusted by 5+ creators
-            </p>
-          </div>
           <Link
             className="flex items-center gap-4 justify-center mt-6"
             href="/dashboard"
@@ -142,6 +116,9 @@ export default async function FloatingNavDemo() {
             </HoverBorderGradient>
           </Link>
         </div>
+      </section>
+      <section className="w-full h-full container mx-auto">
+          <MarqueeDemo />
       </section>
     </div>
   );

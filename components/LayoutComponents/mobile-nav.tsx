@@ -31,7 +31,7 @@ export function MobileNav() {
           onOpenChange={setOpen}
         >
           <Zap strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4"/>
-          <span className="font-bold">
+          <span className="font-bold text-primary">
           Vyākhyā AI
           </span>
         </MobileLink>

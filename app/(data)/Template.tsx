@@ -45,7 +45,17 @@ export default [
     desc: "One-click tool for generating detailed, SEO-friendly blog articles in your language, complete with an outline, engaging content, and FAQs.",
     category: "Content Generation",
     icon: "blog-post-icon.png",
-    prompt: `Generate a blog post based on the provided title, ensuring the content is formatted in HTML. The HTML should include appropriate tags such as <h1>, <p>, <strong>, <em>, and <a> for headings, paragraphs, bold text, italicized text, and links respectively. Ensure the content is well-structured and ready to be used directly in a rich text editor.`,
+    prompt: `Generate a blog post in HTML format tailored for SEO and readability. Ensure the content is well-structured and suitable for direct use in a rich text editor, utilizing the following HTML tags:
+- Use <h1> for headings.
+- Use <p> for paragraphs.
+- Use <strong> for important text.
+- Use <em> for emphasis.
+- Use <a> for links.
+
+Craft a detailed and engaging article on the chosen topic. Consider including a structured outline and relevant FAQs to enhance user engagement and SEO performance.
+and do not use markdown format
+
+`,
     slug: "generate-blog-post",
     form: [
       {
@@ -564,7 +574,7 @@ The output will be a personalized thank you note tailored to the product or serv
         field: "select",
         name: "sendingMode",
         options: [
-          "Social Media DM" , "Handwritten" , "Email"
+          "Social Media DM", "Handwritten", "Email"
         ],
         required: true,
       },
@@ -716,7 +726,7 @@ The output will be an SEO-friendly meta title and description tailored to your t
     desc: "A tool that crafts catchy, clickbait-style blog post titles and enhance transactional search term visibility.",
     category: "SEO",
     icon: "clickbait-icon.png",
-    prompt : `Create a clickbait title using the provided keywords and numbers. Structure the title in a compelling format with bullet points.`,
+    prompt: `Create a clickbait title using the provided keywords and numbers. Structure the title in a compelling format with bullet points.`,
     slug: "clickbait-title-generator",
     form: [
       {

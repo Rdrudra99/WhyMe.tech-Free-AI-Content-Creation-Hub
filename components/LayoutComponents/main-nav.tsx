@@ -16,8 +16,8 @@ export function MainNav() {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Zap strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
-        <span className="hidden font-bold sm:inline-block">Vyākhyā AI</span>
+        <Zap strokeWidth={3} absoluteStrokeWidth className=" text-primary mr-2 w-8 h-8" />
+        <span className="hidden text-xl text-primary font-bold sm:inline-block">Vyākhyā AI</span>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
         <Link
