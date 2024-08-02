@@ -229,40 +229,82 @@ Ensure the HTML content is well-structured, readable, and optimized for search e
     desc: "Generates compelling product descriptions based on features, benefits, and target audience.",
     category: "E-commerce Tools",
     icon: "product-icon.png",
-    prompt: `
-Generate a compelling product description in HTML format. The description should be well-structured and optimized for readability and SEO. Use the following HTML tags to format the content appropriately:
+    prompt: `Generate a high-quality, SEO-optimized product description in HTML format for the product provided. Ensure the content is engaging, well-structured, and designed to convert potential customers. Use the following HTML tags for optimal formatting:
 
-- <h1> for the product name.
-- <h2> for major sections such as "Features" and "Benefits."
-- <p> for paragraphs to describe the product and its attributes.
-- <strong> to emphasize important features or benefits.
-- <em> to add emphasis to key aspects or unique selling points.
-- <ul> and <li> for listing features or benefits in bullet points.
-- <a> for any hyperlinks to related products or additional information.
-
+<h2> for the product name at the top of the description.
+<h3> for major sections such as "Features," "Benefits," and "Target Audience."
+<p> for detailed paragraphs describing the product, its features, and its benefits.
+<strong> to emphasize key features or benefits.
+<em> to highlight significant details or unique selling points.
+<ul> and <li> for listing features and benefits in bullet points.
+<a> for hyperlinks to related products or additional information.
+<img> for adding images if applicable.
 Instructions:
 
-1. Product Name:
-   - Use <h1> for the product name at the top of the description.
+Product Name:
 
-2. Description:
-   - Write a detailed product description in <p> paragraphs. Include essential information about the product, such as its purpose, key features, and unique aspects.
+Use <h2> for the product name and place it prominently at the top of the description.
+Description:
 
-3. Features and Benefits:
-   - Create a section with <h2> titled "Features" and another with <h2> titled "Benefits."
-   - List key features using <ul> and <li> for bullet points.
-   - Highlight important features and benefits with <strong> and use <em> for emphasis on particularly significant details.
+Write a detailed, compelling product description in <p> paragraphs. Include essential information about the product’s purpose, unique features, and what sets it apart from competitors.
+Features:
 
-4. Additional Information:
-   - Add any relevant additional details in <p> paragraphs.
-   - Include <a> links to related products, reviews, or further information if applicable.
+Create a section with an <h2> tag titled "Features."
+Use <ul> and <li> to list key features with clear and concise descriptions. Utilize <strong> for important features.
+Benefits:
 
-5. Call-to-Action:
-   - End with a persuasive call-to-action in <p>, encouraging potential buyers to make a purchase or seek more information.
+Create a section with an <h2> tag titled "Benefits."
+Use <ul> and <li> to list the primary benefits of the product. Highlight how each benefit improves the user's experience with <strong> and <em> tags.
+Target Audience:
 
-Ensure that the HTML content is well-organized, easy to read, and optimized for search engines to attract and engage potential customers.
+Create a section with an <h2> tag titled "Target Audience."
+Describe the ideal customers for the product and how it meets their specific needs and preferences.
+Additional Information:
 
-  `,
+Include any additional relevant details about the product in <p> paragraphs. This may include dimensions, materials, warranty, or compatibility.
+Provide <a> links to related products, reviews, or additional information if applicable.
+Call-to-Action:
+
+End with a persuasive call-to-action in <p>, encouraging potential buyers to make a purchase or learn more. Make the call-to-action clear and motivating.
+SEO Considerations:
+
+Incorporate relevant keywords naturally throughout the description to improve search engine visibility.
+Ensure the description is optimized for readability with short paragraphs and bullet points.
+Slug: generate-product-description
+
+Form Fields:
+
+Product Name
+
+Label: Product Name
+Field Type: Input
+Name: productName
+Required: Yes
+Product Features
+
+Label: Product Features
+Field Type: Textarea
+Name: features
+Required: Yes
+Target Audience
+
+Label: Target Audience
+Field Type: Input
+Name: targetAudience
+Required: No
+Additional Information
+
+Label: Additional Information
+Field Type: Textarea
+Name: additionalInfo
+Required: No
+Call-to-Action
+
+Label: Call-to-Action
+Field Type: Input
+Name: callToAction
+Required: Yes
+`,
     slug: "generate-product-description",
     form: [
       {

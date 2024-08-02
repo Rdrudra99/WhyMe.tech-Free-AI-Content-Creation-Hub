@@ -6,6 +6,14 @@ import EditorPart from "@/components/EditorPart";
 import { TEMPLATE } from "../../page";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+
 interface PROPS {
   params: {
     slug: string;
@@ -48,15 +56,27 @@ const OutcomeSection = (props: PROPS) => {
 
   return (
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-6 lg:gap-10">
-      <main className="py-4 lg:py-4 col-span-1 w-full h-full overflow-hidden">
+      <main className="py-4 hidden md:block lg:py-4 col-span-1 w-full h-full overflow-hidden">
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => generateAiContent(v)}
           loading={loading}
         />
       </main>
+      <Accordion type="single" collapsible className="md:hidden block py-4 lg:py-4 col-span-1 w-full h-full overflow-hidden">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionContent>
+            <FormSection
+              selectedTemplate={selectedTemplate}
+              userFormInput={(v: any) => generateAiContent(v)}
+              loading={loading}
+            />
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
       <aside className="h-screen md:full block md:sticky md:top-14 md:h-[calc(100vh-3.5rem)] col-span-2 w-full">
-        <ScrollArea className="h-full md:full py-6 pr-6 lg:py-8 prose overflow-y-scroll">
+        <ScrollArea className="h-full md:full py-6  lg:py-8 prose overflow-y-scroll">
           <EditorPart aioutput={aioutput} loading={loading} />
         </ScrollArea>
       </aside>
