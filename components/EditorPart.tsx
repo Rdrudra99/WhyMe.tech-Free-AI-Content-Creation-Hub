@@ -30,19 +30,22 @@ const EditorPart = ({ aioutput, loading }: Props) => {
   }
 
   return (
-    <ScrollArea>
-      {loading ? (
-        <div className="flex justify-center items-center h-full">
-          <Loader />
-        </div>
-      ) : aioutput ? (
-        <EditorContent editor={editor} />
-      ) : (
-        <div className="flex justify-center items-center h-full">
-          <p className="text-gray-500">No content to display</p>
-        </div>
-      )}
-    </ScrollArea>
+    <ScrollArea className='dark:text-white'>
+    {loading ? (
+      <div className="flex justify-center items-center h-full">
+        <Loader />
+      </div>
+    ) : aioutput ? (
+      <EditorContent
+        editor={editor}
+      />
+    ) : (
+      <div className="flex justify-center items-center h-full">
+        <p className="text-gray-500">No content to display</p>
+      </div>
+    )}
+  </ScrollArea>
+  
   );
 };
 

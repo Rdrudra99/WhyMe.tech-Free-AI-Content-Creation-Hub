@@ -23,7 +23,7 @@ const Ripple = React.memo(function Ripple({
         return (
           <div
             key={i}
-            className={`absolute animate-ripple rounded-full bg-foreground/25 shadow-xl border [--i:${i}]`}
+            className={`absolute animate-ripple rounded-full bg-foreground/100 shadow-xl border [--i:${i}]`}
             style={
               {
                 width: `${size}px`,

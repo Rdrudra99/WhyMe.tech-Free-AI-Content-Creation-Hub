@@ -31,6 +31,7 @@ export function SiteHeader() {
               >
                 <UserNav />
               </div>
+              <ModeToggle />
           </nav>
         </div>
       </div>

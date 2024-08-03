@@ -8,6 +8,7 @@ import {
   Link2,
   MoveRight,
   Vegan,
+  WheatOff,
   Zap,
 } from "lucide-react";
 import Link from "next/link";
@@ -64,7 +65,7 @@ export default async function FloatingNavDemo() {
                 className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20"
                 href="/"
               >
-                <Vegan strokeWidth={3} className="text-primary dark:text-white" />
+                <WheatOff strokeWidth={3} className="text-primary dark:text-white" />
                 <span className="font-medium text-primary dark:text-white">
                   Vyākhyā AI
                 </span>
@@ -108,8 +109,8 @@ export default async function FloatingNavDemo() {
               as="button"
               className="dark:bg-black bg-primary text-white dark:text-white flex items-center space-x-2"
             >
-              <Vegan strokeWidth={3} />
               <span>Get Started</span>
+              <ArrowRightIcon className="w-4 h-4"/>
             </HoverBorderGradient>
           </Link>
         </div>

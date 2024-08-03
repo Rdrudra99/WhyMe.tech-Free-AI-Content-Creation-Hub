@@ -72,7 +72,7 @@ export default function RootLayout({
         >
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             disableTransitionOnChange
           >
             {/* <NextTopLoader color="#2299DD" showSpinner={false} speed={400} /> */}
