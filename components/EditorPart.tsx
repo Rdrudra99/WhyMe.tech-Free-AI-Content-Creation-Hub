@@ -30,7 +30,7 @@ const EditorPart = ({ aioutput, loading }: Props) => {
   }
 
   return (
-    <ScrollArea className='dark:text-white'>
+    <div className='w-full h-full'>
     {loading ? (
       <div className="flex justify-center items-center h-full">
         <Loader />
@@ -44,7 +44,7 @@ const EditorPart = ({ aioutput, loading }: Props) => {
         <p className="text-gray-500">No content to display</p>
       </div>
     )}
-  </ScrollArea>
+  </div>
   
   );
 };
