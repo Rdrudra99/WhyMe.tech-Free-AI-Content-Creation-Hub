@@ -7,10 +7,12 @@ import React from "react";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import MarqueeDemo from "@/components/LandingPageComponent/Marque";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import { auth } from "@clerk/nextjs/server";
 
 export default async function FloatingNavDemo() {
 
-
+  const { userId } = auth();
+  
   return (
     <div className="relative  w-full ">
       <nav className="max-w-7xl  fixed top-4  mx-auto inset-x-0 z-50 w-[95%] lg:w-full">
@@ -27,14 +29,27 @@ export default async function FloatingNavDemo() {
                 </span>
               </Link>
             </div>
-            <div className="flex space-x-2 items-center">
-              <Link href="/sign-in" className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl">
-                Sign in
-              </Link>
-              <Link href="/sign-up" className="bg-primary relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]">
-                Sign up
-              </Link>
-            </div>
+              {
+                userId ? (
+                  <Link
+                    className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20"
+                    href="/dashboard"
+                  >
+                    <span className="font-medium text-primary dark:text-white">
+                      Dashboard
+                    </span>
+                  </Link>
+                ) : (
+                  <div className="flex space-x-2 items-center">
+                  <Link href="/sign-in" className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl">
+                    Sign in
+                  </Link>
+                  <Link href="/sign-up" className="bg-primary relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]">
+                    Sign up
+                  </Link>
+                </div>
+                ) 
+              }
           </div>
         </div>
       </nav>
