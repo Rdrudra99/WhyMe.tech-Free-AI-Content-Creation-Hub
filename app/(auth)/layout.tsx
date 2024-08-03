@@ -1,10 +1,5 @@
 "use client"
 import React from "react";
-import Image from "next/image";
-import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
-import Ripple from "@/components/magicui/ripple";
-import { Vegan } from "lucide-react";
-import Link from "next/link";
 const layout = ({ children }: { children: React.ReactNode }) => {
   const placeholders = [
     "Generate compelling product descriptions effortlessly",

@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/LayoutComponents/icons";
 import { Badge } from "@/components/ui/badge";
-import { Vegan, WheatOff, Zap } from "lucide-react";
+import { WheatOff } from "lucide-react";
 
 export function MainNav() {
   const pathname = usePathname();

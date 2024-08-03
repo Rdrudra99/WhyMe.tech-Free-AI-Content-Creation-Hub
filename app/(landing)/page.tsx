@@ -1,59 +1,15 @@
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import {
-  ArrowDown,
   ArrowRightIcon,
-  GitBranch,
-  Home,
-  Link2,
-  MoveRight,
-  Vegan,
   WheatOff,
-  Zap,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
-import { FloatingNav } from "@/components/ui/floating-navbar";
-import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
-import { redirect } from "next/navigation";
 import MarqueeDemo from "@/components/LandingPageComponent/Marque";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 export default async function FloatingNavDemo() {
 
-  const people = [
-    {
-      id: 1,
-      name: "Rudra Narayan Boitei",
-      designation: "Software Developer Exicutive",
-      image:
-        "https://media.licdn.com/dms/image/D5603AQHyTl9FBaQiaw/profile-displayphoto-shrink_800_800/0/1718244811587?e=1725494400&v=beta&t=eSxqNaULO3oIFqdAqb8tKSRwhKI6qWWFfNPi07Aca2Q",
-    },
-    {
-      id: 2,
-      name: "Pritesh Biswal",
-      designation: "Software Developer Exicutive",
-      image:
-        "https://instagram.fbbi5-3.fna.fbcdn.net/v/t51.2885-15/409683750_388307436968111_7892502297624787248_n.jpg?stp=c0.248.640.640a_dst-jpg_e15_s150x150&_nc_ht=instagram.fbbi5-3.fna.fbcdn.net&_nc_cat=111&_nc_ohc=0uHZjidNRPkQ7kNvgGj31VU&edm=AGFyKLkBAAAA&ccb=7-5&oh=00_AYCnu9PQN8l9cU1x1g7DB01kbnUHVjEkI9b2Qn_bWrB_qw&oe=6686D7E1&_nc_sid=5a0a6d",
-    },
-    {
-      id: 3,
-      name: "Priyanshu Bej",
-      designation: "Software Developer Exicutive",
-      image:
-        "https://instagram.fbbi5-3.fna.fbcdn.net/v/t51.2885-19/447034917_831788538828293_3255311599294477075_n.jpg?_nc_ht=instagram.fbbi5-3.fna.fbcdn.net&_nc_cat=105&_nc_ohc=nOwbLzunNHoQ7kNvgEVkpzJ&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYCyGDH-ESXPL1SNjH08QS0Kj4fk6SJxUS1yNQsM_MuLLw&oe=6686F3D1&_nc_sid=8f1549",
-    },
-    {
-      id: 4,
-      name: "Deepak Pradhan",
-      designation: "Software Developer Exicutive",
-      image:
-        "https://media.licdn.com/dms/image/D5603AQH25yBxgSdkTw/profile-displayphoto-shrink_800_800/0/1714365694678?e=1725494400&v=beta&t=rwb2-956FqPI752k6toUvl_HDJqD7Hzz-iH-bxUwT3A",
-    },
-
-  ];
 
   return (
     <div className="relative  w-full ">

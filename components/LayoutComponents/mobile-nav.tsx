@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Vegan, Zap } from "lucide-react"
+import { WheatOff } from "lucide-react"
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
 
@@ -20,7 +20,7 @@ export function MobileNav() {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-           <Vegan strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
+           <WheatOff strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
@@ -30,7 +30,7 @@ export function MobileNav() {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <Vegan strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4"/>
+          <WheatOff strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4"/>
           <span className="font-bold text-primary">
           Vyākhyā AI
           </span>

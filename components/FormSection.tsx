@@ -3,7 +3,7 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { Vegan, WandSparkles, Zap } from "lucide-react";
+import { WheatOff } from "lucide-react";
 
 import { ScrollArea } from "./ui/scroll-area";
 import Nodata from "./LayoutComponents/Nodata";
@@ -109,14 +109,14 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
             {loading ? (
               <p className="flex justify-center items-center space-x-2">
                 <span>
-                  <Vegan strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4 animate-spin" />
+                  <WheatOff strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4 animate-spin" />
                 </span>
                 <span>Thinking...</span>
               </p>
             ) : (
               <p className="flex justify-center items-center space-x-2">
                 <span>
-                <Vegan strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
+                <WheatOff strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
                 </span>
                 <span>Generate</span>
               </p>
