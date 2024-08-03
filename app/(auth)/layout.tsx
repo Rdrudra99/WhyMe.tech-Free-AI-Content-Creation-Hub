@@ -29,9 +29,6 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-wrap">
       <div className="flex w-full flex-col md:w-1/2">
-        <div className="flex justify-center pt-12 md:-mb-24 md:justify-start md:pl-12">
-          <Link href="/" className="border-b-gray-700 border-b-4 pb-2 text-2xl font-bold text-gray-900"> Vyākhyā AI . </Link>
-        </div>
         <div className="lg:w-[28rem] mx-auto my-auto flex flex-col justify-center pt-8 md:justify-start md:px-6 md:pt-0">
           {children}
         </div>
