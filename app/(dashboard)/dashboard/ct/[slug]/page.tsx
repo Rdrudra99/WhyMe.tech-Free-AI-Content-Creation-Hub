@@ -65,7 +65,7 @@ const OutcomeSection = (props: PROPS) => {
       </main>
       <Accordion type="single" collapsible className="md:hidden block py-4 lg:py-4 col-span-1 w-full h-full overflow-hidden">
         <AccordionItem value="item-1">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionTrigger>Show/Hide Form</AccordionTrigger>
           <AccordionContent>
             <FormSection
               selectedTemplate={selectedTemplate}
