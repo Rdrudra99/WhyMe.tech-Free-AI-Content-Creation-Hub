@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
 import Ripple from "@/components/magicui/ripple";
+import { Vegan } from "lucide-react";
 const layout = ({ children }: { children: React.ReactNode }) => {
   const placeholders = [
     "Generate compelling product descriptions effortlessly",
@@ -28,9 +29,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
     <div className="w-full lg:grid h-screen lg:grid-cols-2">
       <div className="hidden bg-muted lg:block">
         <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden ">
-          <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-white">
-          Vyākhyā AI
-          </p>
+          <Vegan strokeWidth={3} className="w-28 h-28" />
           <Ripple />
         </div>
       </div>

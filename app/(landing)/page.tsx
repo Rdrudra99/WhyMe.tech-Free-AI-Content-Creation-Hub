@@ -89,7 +89,7 @@ export default async function FloatingNavDemo() {
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </div>
-          <h1 className="text-2xl md:text-4xl lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10 text-black dark:text-white">
+          <h1 className="text-3xl font-bold md:text-4xl lg:text-8xl  max-w-6xl mx-auto text-center mt-6 relative z-10 text-black dark:text-white">
             Powerful <span className="text-primary">Vyākhyā AI</span>
           </h1>
           <p className="text-center mt-6 text-base md:text-xl text-dark dark:text-muted-dark max-w-3xl mx-auto relative z-10">
@@ -106,7 +106,7 @@ export default async function FloatingNavDemo() {
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="button"
-              className="dark:bg-black bg-primary text-black dark:text-white flex items-center space-x-2"
+              className="dark:bg-black bg-primary text-white dark:text-white flex items-center space-x-2"
             >
               <Vegan strokeWidth={3} />
               <span>Get Started</span>

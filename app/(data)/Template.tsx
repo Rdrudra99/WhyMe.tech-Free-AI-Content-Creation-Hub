@@ -577,15 +577,6 @@ Ensure the note feels personal and expresses genuine appreciation.
         placeholder: "e.g., Enter your product or service details",
         required: true,
       },
-      {
-        label: "Mode of sending note",
-        field: "select",
-        name: "sendingMode",
-        options: [
-          "Social Media DM", "Handwritten", "Email"
-        ],
-        required: true,
-      },
     ],
   },
 

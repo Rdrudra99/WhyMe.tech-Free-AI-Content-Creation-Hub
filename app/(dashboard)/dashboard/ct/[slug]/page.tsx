@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Template from "@/app/(data)/Template";
 import FormSection from "@/components/FormSection";
 import EditorPart from "@/components/EditorPart";
-import { TEMPLATE } from "../../page";
+import { TEMPLATE } from "../../page";   
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import {
