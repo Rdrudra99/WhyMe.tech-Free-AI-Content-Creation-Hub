@@ -38,11 +38,12 @@ const layout = ({ children }: { children: React.ReactNode }) => {
       </div>
       <div className="pointer-events-none relative hidden h-screen select-none bg-black md:block md:w-1/2">
         <div className="absolute bottom-0 z-10 px-8 text-white opacity-100">
-          <p className="mb-8 text-3xl font-semibold leading-10">We work 10x faster than our compeititors and stay consistant. While they're bogged won with techincal debt, we're realeasing new features.</p>
-          <p className="mb-4 text-3xl font-semibold">John Elmond</p>
-          <p className="">Founder, Emogue</p>
-          <p className="mb-7 text-sm opacity-70">Web Design Agency</p>
+          <p className="mb-8 text-3xl font-semibold leading-10">Our AI content generator website delivers high-quality content faster than any competitor. While others are mired in technical debt, we&apos;re continuously innovating with new features.</p>
+          <p className="mb-4 text-3xl font-semibold">Kya Re Rudra</p>
+          <p className="">Founder, Vyākhyā AI</p>
+          <p className="mb-7 text-sm opacity-70">AI Content Generator</p>
         </div>
+
         <img className="-z-1 absolute top-0 h-full w-full object-cover opacity-90" src="https://images.unsplash.com/photo-1565301660306-29e08751cc53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" />
       </div>
     </div>
