@@ -11,10 +11,10 @@ export async function POST(request: NextRequest) {
         { role: 'system', content: 'You are a helpful assistant. Respond in HTML format suitable for rich text editors.' },
         { role: 'user', content: message }
       ],
-      model: 'llama-3.1-70b-versatile', // Ensure the model name is correct
-      temperature: 0.7, // Adjust temperature as needed
-      max_tokens: 1024,
-      top_p: 1,
+      model: 'mixtral-8x7b-32768', // Ensure the model name is correct
+      temperature: 0.5, // Adjust temperature as needed
+      max_tokens: 2048,
+      top_p: 0.9,
       stream: true, // Set to true if you expect a streaming response
       stop: null
     });
