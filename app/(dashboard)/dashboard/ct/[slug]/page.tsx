@@ -56,21 +56,21 @@ const OutcomeSection = (props: PROPS) => {
 
   return (
     <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 md:gap-6 lg:gap-10">
-      <main className="py-4 hidden md:block lg:py-4 col-span-1 w-full h-full overflow-hidden">
+      {/* <main className="py-4 hidden md:block lg:py-4 col-span-1 w-full h-full overflow-hidden">
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => generateAiContent(v)}
           loading={loading}
         />
-      </main>
-      <div className="md:hidden block py-4 lg:py-4 col-span-1 w-full h-full overflow-hidden" >
+      </main> */}
+      <div className="md:flex block py-4 lg:py-4 col-span-1 w-full h-full overflow-hidden " >
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => generateAiContent(v)}
           loading={loading}
         />
       </div>
-      <aside className="overflow-y-scroll md:full block md:sticky md:top-14 md:h-[calc(100vh-3.5rem)] col-span-2 w-full">
+      <aside className="overflow-y-scroll md:full block md:sticky md:top-14 md:h-[calc(100vh-3.5rem)] col-span-2 w-full bg-[#F6F7FA] md:px-4">
         <div className="h-full md:full py-6  lg:py-8 prose overflow-y-scroll">
           <EditorPart aioutput={aioutput} loading={loading} />
         </div>

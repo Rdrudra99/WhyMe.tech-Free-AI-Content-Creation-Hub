@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Template from "@/app/(data)/Template";
 import Link from "next/link";

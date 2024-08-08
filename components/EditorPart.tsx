@@ -5,6 +5,7 @@ import StarterKit from '@tiptap/starter-kit';
 import React, { useEffect } from 'react';
 import { ScrollArea } from './ui/scroll-area';
 import Loader from './Reuse/Loader';
+import EmptyState from './Reuse/EmptyState';
 
 interface Props {
   aioutput: string;
@@ -41,7 +42,7 @@ const EditorPart = ({ aioutput, loading }: Props) => {
       />
     ) : (
       <div className="flex justify-center items-center h-full">
-        <p className="text-gray-500">No content to display</p>
+        <EmptyState />
       </div>
     )}
   </div>

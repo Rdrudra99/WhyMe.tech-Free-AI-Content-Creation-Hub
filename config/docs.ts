@@ -12,6 +12,160 @@ export const docsConfig: DocsConfig = {
       href: "/dashboard",
     },
   ],
+  // sidebarNav: [
+  //   {
+  //     title: "Ecommerce",
+  //     items: [
+  //       {
+  //         title: "Product Description Generator",
+  //         href: "/dashboard/ct/generate-product-description",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "SEO Product Title Optimizer",
+  //         href: "/dashboard/ct/seo-product-title-optimizer",
+  //         items: [],
+  //         label: "new",
+  //       },
+  //       {
+  //         title: "Tagline Generator",
+  //         href: "/dashboard/ct/generate-tagline",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Amazon Product Description",
+  //         href: "/dashboard/ct/generate-amazon-description",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Product Comparisons",
+  //         href: "/dashboard/ct/compare-products",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Thank You Note Generator",
+  //         href: "/dashboard/ct/generate-thank-you-note",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Refund/Return/Exchange Response Email",
+  //         href: "/dashboard/ct/generate-return-response-email",
+  //         items: [],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Blog",
+  //     items: [
+  //       {
+  //         title: "Blog Title Generator",
+  //         href: "/dashboard/ct/generate-blog-title",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Quick 1-Click Blog Post",
+  //         href: "/dashboard/ct/generate-blog-post",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Rewrite Article with Keywords",
+  //         href: "/dashboard/ct/rewrite-article-with-keywords",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Human Written Blog Post",
+  //         href: "/dashboard/ct/generate-human-blog-post",
+  //         items: [],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Development",
+  //     items: [
+  //       {
+  //         title: "Code Generator",
+  //         href: "/dashboard/ct/generate-code",
+  //         items: [],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "SEO",
+  //     items: [
+  //       {
+  //         title: "Meta Title and Description",
+  //         href: "/dashboard/ct/generate-meta-title-description",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Clickbait Title Generator",
+  //         href: "/dashboard/ct/clickbait-title-generator",
+  //         items: [],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "HR Tools",
+  //     items: [
+  //       {
+  //         title: "Job Description Generator",
+  //         href: "/dashboard/ct/generate-job-description",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Interview Scheduling Email Generator",
+  //         href: "/dashboard/ct/generate-interview-email",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Job Rejection Email Generator",
+  //         href: "/dashboard/ct/generate-job-rejection-email",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Relieving Letter Generator",
+  //         href: "/dashboard/ct/generate-relieving-letter",
+  //         items: [],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Education",
+  //     items: [
+  //       {
+  //         title: "Concept Simplifier",
+  //         href: "/dashboard/ct/generate-concept-simplifier",
+  //         items: [],
+  //       },
+  //       {
+  //         title: "Reading Passage Generator",
+  //         href: "/dashboard/ct/generate-reading-passage",
+  //         items: [],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Support",
+  //     items: [
+  //       {
+  //         title: "FAQ Generator",
+  //         href: "/dashboard/ct/generate-faqs",
+  //         items: [],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Text Rewriting",
+  //     items: [
+  //       {
+  //         title: "Text Rewriter Tool",
+  //         href: "/dashboard/ct/text-rewriter",
+  //         items: [],
+  //         label: "new",
+  //       },
+  //     ],
+  //   },
+  // ],
   sidebarNav: [
     {
       title: "Ecommerce",
@@ -19,38 +173,45 @@ export const docsConfig: DocsConfig = {
         {
           title: "Product Description Generator",
           href: "/dashboard/ct/generate-product-description",
-          items: [],
+          description: "Generate compelling descriptions for your products to attract customers.",
+          items : []
         },
         {
           title: "SEO Product Title Optimizer",
           href: "/dashboard/ct/seo-product-title-optimizer",
-          items: [],
           label: "new",
+          description: "Optimize product titles to improve search engine visibility and click-through rates.",
+          items : []
         },
         {
           title: "Tagline Generator",
           href: "/dashboard/ct/generate-tagline",
-          items: [],
+          description: "Create catchy taglines and slogans for your products or campaigns.",
+          items : []
         },
         {
           title: "Amazon Product Description",
           href: "/dashboard/ct/generate-amazon-description",
-          items: [],
+          description: "Craft effective product descriptions specifically tailored for Amazon.",
+          items : []
         },
         {
           title: "Product Comparisons",
           href: "/dashboard/ct/compare-products",
-          items: [],
+          description: "Compare multiple products side by side to aid in decision-making.",
+          items : []
         },
         {
           title: "Thank You Note Generator",
           href: "/dashboard/ct/generate-thank-you-note",
-          items: [],
+          description: "Automatically generate personalized thank you notes for customer interactions.",
+          items : []
         },
         {
           title: "Refund/Return/Exchange Response Email",
           href: "/dashboard/ct/generate-return-response-email",
-          items: [],
+          description: "Generate professional responses for refund, return, or exchange requests.",
+          items : []
         },
       ],
     },
@@ -60,22 +221,26 @@ export const docsConfig: DocsConfig = {
         {
           title: "Blog Title Generator",
           href: "/dashboard/ct/generate-blog-title",
-          items: [],
+          description: "Generate engaging and SEO-friendly titles for your blog posts.",
+          items : []
         },
         {
           title: "Quick 1-Click Blog Post",
           href: "/dashboard/ct/generate-blog-post",
-          items: [],
+          description: "Create fully-formed blog posts with a single click for rapid content creation.",
+          items : []
         },
         {
           title: "Rewrite Article with Keywords",
           href: "/dashboard/ct/rewrite-article-with-keywords",
-          items: [],
+          description: "Effortlessly rewrite articles incorporating targeted keywords for SEO.",
+          items : []
         },
         {
           title: "Human Written Blog Post",
           href: "/dashboard/ct/generate-human-blog-post",
-          items: [],
+          description: "Request and receive professionally written blog posts from human writers.",
+          items : []
         },
       ],
     },
@@ -85,7 +250,8 @@ export const docsConfig: DocsConfig = {
         {
           title: "Code Generator",
           href: "/dashboard/ct/generate-code",
-          items: [],
+          description: "Generate snippets of code for various programming languages and frameworks.",
+          items : []
         },
       ],
     },
@@ -95,12 +261,14 @@ export const docsConfig: DocsConfig = {
         {
           title: "Meta Title and Description",
           href: "/dashboard/ct/generate-meta-title-description",
-          items: [],
+          description: "Generate optimized meta titles and descriptions to enhance search engine visibility.",
+          items : []
         },
         {
           title: "Clickbait Title Generator",
           href: "/dashboard/ct/clickbait-title-generator",
-          items: [],
+          description: "Create attention-grabbing titles designed to increase click-through rates.",
+          items : []
         },
       ],
     },
@@ -110,22 +278,26 @@ export const docsConfig: DocsConfig = {
         {
           title: "Job Description Generator",
           href: "/dashboard/ct/generate-job-description",
-          items: [],
+          description: "Efficiently create detailed job descriptions tailored to your company's needs.",
+          items : []
         },
         {
           title: "Interview Scheduling Email Generator",
           href: "/dashboard/ct/generate-interview-email",
-          items: [],
+          description: "Automatically generate emails to schedule interviews with candidates.",
+          items : []
         },
         {
           title: "Job Rejection Email Generator",
           href: "/dashboard/ct/generate-job-rejection-email",
-          items: [],
+          description: "Generate professional and respectful emails to decline job applicants.",
+          items : []
         },
         {
           title: "Relieving Letter Generator",
           href: "/dashboard/ct/generate-relieving-letter",
-          items: [],
+          description: "Create official relieving letters for employees leaving your organization.",
+          items : []
         },
       ],
     },
@@ -135,12 +307,14 @@ export const docsConfig: DocsConfig = {
         {
           title: "Concept Simplifier",
           href: "/dashboard/ct/generate-concept-simplifier",
-          items: [],
+          description: "Simplify complex concepts into easy-to-understand explanations or summaries.",
+          items : []
         },
         {
           title: "Reading Passage Generator",
           href: "/dashboard/ct/generate-reading-passage",
-          items: [],
+          description: "Generate reading passages or excerpts for educational purposes.",
+          items : []
         },
       ],
     },
@@ -150,7 +324,8 @@ export const docsConfig: DocsConfig = {
         {
           title: "FAQ Generator",
           href: "/dashboard/ct/generate-faqs",
-          items: [],
+          description: "Quickly generate frequently asked questions (FAQs) for your products or services.",
+          items : []
         },
       ],
     },
@@ -160,8 +335,9 @@ export const docsConfig: DocsConfig = {
         {
           title: "Text Rewriter Tool",
           href: "/dashboard/ct/text-rewriter",
-          items: [],
           label: "new",
+          description: "Effortlessly rewrite and paraphrase text while maintaining original meaning.",
+          items : []
         },
       ],
     },

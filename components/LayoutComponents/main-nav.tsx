@@ -15,10 +15,9 @@ export function MainNav() {
 
   return (
     <div className="mr-4 hidden md:flex">
-      <Link href="/" className="mr-6 flex items-center space-x-2">
-        <WheatOff strokeWidth={3} absoluteStrokeWidth className=" text-primary mr-2 w-6 h-6 animate-pulse" />
-        <span className="hidden text-xl text-primary font-bold sm:inline-block">Vyākhyā AI</span>
-      </Link>
+        <h1 className="font-bold italic">  
+          Try To Copy
+        </h1>
       {/* <nav className="flex items-center gap-4 text-sm lg:gap-6">
         <Link
           href="/dashboard"
