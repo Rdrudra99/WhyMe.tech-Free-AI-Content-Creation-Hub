@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
   try {
     const chatCompletion = await groq.chat.completions.create({
       messages: [
-        { role: 'system', content: 'You are a helpful assistant. Respond in HTML format suitable for rich text editors.' },
+        { role: 'system', content: 'You are a helpful content generation assistant, skilled in creating and refining various types of content to meet user needs.' },
         { role: 'user', content: message }
       ],
       model: 'llama3-70b-8192', // Ensure the model name is correct

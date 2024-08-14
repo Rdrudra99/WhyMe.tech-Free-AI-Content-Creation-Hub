@@ -3,13 +3,9 @@ import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { WheatOff } from "lucide-react";
+import { Star } from "lucide-react";
 
 import { ScrollArea } from "./ui/scroll-area";
-import Nodata from "./LayoutComponents/Nodata";
-import Loader from "./Reuse/Loader";
-import remarkGfm from "remark-gfm";
-import ReactMarkdown from "react-markdown";
 import {
   Select,
   SelectContent,
@@ -19,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { TEMPLATE } from "@/app/(dashboard)/dashboard/page";
+import { TEMPLATE } from "@/app/ct/[slug]/page";
 
 interface PROPS {
   selectedTemplate?: TEMPLATE;
@@ -109,14 +105,14 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
             {loading ? (
               <p className="flex justify-center items-center space-x-2">
                 <span>
-                  <WheatOff strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4 animate-spin" />
+                  <Star strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4 animate-spin" />
                 </span>
                 <span>Thinking...</span>
               </p>
             ) : (
               <p className="flex justify-center items-center space-x-2">
                 <span>
-                <WheatOff strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
+                <Star strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
                 </span>
                 <span>Generate</span>
               </p>

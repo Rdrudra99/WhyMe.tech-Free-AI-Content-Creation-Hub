@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { SidebarNavItem } from "@/types"
+import { MobileNav } from "./LayoutComponents/mobile-nav"
+import { ModeToggle } from "./ModeToggle"
 
 export interface DocsSidebarNavProps {
   items: SidebarNavItem[]
@@ -14,18 +16,23 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
   const pathname = usePathname()
 
   return items.length ? (
-    <div className="w-full">
-      {items.map((item, index) => (
-        <div key={index} className={cn("pb-4")}>
-          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-primary">
-            {item.title}
-          </h4>
-          {item?.items?.length && (
-            <DocsSidebarNavItems items={item.items} pathname={pathname} />
-          )}
-        </div>
-      ))}
-    </div>
+    <aside className="hidden h-screen w-full max-w-72 border-r xl:block xl:max-w-72">
+      <section className="flex min-h-screen w-full shrink-0 flex-col lg:max-h-screen lg:overflow-y-auto max-h-screen overflow-y-auto">
+        <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7 justify-between">
+          <Link className="inline-flex items-center space-x-3 px-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring xl:p-0" href="/"><span>why Me</span></Link>
+          <ModeToggle />
+        </header>
+        {items.map((item, index) => (
+          <div key={index} className={cn("pb-4")}>
+            <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-primary">
+              {item.title}
+            </h4>
+            {item?.items?.length && (
+              <DocsSidebarNavItems items={item.items} pathname={pathname} />
+            )}
+          </div>
+        ))}
+      </section></aside>
   ) : null
 }
 

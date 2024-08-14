@@ -3,14 +3,18 @@
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import React, { useEffect } from 'react';
-import { ScrollArea } from './ui/scroll-area';
 import Loader from './Reuse/Loader';
 import EmptyState from './Reuse/EmptyState';
+import { MemoizedReactMarkdown } from './markdown';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 
 interface Props {
   aioutput: string;
   loading: boolean;
 }
+
+
 
 const EditorPart = ({ aioutput, loading }: Props) => {
   const editor = useEditor({
@@ -37,9 +41,17 @@ const EditorPart = ({ aioutput, loading }: Props) => {
         <Loader />
       </div>
     ) : aioutput ? (
-      <EditorContent
-        editor={editor}
-      />
+      <MemoizedReactMarkdown
+      className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+      remarkPlugins={[remarkGfm, remarkMath]}
+      components={{
+        p({ children }) {
+          return <p className="mb-2 last:mb-0">{children}</p>
+        },
+      }}
+    >
+      {aioutput}
+    </MemoizedReactMarkdown>
     ) : (
       <div className="flex justify-center items-center h-full">
         <EmptyState />

@@ -53,6 +53,7 @@ export function SiteHeader() {
             </DialogFooter>
           </DialogContent>
         </Dialog>
+        <ModeToggle />
         <div
           className={cn(
             buttonVariants({

@@ -33,7 +33,7 @@ export default async function FloatingNavDemo() {
                 userId ? (
                   <Link
                     className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20"
-                    href="/dashboard"
+                    href="/ct"
                   >
                     <span className="font-medium text-primary dark:text-white">
                       Dashboard
@@ -73,7 +73,7 @@ export default async function FloatingNavDemo() {
           </p>
           <Link
             className="flex items-center gap-4 justify-center mt-6"
-            href="/dashboard"
+            href="/ct"
           >
             <HoverBorderGradient
               containerClassName="rounded-full"

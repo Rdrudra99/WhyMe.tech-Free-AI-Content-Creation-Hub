@@ -3,22 +3,23 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ClerkProvider} from '@clerk/nextjs'
+import { DocsSidebarNav } from "@/components/sidebar-nav";
+import { docsConfig } from "@/config/docs";
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Vyākhyā AI • Rdrudra99",
+  title: "whyme • Rdrudra99",
   description:
-    "Vyākhyā AI is a modern, fast, and lightweight content Generator tool website that helps you generate content for your website, blog, or social media.",
+    "whyme is a modern, fast, and lightweight content Generator tool website that helps you generate content for your website, blog, or social media.",
     keywords: [
-      "Vyākhyā AI",
+      "whyme",
       "Vyākhyā",
       "AI",
       "content generator",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
           url: "https://i.ibb.co/m9RxLMd/20240701-194337-0000.png",
           width: 1200,
           height: 630,
-          alt: "Vyākhyā AI",
+          alt: "whyme",
         },
       ],
     },
@@ -66,7 +67,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "bg-background font-sans antialiased",
+            "relative flex min-h-screen w-full bg-background font-sans text-foreground antialiased",
             fontSans.variable
           )}
         >
@@ -76,7 +77,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {/* <NextTopLoader color="#2299DD" showSpinner={false} speed={400} /> */}
-            {children}
+            <main className="flex-1">{children}</main>
             <Analytics />
             <SpeedInsights />
           </ThemeProvider>

@@ -32,7 +32,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         <div className="absolute bottom-0 z-10 px-8 text-white opacity-100">
           <p className="mb-8 text-3xl font-semibold leading-10">Our AI content generator website delivers high-quality content faster than any competitor. While others are mired in technical debt, we&apos;re continuously innovating with new features.</p>
           <p className="mb-4 text-3xl font-semibold">Kya Re Rudra</p>
-          <p className="">Founder, Vyākhyā AI</p>
+          <p className="">Founder, whyme</p>
           <p className="mb-7 text-sm opacity-70">AI Content Generator</p>
         </div>
 
