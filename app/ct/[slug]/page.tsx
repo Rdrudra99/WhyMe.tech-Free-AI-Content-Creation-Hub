@@ -1,16 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import FormSection from "@/components/FormSection";
-import EditorPart from "@/components/EditorPart";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import Template from "@/app/(data)/Template";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-import { MobileNav } from "@/components/mobile-nav";
 import { LoaderIcon } from "lucide-react";
 import { MemoizedReactMarkdown } from "@/components/markdown";
 import remarkGfm from "remark-gfm";

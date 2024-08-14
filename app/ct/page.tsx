@@ -1,5 +1,4 @@
 
-import { OrbitingCirclesDemo } from '@/components/OrbitingCirclesDemo'
 import React from 'react'
 
 const page = () => {
