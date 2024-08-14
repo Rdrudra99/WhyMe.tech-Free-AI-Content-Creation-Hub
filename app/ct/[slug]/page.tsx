@@ -80,9 +80,24 @@ const OutcomeSection = (props: PROPS) => {
       <aside className="w-full border-r lg:flex lg:max-w-sm">
         <section className="flex md:min-h-screen w-full shrink-0 flex-col lg:max-h-screen lg:overflow-y-auto">
           <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
-            <MobileNav />
-            <h1 className="capitalize">Why Me</h1></header>
-          <div className="flex flex-1 flex-col px-2 xl:px-4">
+            <h1 className="capitalize">
+              {selectedTemplate?.title} Template
+            </h1>
+          </header>
+          {
+            !aioutput ? (
+              <div className="flex md:hidden flex-1 flex-col px-2 xl:px-4">
+                <FormSection
+                  selectedTemplate={selectedTemplate}
+                  userFormInput={(v: any) => generateAiContent(v)}
+                  loading={loading}
+                />
+              </div>
+            ) : (
+              null
+            )
+          }
+          <div className="md:flex flex-1 hidden flex-col px-2 xl:px-4">
             <FormSection
               selectedTemplate={selectedTemplate}
               userFormInput={(v: any) => generateAiContent(v)}
@@ -93,15 +108,21 @@ const OutcomeSection = (props: PROPS) => {
       </aside>
       <div className="flex-1 flex-col lg:flex">
         <section className="flex h-full w-full shrink-0 flex-col lg:max-h-screen lg:overflow-y-auto">
-          <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 justify-between xl:px-4">
-            <a className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" href={`/ct/generate-product-description`}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></a>
-
-            <div className="flex space-x-1">
-              <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg></button>
-              <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg></button>
-            </div>
-          </header>
+          {
+            aioutput ? (
+              <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 justify-between xl:px-4">
+              <a className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" href={`/ct/generate-product-description`}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></a>
+  
+              <div className="flex space-x-1">
+                <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg></button>
+                <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg></button>
+              </div>
+            </header>
+            ) : (
+              null
+            )
+          }
           <div className="flex flex-1 flex-col items-center justify-center space-y-4">
             {loading ? (
               <div className="space-y-2 text-center">

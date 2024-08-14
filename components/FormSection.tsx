@@ -48,7 +48,7 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
 
   return (
     <ScrollArea className="h-full w-full">
-      <fieldset className="grid gap-6 rounded-lg border p-4">
+      <fieldset className="grid gap-6  border p-4 md:mt-4">
         <legend className="-ml-1 px-1 text-sm font-medium text-primary">
           {selectedTemplate?.title}
         </legend>

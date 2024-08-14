@@ -23,7 +23,7 @@ export function SiteHeader() {
           <CommandMenu />
         </div>
       </div>
-      <nav className="flex items-center space-x-4">
+      {/* <nav className="flex items-center space-x-4">
         <Button variant={"link"} size={"sm"} className="text-primary hidden md:flex" >
           <CalendarHeart className="w-3 h-3 mr-2" />
               For Now It is Free 
@@ -64,7 +64,7 @@ export function SiteHeader() {
         >
           <UserNav />
         </div>
-      </nav>
+      </nav> */}
     </div>
   )
 }

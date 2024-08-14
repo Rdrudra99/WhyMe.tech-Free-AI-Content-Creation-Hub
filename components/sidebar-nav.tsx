@@ -18,10 +18,11 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
   return items.length ? (
     <aside className="hidden h-screen w-full max-w-72 border-r xl:block xl:max-w-72">
       <section className="flex min-h-screen w-full shrink-0 flex-col lg:max-h-screen lg:overflow-y-auto max-h-screen overflow-y-auto">
-        <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7 justify-between">
-          <Link className="inline-flex items-center space-x-3 px-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring xl:p-0" href="/"><span>why Me</span></Link>
+        <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-2 justify-between">
+          <Link className="inline-flex uppercase text-3xl font-bold tracking-wider items-center space-x-3 px-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring xl:p-0" href="/">
+          why Me</Link>
           <ModeToggle />
-        </header>
+        </header> 
         {items.map((item, index) => (
           <div key={index} className={cn("pb-4")}>
             <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-primary">
