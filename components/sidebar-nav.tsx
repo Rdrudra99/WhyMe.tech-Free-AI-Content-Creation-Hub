@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { SidebarNavItem } from "@/types"
-import { MobileNav } from "./LayoutComponents/mobile-nav"
+import { MobileNav } from "./mobile-nav"
 import { ModeToggle } from "./ModeToggle"
 import Image from "next/image"
 import { Store } from "lucide-react"

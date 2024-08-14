@@ -11,6 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ChevronLeft, Menu, Store, WheatOff } from "lucide-react"
 import Image from "next/image"
+import { Separator } from "./ui/separator"
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
 
@@ -26,15 +27,11 @@ export function MobileNav() {
         </Button>
       </SheetTrigger>
       <SheetContent side="left">
-        <div className="flex flex-col space-y-3">
-            <Store className="w-6 h-6" />
-              why Me
-        </div>
         <div className="my-4 h-full overflow-y-auto">
           <div className="flex flex-col space-y-2">
             {docsConfig.sidebarNav.map((item:any, index:any) => (
-              <div key={index} className="flex flex-col space-y-3 pt-6">
-                <h4 className="font-medium">{item.title}</h4>
+              <div key={index} className="flex flex-col space-y-3">
+                <h4 className="text-base">{item.title}</h4>
                 {item?.items?.length &&
                   item.items.map((item:any) => (
                     <React.Fragment key={item.href}>
@@ -43,17 +40,19 @@ export function MobileNav() {
                           <MobileLink
                             href={item.href}
                             onOpenChange={setOpen}
-                            className="text-muted-foreground"
+                            className="text-muted-foreground text-sm"
                           >
                             {item.title}
                             {item.label && (
-                              <span className="ml-2 rounded-md bg-black px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+                              <span className="ml-2 rounded-md bg-black px-1.5 py-0.5 text-xs leading-none text-white no-underline group-hover:no-underline">
                                 {item.label}
                               </span>
                             )}
                           </MobileLink>
                         ) : (
-                          item.title
+                         <p className="text-xs">
+                           {item.title}
+                         </p>
                         ))}
                     </React.Fragment>
                   ))}

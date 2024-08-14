@@ -1,6 +1,5 @@
 import { CommandMenu } from '@/components/command-menu'
-import { MobileNav } from '@/components/LayoutComponents/mobile-nav'
-import { SiteHeader } from '@/components/LayoutComponents/site-header'
+import { MobileNav } from '@/components/mobile-nav'
 import { DocsSidebarNav } from '@/components/sidebar-nav'
 import { docsConfig } from '@/config/docs'
 import { cn } from '@/lib/utils'
@@ -15,7 +14,7 @@ const layout = (
             <header className="sticky md:hidden  top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
                 <MobileNav />
                 <CommandMenu />
-                <UserButton />
+                <UserButton /> 
             </header>
             <div className='flex h-full w-full'>
                 <DocsSidebarNav items={docsConfig.sidebarNav} />
