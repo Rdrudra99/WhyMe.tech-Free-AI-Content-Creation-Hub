@@ -79,11 +79,10 @@ const OutcomeSection = (props: PROPS) => {
     <div className="md:flex block">
       <aside className="w-full border-r lg:flex lg:max-w-sm">
         <section className="flex md:min-h-screen w-full shrink-0 flex-col lg:max-h-screen lg:overflow-y-auto">
-          <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
+          <header className="sticky hidden top-0 z-10 md:flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">      
             <h1 className="capitalize">
-              {selectedTemplate?.title} Template
-            </h1>
-          </header>
+                {selectedTemplate?.title}
+              </h1></header>
           {
             !aioutput ? (
               <div className="flex md:hidden flex-1 flex-col px-2 xl:px-4">

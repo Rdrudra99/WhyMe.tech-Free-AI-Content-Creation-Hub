@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils"
 import { SidebarNavItem } from "@/types"
 import { MobileNav } from "./LayoutComponents/mobile-nav"
 import { ModeToggle } from "./ModeToggle"
-
+import Image from "next/image"
+import { Store } from "lucide-react"
 export interface DocsSidebarNavProps {
   items: SidebarNavItem[]
 }
@@ -19,8 +20,12 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
     <aside className="hidden h-screen w-full max-w-72 border-r xl:block xl:max-w-72">
       <section className="flex min-h-screen w-full shrink-0 flex-col lg:max-h-screen lg:overflow-y-auto max-h-screen overflow-y-auto">
         <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-2 justify-between">
-          <Link className="inline-flex uppercase text-3xl font-bold tracking-wider items-center space-x-3 px-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring xl:p-0" href="/">
-          why Me</Link>
+          <h1 className="flex justify-center items-center space-x-2">
+              <Store className="w-6 h-6" />
+             <span className="font-semibold tracking-wider text-xl">
+             Why Me
+             </span>
+          </h1>
           <ModeToggle />
         </header> 
         {items.map((item, index) => (

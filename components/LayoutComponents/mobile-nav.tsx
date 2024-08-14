@@ -9,7 +9,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, WheatOff } from "lucide-react"
+import { ChevronLeft, Menu, Store, WheatOff } from "lucide-react"
+import Image from "next/image"
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
 
@@ -20,36 +21,16 @@ export function MobileNav() {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-           <Menu strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
+           <ChevronLeft />
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="pr-0">
-        <MobileLink
-          href="/"
-          className="flex items-center"
-          onOpenChange={setOpen}
-        >
-          <Menu strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4"/>
-          <span className="font-bold text-primary">
-          whyme
-          </span>
-        </MobileLink>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          {/* <div className="flex flex-col space-y-3">
-            {docsConfig.mainNav?.map(
-              (item:any) =>
-                item.href && (
-                  <MobileLink
-                    key={item.href}
-                    href={item.href}
-                    onOpenChange={setOpen}
-                  >
-                    {item.title}
-                  </MobileLink>
-                )
-            )}
-          </div> */}
+      <SheetContent side="left">
+        <div className="flex flex-col space-y-3">
+            <Store className="w-6 h-6" />
+              why Me
+        </div>
+        <div className="my-4 h-full overflow-y-auto">
           <div className="flex flex-col space-y-2">
             {docsConfig.sidebarNav.map((item:any, index:any) => (
               <div key={index} className="flex flex-col space-y-3 pt-6">
@@ -66,7 +47,7 @@ export function MobileNav() {
                           >
                             {item.title}
                             {item.label && (
-                              <span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+                              <span className="ml-2 rounded-md bg-black px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
                                 {item.label}
                               </span>
                             )}
@@ -79,7 +60,7 @@ export function MobileNav() {
               </div>
             ))}
           </div>
-        </ScrollArea>
+        </div>
       </SheetContent>
     </Sheet>
   )
