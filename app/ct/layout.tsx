@@ -11,7 +11,7 @@ const layout = (
 ) => {
     return (
         <div className={cn("min-h-screen w-full bg-background font-sans text-foreground antialiased")}>
-            <header className="sticky md:hidden  top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
+            <header className="sticky lg:hidden  top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
                 <MobileNav />
                 <CommandMenu />
                 <UserButton /> 

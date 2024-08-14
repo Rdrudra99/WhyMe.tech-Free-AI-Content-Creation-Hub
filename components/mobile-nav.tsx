@@ -12,8 +12,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ChevronLeft, Menu, Store, WheatOff } from "lucide-react"
 import Image from "next/image"
 import { Separator } from "./ui/separator"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
-import { DocsSidebarNavItems } from "./sidebar-nav"
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
 
@@ -33,12 +31,7 @@ export function MobileNav() {
           <div className="flex flex-col space-y-2">
             {docsConfig.sidebarNav.map((item:any, index:any) => (
               <div key={index} className="flex flex-col space-y-3">
-                  <Accordion type="single" collapsible key={index}>
-              <AccordionItem value={item.title}>
-                <AccordionTrigger className="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 py-2 w-full space-x-3 px-2 xl:px-3 justify-between">
-                  <span>{item.title}</span>
-                </AccordionTrigger>
-                <AccordionContent className="space-y-3 px-6 py-4">
+                <h4 className="text-base">{item.title}</h4>
                 {item?.items?.length &&
                   item.items.map((item:any) => (
                     <React.Fragment key={item.href}>
@@ -63,9 +56,6 @@ export function MobileNav() {
                         ))}
                     </React.Fragment>
                   ))}
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
               </div>
             ))}
           </div>
