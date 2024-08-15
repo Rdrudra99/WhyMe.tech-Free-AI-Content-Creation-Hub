@@ -15,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { TEMPLATE } from "@/app/ct/[slug]/page";
+import { TEMPLATE } from "@/app/dashboard/[slug]/page";
 
 interface PROPS {
   selectedTemplate?: TEMPLATE;

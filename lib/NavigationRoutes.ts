@@ -4,6 +4,6 @@ export const routes = [
   {
     label: "DashBoard",
     icon: Code,
-    href: "/ct",
+    href: "/dashboard",
   },
 ];
