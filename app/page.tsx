@@ -1,9 +1,112 @@
+import AnimatedShinyText from '@/components/magicui/animated-shiny-text'
+import { Button } from '@/components/ui/button'
+import MarqueeDemo from '@/components/Vmark'
+import { cn } from '@/lib/utils'
+import { ArrowRightIcon } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <main className='w-full h-full'>
+      {/* nav bar */}
+      <nav className="max-w-7xl  fixed top-4  mx-auto inset-x-0 z-50 w-[95%] lg:w-full" >
+        <div className="lg:block w-full">
+          <div className="w-full flex relative justify-between px-4 py-2 rounded-full bg-white transition duration-200">
+            <div className="flex flex-row gap-2 items-center">
+              <Link className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20" href="/">
+                <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm">
+                </div>
+                <span className="font-medium text-black dark:text-white">Every AI</span>
+              </Link>
+            </div>
+            <div className="flex space-x-2 items-center">
+              <Link className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl" href="/login">Login</Link>
+              <Link className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]" href="/signup">Sign Up</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+      {/* hero section */}
+      <div className='max-w-7xl mx-auto px-4 flex min-h-screen flex-col items-center justify-between pt-10 lg:pt-5'>
+        <div className='flex flex-col min-h-screen pt-20 md:pt-40 relative overflow-hidden'>
+          {/* hero section button */}
+          <div className="flex justify-center" >
+            <div
+              className={cn(
+                "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
+              )}
+            >
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                <span>✨ Introducing Why Me</span>
+                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+              </AnimatedShinyText>
+            </div>
+          </div>
+          <h1 className="text-2xl md:text-4xl lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10">
+            <span>WhyMe Because Every Word Matters</span>
+          </h1>
+          <p className="text-center mt-6 text-base md:text-xl text-dark dark:text-muted-dark max-w-3xl mx-auto relative z-10">
+            <span>Why Me delivers precise, engaging content for e-commerce, blogs, and SEO, making every word count with our AI-powered solutions..</span>
+          </p>
+          {/* get stated and contact button */}
+          <div className="flex items-center gap-4 justify-center mt-6 relative z-10">
+            <Link href={`/sign-up`}>
+              <Button className="bg-neutral-900 relative rounded-full z-10 hover:bg-black/90 border border-transparent text-white text-sm" >
+                Get started
+              </Button>
+            </Link>
+            <Button variant={"outline"} className='rounded-full' >
+              Contact us
+            </Button>
+          </div>
+          {/* hero image section */}
+          <div className="p-4 border border-neutral-200 bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-[32px] mt-20 relative">
+            <div className="absolute inset-x-0 bottom-0 h-40 w-full bg-gradient-to-b from-transparent via-white to-white dark:via-black/50 dark:to-black scale-[1.1] pointer-events-none">
+            </div>
+            <div className="p-2 bg-white dark:bg-black dark:border-neutral-700 border border-neutral-200 rounded-[24px]">
+              <img src={"/hero.png"} alt="header" loading="lazy" width="1920" height="1080" decoding="async" data-nimg="1" className="rounded-[20px]" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <MarqueeDemo />
+      {/* footer section */}
+      <div className="relative">
+        <div className="border-t border-neutral-100  dark:border-neutral-800 px-8 pt-20 pb-32 relative bg-white dark:bg-black">
+          <div className="max-w-7xl mx-auto text-sm text-neutral-500 dark:text-neutral-400 flex sm:flex-row flex-col justify-between items-start "><div>
+            <div className="mr-4  md:flex mb-4">
+              <a className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20" href="/">
+                <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm">
+                </div>
+                <span className="font-medium text-black dark:text-white">Every AI</span>
+              </a>
+            </div>
+            <div>Copyright © 2024 Every Labs</div>
+            <div className="mt-2">All rights reserved</div>
+          </div>
+            <div className="grid grid-cols-3 gap-10 items-start mt-10 md:mt-0">
+              <div className="flex justify-center space-y-4 flex-col mt-4">
+                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/pricing">Pricing</a>
+                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/blog">Blog</a><a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/contact">Contact</a>
+              </div>
+              <div className="flex justify-center space-y-4 flex-col mt-4">
+                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Privacy Policy</a>
+                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Terms of Service</a>
+                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Refund Policy</a>
+              </div>
+              <div className="flex justify-center space-y-4 flex-col mt-4">
+                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="https://twitter.com/mannupaaji">Twitter</a>
+                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="https://linkedin.com/in/manuarora28">LinkedIn</a>
+                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="https://github.com/manuarora700">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="text-center text-5xl md:text-9xl lg:text-[18rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 dark:from-neutral-950 to-neutral-200 dark:to-neutral-800 inset-x-0">WHY ME</p>
+      </div>
+    </main>
   )
 }
-
 export default page
