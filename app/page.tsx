@@ -1,6 +1,5 @@
 import AnimatedShinyText from '@/components/magicui/animated-shiny-text'
 import { Button } from '@/components/ui/button'
-import MarqueeDemo from '@/components/Vmark'
 import { cn } from '@/lib/utils'
 import { ArrowRightIcon } from 'lucide-react'
 import Image from 'next/image'
@@ -66,12 +65,11 @@ const page = () => {
             <div className="absolute inset-x-0 bottom-0 h-40 w-full bg-gradient-to-b from-transparent via-white to-white dark:via-black/50 dark:to-black scale-[1.1] pointer-events-none">
             </div>
             <div className="p-2 bg-white dark:bg-black dark:border-neutral-700 border border-neutral-200 rounded-[24px]">
-              <img src={"/hero.png"} alt="header" loading="lazy" width="1920" height="1080" decoding="async" data-nimg="1" className="rounded-[20px]" />
+              <Image src={"/hero.png"} alt="header" loading="lazy" width="1920" height="1080" decoding="async" data-nimg="1" className="rounded-[20px]" />
             </div>
           </div>
         </div>
       </div>
-      <MarqueeDemo />
       {/* footer section */}
       <div className="relative">
         <div className="border-t border-neutral-100  dark:border-neutral-800 px-8 pt-20 pb-32 relative bg-white dark:bg-black">
