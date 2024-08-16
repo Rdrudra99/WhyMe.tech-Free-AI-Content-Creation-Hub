@@ -10,6 +10,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { auth } from "@clerk/nextjs/server";
+import { ModeToggle } from '@/components/ModeToggle'
 
 const page = () => {
   const { userId } = auth();
@@ -18,7 +19,7 @@ const page = () => {
       {/* nav bar */}
       <nav className="max-w-7xl  fixed top-4  mx-auto inset-x-0 z-50 w-[95%] lg:w-full" >
         <div className="lg:block w-full">
-          <div className="w-full flex relative justify-between px-4 py-2 rounded-full bg-white transition duration-200">
+          <div className="w-full flex relative justify-between px-4 py-2 rounded-full bg-white dark:bg-transparent transition duration-200">
             <div className="flex flex-row gap-2 items-center">
               <Link className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20" href="/">
                 <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm">
@@ -28,12 +29,15 @@ const page = () => {
             </div>
             {
               userId ? (
-                <Link
-                  className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]"
-                  href="/dashboard"
-                >
+                <div className='flex space-x-2'>
+                  <Link
+                    className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]"
+                    href="/dashboard"
+                  >
                     Dashboard
-                </Link>
+                  </Link>
+                  <ModeToggle />
+                </div>
               ) : (
                 <div className="flex space-x-2 items-center">
                   <Link className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl" href="/log-in">Login</Link>
@@ -45,8 +49,8 @@ const page = () => {
         </div>
       </nav>
       {/* hero section */}
-      <div className='max-w-7xl mx-auto px-4 flex min-h-screen flex-col items-center justify-between pt-10 lg:pt-5'>
-        <div className='flex flex-col min-h-screen pt-20 md:pt-40 relative overflow-hidden'>
+      <div className='max-w-7xl mx-auto px-4 flex min-h-fit flex-col items-center justify-between pt-10 lg:pt-5'>
+        <div className='flex flex-col  pt-20 md:pt-40 relative overflow-hidden'>
           {/* hero section button */}
           <div className="flex justify-center" >
             <div
@@ -63,7 +67,7 @@ const page = () => {
           <h1 className="text-2xl md:text-4xl lg:text-8xl font-semibold max-w-6xl mx-auto text-center mt-6 relative z-10">
             <span>WhyMe Because Every Word Matters</span>
           </h1>
-          <p className="text-center mt-6 text-base md:text-xl text-dark dark:text-muted-dark max-w-3xl mx-auto relative z-10">
+          <p className="text-center text-gray-500 mt-6 text-base md:text-xl text-dark dark:text-muted-dark max-w-3xl mx-auto relative z-10">
             <span>Why Me delivers precise, engaging content for e-commerce, blogs, and SEO, making every word count with our AI-powered solutions..</span>
           </p>
           {/* get stated and contact button */}

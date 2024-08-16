@@ -39,38 +39,38 @@ export default [
     ],
   },
 
-  // Quick 1-Click Blog Post
-  {
-    title: "Quick 1-Click Blog Post",
-    desc: "One-click tool for generating detailed, SEO-friendly blog articles in your language, complete with an outline, engaging content, and FAQs.",
-    category: "Content Generation",
-    icon: "blog-post-icon.png",
-    prompt: `Create a detailed and SEO-friendly blog post titled "{blogTitle}" in {language}. Include an outline, engaging content, and FAQs.`,
-    slug: "generate-blog-post",
-    form: [
-      {
-        label: "What is your blog title?",
-        field: "input",
-        name: "blogTitle",
-        required: true,
-      },
-      {
-        label: "Language",
-        field: "select",
-        name: "language",
-        options: ["English", "Hindi", "Odia"],
-        required: true,
-      },
-    ],
-  },
+// Quick 1-Click Blog Post
+{
+  title: "One-Click Blog Post",
+  desc: "Generate detailed, SEO-friendly blog articles with an outline, engaging content, and FAQs.",
+  category: "Content Generation",
+  icon: "blog-post-icon.png",
+  prompt: `Create a detailed, SEO-friendly blog post titled "{blogTitle}" in {language}. Include an outline, engaging content, and FAQs.`,
+  slug: "generate-blog-post",
+  form: [
+    {
+      label: "Blog Title",
+      field: "input",
+      name: "blogTitle",
+      required: true,
+    },
+    {
+      label: "Language",
+      field: "select",
+      name: "language",
+      options: ["English", "Hindi", "Odia"],
+      required: true,
+    },
+  ],
+},
 
-  // Rewrite Article with Keywords
-  {
-    title: "Rewrite Article with Keywords",
-    desc: "A tool designed to rewrite your articles, ensuring they are 100% unique and SEO-optimized.",
-    category: "Content Optimization",
-    icon: "article-rewrite-icon.png",
-    prompt: `Rewrite the following article to ensure it is 100% unique and optimized for SEO. Incorporate the provided focus keywords naturally into the rewritten content. 
+// Rewrite Article with Keywords
+{
+  title: "Keyword Article Rewriter",
+  desc: "Rewrite articles to be unique and SEO-optimized with your focus keywords.",
+  category: "Content Optimization",
+  icon: "article-rewrite-icon.png",
+  prompt: `Rewrite the following article to ensure it's unique and SEO-friendly. Incorporate the provided keywords naturally.
 
 **Existing Article:** 
 {{existingArticle}}
@@ -81,63 +81,64 @@ export default [
 **Second Focus Keyword (Optional):** 
 {{focusKeyword2}}
 `,
-    slug: "rewrite-article-with-keywords",
-    form: [
-      {
-        label: "Enter your Existing Article",
-        field: "textarea",
-        name: "existingArticle",
-        placeholder: "Paste your content here",
-        required: true,
-      },
-      {
-        label: "Enter your Focus Keyword",
-        field: "input",
-        name: "focusKeyword1",
-        placeholder: "Please enter your focus keyword",
-        required: true,
-      },
-      {
-        label: "Enter your second Focus Keyword",
-        field: "input",
-        name: "focusKeyword2",
-        placeholder: "Optional: Enter your second focus keyword",
-        required: false,
-      },
-    ],
-  },
+  slug: "rewrite-article-with-keywords",
+  form: [
+    {
+      label: "Existing Article",
+      field: "textarea",
+      name: "existingArticle",
+      placeholder: "Paste your article here",
+      required: true,
+    },
+    {
+      label: "Focus Keyword",
+      field: "input",
+      name: "focusKeyword1",
+      placeholder: "Enter your main keyword",
+      required: true,
+    },
+    {
+      label: "Second Focus Keyword (Optional)",
+      field: "input",
+      name: "focusKeyword2",
+      placeholder: "Enter an additional keyword (optional)",
+      required: false,
+    },
+  ],
+},
 
-  // Human Written Blog Post
-  {
-    title: "Human Written Blog Post",
-    desc: "Use this tool to generate an entire new blog post which is plagiarism-free and can bypass AI detectors. If you still find AI content detected in any of the outputs, re-generate the outputs or use 'Rewrite Article (Extreme AI Bypass)' tool.",
-    category: "Content Generation",
-    icon: "human-blog-icon.png",
-    prompt: `Create a completely original blog post based on the given title. The content should be unique, engaging, and free of plagiarism. Ensure the blog post is crafted in a way that can bypass AI detectors. 
+// Human Written Blog Post
+{
+  title: "Human-Like Blog Post",
+  desc: "Generate a unique, plagiarism-free blog post that bypasses AI detectors. For AI detection issues, use the 'Rewrite Article (Extreme AI Bypass)' tool.",
+  category: "Content Generation",
+  icon: "human-blog-icon.png",
+  prompt: `Create an entirely original blog post based on the given title. Ensure the content is unique and engaging, designed to bypass AI detectors.
 
 **Blog Title:** 
 {{blogTitle}}
 `,
-    slug: "generate-human-blog-post",
-    form: [
-      {
-        label: "What is your blog title?",
-        field: "textarea",
-        name: "blogTitle",
-        required: true,
-      },
-    ],
-  },
+  slug: "generate-human-blog-post",
+  form: [
+    {
+      label: "Blog Title",
+      field: "textarea",
+      name: "blogTitle",
+      placeholder: "Enter your blog title here",
+      required: true,
+    },
+  ],
+},
 
   //  ECOMMERCE TOOLS 🚀
 
   // Product Description Generator
   {
-    title: "Product Description Generator",
-    desc: "Generates compelling product descriptions based on features, benefits, and target audience.",
+    title: "AI Product Description Writer",
+    desc: "Craft persuasive product descriptions highlighting key features and benefits",
     category: "E-commerce Tools",
     icon: "product-icon.png",
-    prompt: `Generate a compelling product description for the following product. The description should highlight the key features, benefits, and target audience to effectively attract potential buyers. Ensure the description is engaging and tailored to the product's unique selling points.
+    prompt: `Generate a persuasive product description for the following product. The description should emphasize the key features, benefits, and target audience to effectively attract potential buyers. Ensure the description is engaging and tailored to the product's unique selling points.
 
 **Product Name:** 
 {{productName}}
@@ -170,13 +171,14 @@ export default [
       },
     ],
   },
+
   // SEO Product Title Optimizer
   {
-    title: "SEO Product Title Optimizer",
-    desc: "Optimizes product titles for search engines by analyzing keyword relevance and click-through potential.",
+    title: "SEO Product Title Enhancer",
+    desc: "Boosts product titles for better search engine rankings and higher click-through rates.",
     category: "E-commerce Tools",
     icon: "seo-icon.png",
-    prompt: `Optimize the product title for better search engine visibility and click-through rates. The optimized title should effectively incorporate the provided keywords and be designed to attract both search engines and potential customers.
+    prompt: `Optimize the product title for improved search engine visibility and click-through rates. The optimized title should effectively incorporate the provided keywords and be designed to attract both search engines and potential customers.
 
 **Current Product Title:** 
 {{currentTitle}}
@@ -201,10 +203,11 @@ export default [
     ],
   },
 
+
   // 🚀Tagline Generator
   {
-    title: "Tagline Generator",
-    desc: "Struggling to find the perfect tagline for your brand? Let our AI tool assist you in creating a tagline that stands out.",
+    title: "Tagline Maker",
+    desc: "Create a standout tagline for your brand.",
     category: "Marketing",
     icon: "tagline-icon.png",
     prompt: `Generate a memorable and impactful tagline for your product or brand. The tagline should effectively capture the essence of what you're selling or promoting and resonate with your target audience.
@@ -218,14 +221,13 @@ export default [
     slug: "generate-tagline",
     form: [
       {
-        label: "Product/Brand Name",
+        label: "Brand Name",
         field: "input",
         name: "productName",
         required: true,
       },
       {
-        label:
-          "What are you selling or promoting? (Include key features of your product or service)",
+        label: "What are you promoting?",
         field: "textarea",
         name: "productDescription",
         required: true,
@@ -235,8 +237,8 @@ export default [
 
   // Amazon Product Description
   {
-    title: "Amazon Product Description",
-    desc: "This tool helps you quickly create appealing and effective Amazon product descriptions, boosting your product's visibility and appeal to customers.",
+    title: "Amazon Description Writer",
+    desc: "Quickly create appealing Amazon product descriptions.",
     category: "E-commerce",
     icon: "amazon-icon.png",
     prompt: `Create an engaging and effective product description for Amazon that highlights the key features and benefits of your product. Ensure the description is tailored to attract your target audience and improve visibility on the platform.
@@ -256,18 +258,17 @@ export default [
         label: "Product Name",
         field: "input",
         name: "productName",
-        placeholder: "e.g., iPhone 12, Samsung Galaxy Note 20, etc.",
+        placeholder: "e.g., iPhone 12, Samsung Galaxy Note 20",
         required: true,
       },
       {
-        label:
-          "Please describe your product, including its key features, benefits, and any other relevant details.",
+        label: "Describe your product",
         field: "textarea",
         name: "productDescription",
         required: true,
       },
       {
-        label: "Who is your Target Audience? (Optional)",
+        label: "Target Audience (Optional)",
         field: "input",
         name: "targetAudience",
         required: false,
@@ -276,8 +277,8 @@ export default [
   },
   // Product Comparisons
   {
-    title: "Product Comparisons",
-    desc: "This tool simplifies product comparisons by outlining the pros and cons, determining suitability, and helping you find the best value for your money.",
+    title: "Product Compare",
+    desc: "Easily compare products to find the best value.",
     category: "Comparison",
     icon: "comparison-icon.png",
     prompt: `Compare two products by outlining their key features, pros, and cons to determine which offers better value and suitability based on your needs.
@@ -297,103 +298,99 @@ export default [
     slug: "compare-products",
     form: [
       {
-        label: "Enter the name of Product A",
+        label: "Product A Name",
         field: "input",
         name: "productNameA",
         placeholder: "e.g., Samsung Galaxy S22",
         required: true,
       },
       {
-        label: "Details of Product A (Optional)",
+        label: "Product A Details (Optional)",
         field: "textarea",
         name: "productDetailsA",
-        placeholder: "e.g., It is a 5G mobile phone",
+        placeholder: "e.g., 5G mobile phone",
         required: false,
       },
       {
-        label: "Enter the name of Product B",
+        label: "Product B Name",
         field: "input",
         name: "productNameB",
         placeholder: "e.g., Google Pixel",
         required: true,
       },
       {
-        label: "Details of Product B (Optional)",
+        label: "Product B Details (Optional)",
         field: "textarea",
         name: "productDetailsB",
-        placeholder: "",
         required: false,
       },
     ],
   },
 
-  // Thank You Note Generator
-  {
-    title: "Thank You Note Generator",
-    desc: "This tool creates heartfelt thank you notes to express your gratitude with ease.",
-    category: "Communication",
-    icon: "thank-you-icon.png",
-    prompt: `Create a personalized thank you note based on the details provided. This note will express your gratitude for the customer's purchase and make them feel valued.
+// Thank You Note Generator
+{
+  title: "Thank You Note Maker",
+  desc: "Generate heartfelt thank you notes with ease.",
+  category: "Communication",
+  icon: "thank-you-icon.png",
+  prompt: `Create a personalized thank you note based on the details provided. This note will express your gratitude and make the recipient feel valued.
 
 **Purchased Product/Service:**
 {{purchasedProduct}}
 `,
-    slug: "generate-thank-you-note",
-    form: [
-      {
-        label: "What product they purchased from you?",
-        field: "input",
-        name: "purchasedProduct",
-        placeholder: "e.g., Enter your product or service details",
-        required: true,
-      },
-    ],
-  },
+  slug: "generate-thank-you-note",
+  form: [
+    {
+      label: "Purchased Product/Service",
+      field: "input",
+      name: "purchasedProduct",
+      placeholder: "e.g., Product or service details",
+      required: true,
+    },
+  ],
+},
 
-  // Refund/Return/Exchange Response Email
-  {
-    title: "Refund/Return/Exchange Response Email",
-    desc: "This tool helps you to generate a professional return/exchange response email. A useful tool for efficiently managing your return and exchange emails.",
-    category: "Customer Service",
-    icon: "email-icon.png",
-    prompt: `Generate a professional response email for handling customer return or exchange requests. This email should address the customer's message, provide relevant information about the product or service, and include your response or resolution.
+// Refund/Return/Exchange Response Email
+{
+  title: "Return/Exchange Email Generator",
+  desc: "Create professional responses for return or exchange requests.",
+  category: "Customer Service",
+  icon: "email-icon.png",
+  prompt: `Generate a professional response email for handling return or exchange requests. Address the customer's message, provide relevant product information, and include your resolution.
 
 **Product/Service Description:**
 {{productDescription}}
 
-**Customer's Message (if provided):**
+**Customer's Message (Optional):**
 {{customerMessage}}
 
 **Your Response:**
 {{responseMessage}}
 `,
-    slug: "generate-return-response-email",
-    form: [
-      {
-        label: "What is your product/service?",
-        field: "textarea",
-        name: "productDescription",
-        placeholder:
-          "Please describe its main features, benefits, and what makes it unique.",
-        required: true,
-      },
-      {
-        label:
-          "What message did you receive from the customer regarding the return or exchange of the product? (Optional)",
-        field: "textarea",
-        name: "customerMessage",
-        placeholder: "e.g., I ordered the wrong product.",
-        required: false,
-      },
-      {
-        label:
-          "What is your response/answer to customer messages regarding returns or exchanges?",
-        field: "textarea",
-        name: "responseMessage",
-        required: true,
-      },
-    ],
-  },
+  slug: "generate-return-response-email",
+  form: [
+    {
+      label: "Product/Service Description",
+      field: "textarea",
+      name: "productDescription",
+      placeholder: "Describe its features and what makes it unique.",
+      required: true,
+    },
+    {
+      label: "Customer's Message (Optional)",
+      field: "textarea",
+      name: "customerMessage",
+      placeholder: "e.g., I ordered the wrong product.",
+      required: false,
+    },
+    {
+      label: "Your Response",
+      field: "textarea",
+      name: "responseMessage",
+      required: true,
+    },
+  ],
+},
 
   // S E O  T O O L S 🚀
 
@@ -615,13 +612,13 @@ export default [
     ],
   },
 
-  // Relieving Letter Generator
-  {
-    title: "Relieving Letter Generator",
-    desc: "This tool helps you to create a formal way of communicating to the employee that the resignation has been accepted.",
-    category: "HR",
-    icon: "relieving-letter-icon.png",
-    prompt: `Compose a formal relieving letter to communicate the acceptance of an employee's resignation.
+// Relieving Letter Generator
+{
+  title: "Relieving Letter Maker",
+  desc: "Generate a formal relieving letter to confirm an employee's resignation and last working day.",
+  category: "HR",
+  icon: "relieving-letter-icon.png",
+  prompt: `Compose a formal relieving letter to acknowledge the acceptance of an employee's resignation.
 
 **Job Title:**
 {{jobTitle}}
@@ -629,89 +626,79 @@ export default [
 **Last Working Date:**
 {{lastWorkingDate}}
 
-**Additional Details:**
+**Additional Details (Optional):**
 {{additionalDetails}}
-
-**Instructions:**
-- Use the provided details to draft a formal letter that confirms the employee's resignation and their last working day.
-- Include any specific details or sections as mentioned in the additional details.
-- Ensure the tone is professional and acknowledges the employee's contributions.
 `,
-    slug: "generate-relieving-letter",
-    form: [
-      {
-        label: "What is the Job Title?",
-        field: "input",
-        name: "jobTitle",
-        placeholder: "e.g., Researcher, Developer",
-        required: true,
-      },
-      {
-        label: "What is the employee's relieving/last working date?",
-        field: "input",
-        name: "lastWorkingDate",
-        placeholder: "e.g., 10-12-2021",
-        required: true,
-      },
-      {
-        label:
-          "Are there any specific sections or details you want to include in the letter? (Optional)",
-        field: "textarea",
-        name: "additionalDetails",
-        required: false,
-      },
-    ],
-  },
+  slug: "generate-relieving-letter",
+  form: [
+    {
+      label: "Job Title",
+      field: "input",
+      name: "jobTitle",
+      placeholder: "e.g., Developer",
+      required: true,
+    },
+    {
+      label: "Last Working Date",
+      field: "input",
+      name: "lastWorkingDate",
+      placeholder: "e.g., 10-12-2021",
+      required: true,
+    },
+    {
+      label: "Additional Details (Optional)",
+      field: "textarea",
+      name: "additionalDetails",
+      placeholder: "e.g., Any specific sections to include",
+      required: false,
+    },
+  ],
+},
+
 
   // EDUCATION TOOLS  🚀
 
-  // Concept Simplifier
-  {
-    title: "Concept Simplifier",
-    desc: "This tool simplifies complex topics to make them easy to understand for everyone, from kids to experts, by explaining things in a way that's just right for them.",
-    category: "Education",
-    icon: "concept-simplifier-icon.png",
-    prompt: `Explain the concept or topic in a way that matches the selected difficulty level.
+// Concept Simplifier
+{
+  title: "Concept Simplifier",
+  desc: "Simplify complex topics to make them easy to understand at any level.",
+  category: "Education",
+  icon: "concept-simplifier-icon.png",
+  prompt: `Explain the concept or topic based on the selected difficulty level.
 
 **Concept/Topic:**
 {{concept}}
 
 **Difficulty Level:**
 {{difficultyLevel}}
-
-**Instructions:**
-- Provide an explanation of the concept or topic that aligns with the chosen difficulty level.
-- For "Beginner," use simple language and basic examples.
-- For "Intermediate," include more details and some technical terms.
-- For "Advanced," offer a deeper dive into the subject with complex explanations.
-- For "Expert," present a thorough and detailed explanation that assumes familiarity with the topic.
 `,
-    slug: "generate-concept-simplifier",
-    form: [
-      {
-        label: "What concept or topic would you like explained?",
-        field: "input",
-        name: "concept",
-        placeholder: "e.g., Quantum Physics, Machine Learning, etc.",
-        required: true,
-      },
-      {
-        label: "How would you like this concept explained?",
-        field: "select",
-        name: "difficultyLevel",
-        options: ["Beginner", "Intermediate", "Advanced", "Expert"],
-        required: true,
-      },
-    ],
-  },
+  slug: "generate-concept-simplifier",
+  form: [
+    {
+      label: "Concept/Topic",
+      field: "input",
+      name: "concept",
+      placeholder: "e.g., Quantum Physics",
+      required: true,
+    },
+    {
+      label: "Difficulty Level",
+      field: "select",
+      name: "difficultyLevel",
+      options: ["Beginner", "Intermediate", "Advanced", "Expert"],
+      required: true,
+    },
+  ],
+},
 
-  // Reading Passage Generator
-  {
-    title: "Reading Passage Generator",
-    desc: "This powerful tool helps you to create engaging and informative reading passages effortlessly.",
-    category: "Education",
-    icon: "reading-passage-icon.png",
-    prompt: `Create a reading passage based on the provided details.
+
+// Reading Passage Generator
+{
+  title: "Reading Passage Creator",
+  desc: "Effortlessly create engaging and informative reading passages for any grade level.",
+  category: "Education",
+  icon: "reading-passage-icon.png",
+  prompt: `Generate a reading passage based on the given details.
 
 **Grade Level:**
 {{gradeLevel}}
@@ -719,71 +706,71 @@ export default [
 **Topic:**
 {{topic}}
 
-**Preferences/Requirements:**
+**Preferences/Requirements (Optional):**
 {{preferences}}
-
-**Instructions:**
-- Develop a reading passage suitable for the specified grade level.
-- Focus on the given topic to create an engaging and informative passage.
-- Incorporate any specific preferences or requirements, such as length or style, if provided.
-- Ensure the passage is educational and aligns with the grade level's reading comprehension abilities.
 `,
-    slug: "generate-reading-passage",
-    form: [
-      {
-        label: "What grade level are you looking for?",
-        field: "input",
-        name: "gradeLevel",
-        placeholder: "e.g., 5th grade, high school",
-        required: true,
-      },
-      {
-        label: "What topic would you like to teach?",
-        field: "input",
-        name: "topic",
-        placeholder: "e.g., The moon landing",
-        required: true,
-      },
-      {
-        label:
-          "Do you have any preferences or requirements for the passage? (Optional)",
-        field: "textarea",
-        name: "preferences",
-        placeholder: "e.g., passage length",
-        required: false,
-      },
-    ],
-  },
+  slug: "generate-reading-passage",
+  form: [
+    {
+      label: "Grade Level",
+      field: "input",
+      name: "gradeLevel",
+      placeholder: "e.g., 5th grade",
+      required: true,
+    },
+    {
+      label: "Topic",
+      field: "input",
+      name: "topic",
+      placeholder: "e.g., The moon landing",
+      required: true,
+    },
+    {
+      label: "Preferences/Requirements (Optional)",
+      field: "textarea",
+      name: "preferences",
+      placeholder: "e.g., Passage length",
+      required: false,
+    },
+  ],
+},
+
 
   // SUPPORT TOOLS  🚀
 
-  // FAQ Generator
-  {
-    title: "FAQ Generator",
-    desc: "This tool efficiently guides you in creating tailored FAQs, ensuring your questions and answers are directly relevant and clearly structured for any specific topic and context.",
-    category: "Customer Support",
-    icon: "faq-icon.png",
-    prompt: ``,
-    slug: "generate-faqs",
-    form: [
-      {
-        label: "What is the main topic or subject for the FAQs?",
-        field: "input",
-        name: "topic",
-        placeholder:
-          "e.g., Online Payment Methods, Using a Mobile Banking App, etc...",
-        required: true,
-      },
-      {
-        label: "Where will these FAQs be used?",
-        field: "input",
-        name: "usage",
-        placeholder:
-          "e.g., E-commerce website, Banking App help section, etc...",
-        required: true,
-      },
-    ],
-  },
+// FAQ Generator
+{
+  title: "FAQ Creator",
+  desc: "Easily create tailored FAQs for any topic with clear and relevant questions and answers.",
+  category: "Customer Support",
+  icon: "faq-icon.png",
+  prompt: `Generate FAQs based on the provided details.
+
+**Topic:**
+{{topic}}
+
+**Usage:**
+{{usage}}
+`,
+  slug: "generate-faqs",
+  form: [
+    {
+      label: "Main Topic",
+      field: "input",
+      name: "topic",
+      placeholder: "e.g., Online Payment Methods",
+      required: true,
+    },
+    {
+      label: "Usage Context",
+      field: "input",
+      name: "usage",
+      placeholder: "e.g., E-commerce website help section",
+      required: true,
+    },
+  ],
+},
+
 
   // CODE GENERATOR TOOLS 🚀
 
@@ -822,49 +809,45 @@ export default [
       },
     ],
   },
-  // Text Rewriter Tool
-  {
-    title: "Text Rewriter Tool",
-    desc: "An AI tool that rewrites text to improve clarity and coherence.",
-    category: "Text Rewriting",
-    icon: "text-rewriter-icon.png",
-    prompt: `Rewrite the provided text to enhance clarity and coherence.
+// Text Rewriter Tool
+{
+  title: "Text Rewriter Tool",
+  desc: "AI tool to rewrite text for improved clarity and coherence.",
+  category: "Text Rewriting",
+  icon: "text-rewriter-icon.png",
+  prompt: `Rewrite the provided text to enhance clarity and coherence.
 
 **Text to Rewrite:**
 {{textToRewrite}}
 
 **Desired Tone:**
 {{tone}}
-
-**Instructions:**
-- Ensure the rewritten text maintains the original meaning and intent.
-- Adjust the tone according to the specified option (Professional, Friendly, Casual, etc.).
-- Focus on improving the readability and flow of the text.
-- Make sure the revised version is clear, coherent, and suitable for the intended audience.
 `,
-    slug: "text-rewriter",
-    form: [
-      {
-        label: "Text to Rewrite",
-        field: "textarea",
-        name: "textToRewrite",
-        required: true,
-      },
-      {
-        label: "Tone",
-        field: "select",
-        name: "tone",
-        options: [
-          "Professional",
-          "Friendly",
-          "Casual",
-          "Formal",
-          "Humorous",
-          "Academic",
-          "Technical",
-        ],
-        required: true,
-      },
-    ],
-  },
+  slug: "text-rewriter",
+  form: [
+    {
+      label: "Text to Rewrite",
+      field: "textarea",
+      name: "textToRewrite",
+      placeholder: "Paste your text here...",
+      required: true,
+    },
+    {
+      label: "Tone",
+      field: "select",
+      name: "tone",
+      options: [
+        "Professional",
+        "Friendly",
+        "Casual",
+        "Formal",
+        "Humorous",
+        "Academic",
+        "Technical",
+      ],
+      required: true,
+    },
+  ],
+}
+
 ];

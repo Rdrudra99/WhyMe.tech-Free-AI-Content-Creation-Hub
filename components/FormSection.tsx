@@ -63,7 +63,7 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
                 {items.field === "input" && (
                   <Input
                     name={items.name}
-                    placeholder={items.label}
+                    placeholder={items.placeholder || ""}
                     required={items?.required}
                     onChange={handleInputChange}
                   />
@@ -71,7 +71,7 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
                 {items.field === "textarea" && (
                   <Textarea
                     name={items.name}
-                    placeholder={items.label}
+                    placeholder={items.placeholder || ""}
                     required={items?.required}
                     onChange={handleInputChange}
                   />

@@ -91,9 +91,10 @@ const OutcomeSection = (props: PROPS) => {
       <aside className="w-full border-r lg:flex lg:max-w-sm">
         <section className="flex md:min-h-screen w-full shrink-0 flex-col lg:max-h-screen lg:overflow-y-auto">
           <header className="sticky hidden top-0 z-10 md:flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
-            <h1 className="capitalize">
+            {/* <h1 className="capitalize">
               {selectedTemplate?.title}
-            </h1></header>
+            </h1> */}
+            </header>
           {
             !aioutput ? (
               <div className="flex md:hidden flex-1 flex-col px-2 xl:px-4 md:mt-0 mt-4">
@@ -174,7 +175,9 @@ const OutcomeSection = (props: PROPS) => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
                   <h1 className="text-xl">Why Me</h1>
                 </div>
-                <p className="text-sm">Sharing things about Next.js</p>
+                <p className="text-sm">
+                  Start typing to generate AI-powered content tailored to your needs.
+                </p>
               </div>
             )}
           </div>
