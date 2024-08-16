@@ -7,7 +7,8 @@ import { MemoizedReactMarkdown } from "@/components/markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import { cn } from "@/lib/utils";
-import { Lobster, Montserrat , Poppins} from "next/font/google";
+import { Lobster, Montserrat, Poppins } from "next/font/google";
+import Link from "next/link";
 
 export interface TEMPLATE {
   title: string;
@@ -42,6 +43,7 @@ const OutcomeSection = (props: PROPS) => {
   const [aioutput, setAioutput] = useState<string>("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [copySuccess, setCopySuccess] = useState<boolean | null>(null);
   const selectedTemplate: TEMPLATE | undefined = Template?.find(
     (item) => item.slug == props.params.slug
   );
@@ -72,6 +74,17 @@ const OutcomeSection = (props: PROPS) => {
       setLoading(false);
     }
   };
+
+  const copyAiOutput = async () => {
+    try {
+      await navigator.clipboard.writeText(aioutput);
+      setCopySuccess(true);
+    } catch (err) {
+      setCopySuccess(false);
+    }
+  };
+
+
 
   return (
     <div className="md:flex block overflow-hidden">
@@ -108,12 +121,16 @@ const OutcomeSection = (props: PROPS) => {
           {
             aioutput ? (
               <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 justify-between xl:px-4">
-                <a className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" href={`/dashboard`}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></a>
-
+                <Link className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" href={`/dashboard`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+                </Link>
                 <div className="flex space-x-1">
                   <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg></button>
-                  <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg></button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg>
+                  </button>
+                  <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" onClick={copyAiOutput}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+                  </button>
                 </div>
               </header>
             ) : (
@@ -133,35 +150,35 @@ const OutcomeSection = (props: PROPS) => {
               </div>
             ) : aioutput ? (
               <div className={cn(`flex flex-1 flex-col px-2 xl:px-4 ${poppins.className}`)}>
-            <div className="px-2 py-4 xl:px-3 xl:py-7">
-              <div className="flex-1 flex-col lg:flex">
-                <div className="flex flex-1 flex-col items-center justify-center space-y-4">
-                  <MemoizedReactMarkdown
-                    className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
-                    remarkPlugins={[remarkGfm, remarkMath]}
-                    components={{
-                      p({ children }) {
-                        return <p className="mb-2 last:mb-0">{children}</p>
-                      },
-                    }}
-                  >
-                    {aioutput}
-                  </MemoizedReactMarkdown>
+                <div className="px-2 py-4 xl:px-3 xl:py-7">
+                  <div className="flex-1 flex-col lg:flex">
+                    <div className="flex flex-1 flex-col items-center justify-center space-y-4">
+                      <MemoizedReactMarkdown
+                        className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+                        remarkPlugins={[remarkGfm, remarkMath]}
+                        components={{
+                          p({ children }) {
+                            return <p className="mb-2 last:mb-0">{children}</p>
+                          },
+                        }}
+                      >
+                        {aioutput}
+                      </MemoizedReactMarkdown>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          ) : (
-          <div className="space-y-2 text-center hidden md:block">
-            <div className="flex items-center justify-center space-x-1.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
-              <h1 className="text-xl">Why Me</h1>
-            </div>
-            <p className="text-sm">Sharing things about Next.js</p>
-          </div>
+            ) : (
+              <div className="space-y-2 text-center hidden md:block">
+                <div className="flex items-center justify-center space-x-1.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+                  <h1 className="text-xl">Why Me</h1>
+                </div>
+                <p className="text-sm">Sharing things about Next.js</p>
+              </div>
             )}
-      </div>
-    </section>
+          </div>
+        </section>
       </div >
     </div >
   );
