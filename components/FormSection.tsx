@@ -15,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { TEMPLATE } from "@/app/dashboard/[slug]/page";
+import { TEMPLATE } from "@/app/(dashboard)/dashboard/[slug]/page";
 
 interface PROPS {
   selectedTemplate?: TEMPLATE;
@@ -56,7 +56,7 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
           {selectedTemplate?.desc}
         </p>
         <form className="grid w-full gap-6" onSubmit={handleSubmit}>
-          {selectedTemplate?.form?.map((items:any, index:number) => {
+          {selectedTemplate?.form?.map((items: any, index: number) => {
             return (
               <div className="grid gap-3" key={index}>
                 <Label htmlFor={items.name}>{items.label}</Label>
@@ -88,7 +88,7 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
                     <SelectContent>
                       <SelectGroup>
                         <SelectLabel>{items.label}</SelectLabel>
-                        {items.options?.map((option:any, index:number) => (
+                        {items.options?.map((option: any, index: number) => (
                           <SelectItem key={index} value={option}>
                             {option}
                           </SelectItem>
@@ -104,15 +104,15 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
           <Button type="submit" size="sm" className="ml-auto w-full">
             {loading ? (
               <p className="flex justify-center items-center space-x-2">
-                <span>
-                  <Star strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4 animate-spin" />
+                <span className="animate-spin">
+                  ✨
                 </span>
                 <span>Thinking...</span>
               </p>
             ) : (
               <p className="flex justify-center items-center space-x-2">
                 <span>
-                <Star strokeWidth={3} absoluteStrokeWidth className="mr-2 h-4 w-4" />
+                  ✨
                 </span>
                 <span>Generate</span>
               </p>

@@ -1,44 +1,46 @@
 import { cn } from "@/lib/utils";
 import Marquee from "@/components/magicui/marquee";
+import React from "react";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    name: "Rahul",
+    username: "@rahul",
+    body: "Whyme.tech makes creating e-commerce content effortless. It's a game changer for my business!",
+    img: "https://avatar.vercel.sh/rahul",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "Priya",
+    username: "@priya",
+    body: "Writing SEO-friendly blogs has never been this easy. Whyme.tech is a must-have tool!",
+    img: "https://avatar.vercel.sh/priya",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    name: "Amit",
+    username: "@amit",
+    body: "Whyme.tech has transformed how I generate content for my website. The results are fantastic!",
+    img: "https://avatar.vercel.sh/amit",
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
+    name: "Sneha",
+    username: "@sneha",
+    body: "Creating engaging content for my blog is now a breeze thanks to Whyme.tech.",
+    img: "https://avatar.vercel.sh/sneha",
   },
   {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    name: "Rohan",
+    username: "@rohan",
+    body: "Whyme.tech has revolutionized my SEO strategy. Content creation has never been smoother!",
+    img: "https://avatar.vercel.sh/rohan",
   },
   {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    name: "Meera",
+    username: "@meera",
+    body: "Whyme.tech helps me generate perfect text for all my e-commerce needs. I'm impressed!",
+    img: "https://avatar.vercel.sh/meera",
   },
 ];
+
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -80,19 +82,29 @@ const ReviewCard = ({
 
 export function MarqueeDemo() {
   return (
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
-    </div>
+    <React.Fragment>
+      <div className="container overflow-hidden mx-auto">
+        <h2 className="w-full mx-auto text-center tracking-tight font-medium text-black dark:text-white text-3xl md:text-5xl md:leading-tight overflow-hidden">
+        Why Users Love Whyme.tech
+        </h2>
+        <h2 className="text-sm md:text-base my-4 text-gray-500 font-normal dark:text-muted-dark text-center max-w-lg mx-auto">
+        Whyme.tech delivers powerful content for e-commerce, blogs, and SEO, loved by users globally for its simplicity and impact.
+        </h2>
+      </div>
+      <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden  bg-background">
+        <Marquee pauseOnHover className="[--duration:20s]">
+          {firstRow.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <Marquee reverse pauseOnHover className="[--duration:20s]">
+          {secondRow.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+      </div>
+    </React.Fragment>
   );
 }

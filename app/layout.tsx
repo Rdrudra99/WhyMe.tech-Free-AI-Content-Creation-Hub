@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -9,10 +8,21 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ClerkProvider} from '@clerk/nextjs'
 import { DocsSidebarNav } from "@/components/sidebar-nav";
 import { docsConfig } from "@/config/docs";
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+import { Lobster, Roboto , Lato , Oswald , Raleway , Montserrat, Poppins } from 'next/font/google'
+ 
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
+const montserrat = Montserrat({
+  weight: '400',
+  subsets: ['latin'],
+})
+ 
+const poppins = Poppins({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "whyme • Rdrudra99",
@@ -67,8 +77,8 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "relative flex min-h-screen w-full bg-background font-sans text-foreground antialiased",
-            fontSans.variable
+            "relative flex min-h-screen w-full bg-background  text-foreground antialiased",
+            poppins.className
           )}
         >
           <ThemeProvider

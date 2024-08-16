@@ -5,12 +5,18 @@ import { docsConfig } from '@/config/docs'
 import { cn } from '@/lib/utils'
 import { UserButton } from '@clerk/nextjs'
 import React from 'react'
+import {Montserrat} from 'next/font/google'
+ 
+const montserrat = Montserrat({
+    weight: '400',
+    subsets: ['latin'],
+  })
 
 const layout = (
     { children }: Readonly<{ children: React.ReactNode; }>,
 ) => {
     return (
-        <div className={cn("min-h-screen w-full bg-background font-sans text-foreground antialiased")}>
+        <div className={`min-h-screen w-full bg-background  text-foreground antialiased  font-Montserrat`}>
             <header className="sticky lg:hidden  top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
                 <MobileNav />
                 <CommandMenu />

@@ -1,12 +1,18 @@
+import HeroFormCenterAlignedWithAForm from '@/components/ContactSection'
+import FeatureSection from '@/components/FeatureSection'
 import AnimatedShinyText from '@/components/magicui/animated-shiny-text'
+import PricingSectionCards from '@/components/PricingSection'
 import { Button } from '@/components/ui/button'
+import { MarqueeDemo } from '@/components/Vmark'
 import { cn } from '@/lib/utils'
 import { ArrowRightIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { auth } from "@clerk/nextjs/server";
 
 const page = () => {
+  const { userId } = auth();
   return (
     <main className='w-full h-full'>
       {/* nav bar */}
@@ -20,10 +26,21 @@ const page = () => {
                 <span className="font-medium text-black dark:text-white">Why Me</span>
               </Link>
             </div>
-            <div className="flex space-x-2 items-center">
-              <Link className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl" href="/login">Login</Link>
-              <Link className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]" href="/signup">Sign Up</Link>
-            </div>
+            {
+              userId ? (
+                <Link
+                  className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]"
+                  href="/dashboard"
+                >
+                    Dashboard
+                </Link>
+              ) : (
+                <div className="flex space-x-2 items-center">
+                  <Link className="relative z-10 bg-transparent hover:bg-gray-100 border border-transparent text-black text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center dark:text-white dark:hover:bg-neutral-800 dark:hover:shadow-xl" href="/log-in">Login</Link>
+                  <Link className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]" href="/sign-up">Sign Up</Link>
+                </div>
+              )
+            }
           </div>
         </div>
       </nav>
@@ -70,34 +87,46 @@ const page = () => {
           </div>
         </div>
       </div>
+      {/* <div className='container mx-auto overflow-hidden'>
+        <MarqueeDemo />
+      </div> */}
+      <div className='max-w-7xl mx-auto overflow-hidden '>
+        <PricingSectionCards />
+      </div>
+      <div className='max-w-7xl mx-auto overflow-hidden '>
+        <HeroFormCenterAlignedWithAForm />
+      </div>
+      <div className='max-w-7xl mx-auto overflow-hidden '>
+        <FeatureSection />
+      </div>
       {/* footer section */}
       <div className="relative">
         <div className="border-t border-neutral-100  dark:border-neutral-800 px-8 pt-20 pb-32 relative bg-white dark:bg-black">
           <div className="max-w-7xl mx-auto text-sm text-neutral-500 dark:text-neutral-400 flex sm:flex-row flex-col justify-between items-start "><div>
             <div className="mr-4  md:flex mb-4">
-              <a className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20" href="/">
+              <Link className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20" href="/">
                 <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm">
                 </div>
-                <span className="font-medium text-black dark:text-white">Every AI</span>
-              </a>
+                <span className="font-medium text-black dark:text-white">Why Me</span>
+              </Link>
             </div>
-            <div>Copyright © 2024 Every Labs</div>
+            <div>Copyright © 2024 Why Me</div>
             <div className="mt-2">All rights reserved</div>
           </div>
             <div className="grid grid-cols-3 gap-10 items-start mt-10 md:mt-0">
               <div className="flex justify-center space-y-4 flex-col mt-4">
-                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/pricing">Pricing</a>
-                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/blog">Blog</a><a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/contact">Contact</a>
+                <Link className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/">Pricing</Link>
+                <Link className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/">Blog</Link><a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="/contact">Contact</a>
               </div>
               <div className="flex justify-center space-y-4 flex-col mt-4">
-                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Privacy Policy</a>
-                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Terms of Service</a>
-                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Refund Policy</a>
+                <Link className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Privacy Policy</Link>
+                <Link className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Terms of Service</Link>
+                <Link className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Refund Policy</Link>
               </div>
               <div className="flex justify-center space-y-4 flex-col mt-4">
-                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="https://twitter.com/mannupaaji">Twitter</a>
-                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="https://linkedin.com/in/manuarora28">LinkedIn</a>
-                <a className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="https://github.com/manuarora700">GitHub</a>
+                <Link className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="#">Twitter</Link>
+                <Link className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="https://linkedin.com/in/rdrudra99">LinkedIn</Link>
+                <Link className="transition-colors hover:text-black text-dark dark:text-muted-dark dark:hover:text-neutral-400 text-xs sm:text-sm" href="https://github.com/Rdrudra99">GitHub</Link>
               </div>
             </div>
           </div>
