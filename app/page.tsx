@@ -19,7 +19,7 @@ const page = () => {
       {/* nav bar */}
       <nav className="max-w-7xl  fixed top-4  mx-auto inset-x-0 z-50 w-[95%] lg:w-full" >
         <div className="lg:block w-full">
-          <div className="w-full flex relative justify-between md:px-4 py-2 rounded-full bg-white dark:bg-transparent transition duration-200">
+          <div className="w-full flex relative justify-between md:px-4 py-2 rounded-full bg-white dark:bg-background transition duration-200">
             <div className="flex flex-row gap-2 items-center">
               <Link className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20" href="/">
                 <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm">
