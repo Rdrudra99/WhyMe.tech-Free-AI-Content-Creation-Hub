@@ -49,7 +49,7 @@ export default async function History() {
                                 {history.output}
                             </TableCell>
                             <TableCell className="text-right">
-                                    copy
+                                    <Copy text={history.output} />
                             </TableCell>
                         </TableRow>
                     ))}
