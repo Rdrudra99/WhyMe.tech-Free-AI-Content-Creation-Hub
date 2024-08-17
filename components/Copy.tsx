@@ -11,7 +11,7 @@ const Copy = ({output}:any) => {
           })
     }
   return (
-    <Button variant="outline" size="icon" onClick={handleCopy}>
+    <Button variant="outline" size="icon" onClick={handleCopy} className='cursor-pointer'>
       <CopyIcon className="h-4 w-4" />
     </Button>
   )
