@@ -12,7 +12,8 @@ export async function POST(req: Request) {
 
         const { slug, formData, output } = await req.json();
         const serializedFormData = JSON.stringify(formData);
-        const createNewData = await db.aicontent.create({
+        // @ts-ignore
+        const createNewData = await db.aiContent.create({
             data: {
                 slug: slug,
                 formData: serializedFormData, // This is now valid since formData is of type Json

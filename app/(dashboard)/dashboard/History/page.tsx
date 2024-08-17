@@ -38,7 +38,7 @@ export default async function History() {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {userHistory.map((history , index) => (
+                    {userHistory.map((history:any , index:number) => (
                         <TableRow key={history.id}>
                             <TableCell className="font-medium">
                                 {index + 1}
