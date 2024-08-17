@@ -779,19 +779,7 @@ export default [
     desc: "An AI tool that generates code snippets based on your input specifications.",
     category: "Development",
     icon: "code-icon.png",
-    prompt: `Create a set of frequently asked questions (FAQs) based on the provided details.
-
-**Main Topic or Subject:**
-{{topic}}
-
-**Usage Context:**
-{{usage}}
-
-**Instructions:**
-- Develop clear and relevant FAQs that directly address common questions related to the specified topic.
-- Ensure the questions and answers are well-structured and easy to understand.
-- Tailor the content to the context where the FAQs will be used, such as an e-commerce website or a banking app.
-- Consider including additional helpful details or explanations if relevant to the topic and usage.
+    prompt: `Give Me The Code For the following functionality in {{language}} programming language.
 `,
     slug: "generate-code",
     form: [
