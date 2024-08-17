@@ -10,7 +10,7 @@ export default async function History() {
       return NextResponse.redirect("/login");
     }
     
-    const userHistory = await db.aicontent.findMany({
+    const userHistory = await db.aiContent.findMany({
       where: {
         userId: userId as string,
       },
