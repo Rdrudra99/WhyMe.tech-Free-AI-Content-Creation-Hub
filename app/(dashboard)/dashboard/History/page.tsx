@@ -10,7 +10,7 @@
 //       return NextResponse.redirect("/login");
 //     }
 //     // @ts-ignore
-//     const userHistory = await db.aiContent.findMany({
+//     const userHistory = await db.aicontent.findMany({
 //       where: {
 //         userId: userId as string,
 //       },
