@@ -1,6 +1,6 @@
 import Copy from "@/components/Copy";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell, TableCaption } from "@/components/ui/table"
-import db from "@/lib/db";
+import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server"
 import { NextResponse } from "next/server";
 export default async function History() {
