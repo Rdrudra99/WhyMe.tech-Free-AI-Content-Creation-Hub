@@ -86,6 +86,7 @@ export default function RootLayout({
             defaultTheme="light"
             disableTransitionOnChange
           >
+              <Toaster />
             {/* <NextTopLoader color="#2299DD" showSpinner={false} speed={400} /> */}
             <main className="flex-1">{children}</main>
             <Analytics />

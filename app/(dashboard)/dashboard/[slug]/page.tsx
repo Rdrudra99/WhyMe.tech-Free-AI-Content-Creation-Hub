@@ -60,11 +60,17 @@ const OutcomeSection = (props: PROPS) => {
           "Content-Type": "application/json",
         },
       });
-
       if (response.ok) {
         const data = await response.json();
         console.log(data.content);
         setAioutput(data.content);
+        const result = await fetch("/api/pushData", {
+          method: "POST",
+          body: JSON.stringify({ slug: selectedTemplate?.slug, formData: formData, output: data.content }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
       } else {
         console.log("Error");
       }
