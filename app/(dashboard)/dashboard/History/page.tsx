@@ -17,7 +17,7 @@ export default async function History() {
     });
     
     return (
-      <div className="min-h-screen overflow-y-auto container mx-auto">
+      <div className="min-h-screen overflow-y-auto container mx-auto ">
                <div className="min-h-screen overflow-y-auto container mx-auto">
             <Table>
                 <TableCaption>A list of your recent invoices.</TableCaption>
