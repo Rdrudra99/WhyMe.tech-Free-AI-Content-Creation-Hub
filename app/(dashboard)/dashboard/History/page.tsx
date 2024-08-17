@@ -9,7 +9,7 @@ export default async function History() {
     if (!userId) {
       return NextResponse.redirect("/login");
     }
-    
+    // @ts-ignore
     const userHistory = await db.aiContent.findMany({
       where: {
         userId: userId as string,
