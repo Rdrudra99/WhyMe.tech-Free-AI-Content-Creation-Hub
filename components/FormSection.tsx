@@ -42,7 +42,7 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData); // Log the formData object on form submission
+    // console.log(formData); 
     userFormInput(formData);
   };
 

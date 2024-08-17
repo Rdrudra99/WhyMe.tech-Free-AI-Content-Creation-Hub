@@ -62,7 +62,7 @@ const OutcomeSection = (props: PROPS) => {
       });
       if (response.ok) {
         const data = await response.json();
-        console.log(data.content);
+        // console.log(data.content);
         setAioutput(data.content);
         const result = await fetch("/api/pushData", {
           method: "POST",
@@ -72,7 +72,7 @@ const OutcomeSection = (props: PROPS) => {
           },
         });
       } else {
-        console.log("Error");
+        // console.log("Error");
       }
     } catch (error: any) {
       setError(error);
