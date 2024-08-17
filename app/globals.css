@@ -79,11 +79,11 @@
     }
   
     .dark {
-      --background: 240 10% 3.9%;
+      --background: rgb(44, 44, 50);
       --foreground: 0 0% 98%;
-      --card: 240 10% 3.9%;
+      --card: rgb(44, 44, 50);
       --card-foreground: 0 0% 98%;
-      --popover: 240 10% 3.9%;
+      --popover: rgb(44, 44, 50);
       --popover-foreground: 0 0% 98%;
       --primary: 0 0% 98%;
       --primary-foreground: 240 5.9% 10%;

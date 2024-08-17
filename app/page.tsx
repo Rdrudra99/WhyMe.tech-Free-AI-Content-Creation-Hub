@@ -105,7 +105,7 @@ const page = () => {
       </div>
       {/* footer section */}
       <div className="relative">
-        <div className="border-t border-neutral-100  dark:border-neutral-800 px-8 pt-20 pb-32 relative bg-white dark:bg-black">
+        <div className="border-t border-neutral-100  dark:border-neutral-800 px-8 pt-20 pb-32 relative ">
           <div className="max-w-7xl mx-auto text-sm text-neutral-500 dark:text-neutral-400 flex sm:flex-row flex-col justify-between items-start "><div>
             <div className="mr-4  md:flex mb-4">
               <Link className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20" href="/">
