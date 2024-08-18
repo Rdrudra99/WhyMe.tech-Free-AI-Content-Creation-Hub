@@ -13,6 +13,7 @@ import { Zap } from "lucide-react"
 import { ModeToggle } from "./ModeToggle"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
 import { SignOutButton, UserButton, useUser } from "@clerk/nextjs"
+import { Separator } from "./ui/separator"
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
   const { isSignedIn, user, isLoaded } = useUser()
@@ -50,7 +51,7 @@ export function MobileNav() {
                               <MobileLink
                                 href={subItem.href}
                                 onOpenChange={setOpen}
-                                className="text-muted-foreground text-sm flex justify-start items-center"
+                                className="text-muted-foreground text-sm flex justify-start items-center space-y-2"
                               >
                                 {subItem.title}
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +80,8 @@ export function MobileNav() {
             ))}
           </div>
         </div>
-        <div className=" py-2 xl:mt-auto xl:py-4 space-y-2">
+        <Separator className="w-full" />
+        <div className=" py-2 xl:mt-auto xl:py-4 space-y-2 px-2">
             <MobileLink
             href={`https://rdrudra99.site`}
             onOpenChange={setOpen}
