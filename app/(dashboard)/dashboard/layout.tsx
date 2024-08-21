@@ -19,11 +19,13 @@ const layout = (
 ) => {
     // const { isSignedIn, user, isLoaded } = useUser();
     return (
-        <div className={`min-h-screen w-full bg-background  text-foreground antialiased  font-Montserrat`}>
-            <header className="sticky lg:hidden  top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
+        <div className={`relative flex min-h-screen flex-col bg-background antialiased`}>
+            <header className="sticky top-0 z-50 lg:hidden flex border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="container flex h-14 items-center">
                 <MobileNav />
                 <CommandMenu />
                 <UserButton /> 
+            </div>
             </header>
             <div className='flex h-full w-full'>
                 <DocsSidebarNav items={docsConfig.sidebarNav} />
