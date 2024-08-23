@@ -12,7 +12,6 @@ import React from 'react'
 import { auth } from "@clerk/nextjs/server";
 import { ModeToggle } from '@/components/ModeToggle'
 
-
 const page = () => {
   const { userId } = auth();
   return (

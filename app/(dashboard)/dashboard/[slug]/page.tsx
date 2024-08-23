@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FormSection from "@/components/FormSection";
 import Template from "@/app/(data)/Template";
 import { LoaderIcon } from "lucide-react";
@@ -9,16 +9,7 @@ import remarkMath from "remark-math";
 import { cn } from "@/lib/utils";
 import { Lobster, Montserrat, Poppins } from "next/font/google";
 import Link from "next/link";
-import EditorPart from "@/components/EditorPart";
-import { useEditor, EditorContent } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
-import { Markdown } from 'tiptap-markdown'; // Import the Markdown extension
-import EditorMenubar from "@/components/EditorMenubar";
 
-interface Props {
-    aioutput: string;
-    loading: boolean;
-}
 export interface TEMPLATE {
   title: string;
   desc: string;
@@ -90,20 +81,6 @@ const OutcomeSection = (props: PROPS) => {
     }
   };
 
-  const [markdownOutput, setMarkdownOutput] = useState<string>('');
-
-  const editor = useEditor({
-      extensions: [StarterKit, Markdown],
-      content: aioutput,
-  });
-
-  useEffect(() => {
-      if (editor && !loading) {
-          editor.commands.setContent(aioutput);
-          setMarkdownOutput(editor.storage.markdown.getMarkdown()); // Set markdown output after content is set
-      }
-  }, [aioutput, loading, editor]);
-
   const copyAiOutput = async () => {
     try {
       await navigator.clipboard.writeText(aioutput);
@@ -123,7 +100,7 @@ const OutcomeSection = (props: PROPS) => {
             {/* <h1 className="capitalize">
               {selectedTemplate?.title}
             </h1> */}
-          </header>
+            </header>
           {
             !aioutput ? (
               <div className="flex md:hidden flex-1 flex-col px-2 xl:px-4 md:mt-0 mt-4">
@@ -147,12 +124,20 @@ const OutcomeSection = (props: PROPS) => {
         </section>
       </aside>
       <div className="flex-1 flex-col lg:flex">
-        <section className="flex h-full w-full shrink-0 flex-col overflow-x-hidden lg:max-h-screen lg:overflow-y-auto">
+        <section className="flex h-full w-full shrink-0 flex-col lg:max-h-screen lg:overflow-y-auto">
           {
             aioutput ? (
-              <header className="sticky top-0  w-full ">
-                <div className="container flex h-14 max-w-screen-2xl items-center">
-                <EditorMenubar editor={editor} />
+              <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 justify-between xl:px-4">
+                <Link className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" href={`/dashboard`}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+                </Link>
+                <div className="flex space-x-1">
+                  <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg>
+                  </button>
+                  <button className="inline-flex items-center justify-center space-x-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground size-9" onClick={copyAiOutput}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-bookmark"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
+                  </button>
                 </div>
               </header>
             ) : (
@@ -174,8 +159,18 @@ const OutcomeSection = (props: PROPS) => {
               <div className={cn(`flex flex-1 flex-col px-2 xl:px-4 ${poppins.className}`)}>
                 <div className="px-2 py-4 xl:px-3 xl:py-7">
                   <div className="flex-1 flex-col lg:flex">
-                    <div className="prose flex flex-1 flex-col items-center justify-center space-y-4">
-                    <EditorContent editor={editor} />
+                    <div className="flex flex-1 flex-col items-center justify-center space-y-4">
+                      <MemoizedReactMarkdown
+                        className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+                        remarkPlugins={[remarkGfm, remarkMath]}
+                        components={{
+                          p({ children }) {
+                            return <p className="mb-2 last:mb-0">{children}</p>
+                          },
+                        }}
+                      >
+                        {aioutput}
+                      </MemoizedReactMarkdown>
                     </div>
                   </div>
                 </div>
