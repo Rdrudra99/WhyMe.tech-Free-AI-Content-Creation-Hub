@@ -49,7 +49,7 @@ export default function PlaceholdersAndVanishInputDemo() {
           <UserButton />
         </div>
       </header>
-      <div className="container px-4 md:px-6 py-6 md:py-12 lg:py-16 xl:py-24 overflow-y-scroll lg:h-[calc(100vh-64px)]">
+      <div className="container px-4 md:px-6 py-6 md:py-12 lg:py-16 xl:py-24 overflow-y-scroll lg:h-[calc(100vh-64px)] overflow-hidden">
         <div className="grid gap-6 items-center">
           <div className="flex flex-col justify-center space-y-8 text-center">
             <div className="space-y-2">
@@ -61,7 +61,7 @@ export default function PlaceholdersAndVanishInputDemo() {
               </p>
             </div>
             {/* Filter Buttons */}
-            <div className="flex justify-center space-x-4 mb-4">
+            <div className="flex justify-center space-x-4 mb-4 flex-wrap md:space-y-0 space-y-2">
               <button
                 className={cn(
                   "px-4 py-2 rounded-full",
