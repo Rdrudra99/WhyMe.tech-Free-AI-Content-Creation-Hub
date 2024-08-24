@@ -78,7 +78,7 @@ export default function RootLayout({
         <body
           className={cn(
             "relative flex min-h-screen w-full bg-background  text-foreground antialiased",
-            poppins.className
+            roboto.className
           )}
         >
           <ThemeProvider

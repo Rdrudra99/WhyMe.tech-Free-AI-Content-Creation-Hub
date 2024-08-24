@@ -1,13 +1,17 @@
 "use client";
 
 import { CommandMenu } from "@/components/command-menu";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { docsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
 import { UserButton, useUser } from "@clerk/nextjs";
+import { IconClipboardCopy, IconSignature } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CombineIcon, Loader } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
-
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 export default function PlaceholdersAndVanishInputDemo() {
   const { isSignedIn, user, isLoaded } = useUser();
   const [inputData, setInputData] = useState(""); // Search query state
@@ -22,17 +26,8 @@ export default function PlaceholdersAndVanishInputDemo() {
     );
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputData(e.target.value); // Update search query state
-  };
-
   const handleFilterChange = (filterTitle: string) => {
     setFilter(filterTitle); // Update filter state
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Handle form submission if needed
   };
 
   // Filter subItems based on the search query and selected main title
@@ -62,50 +57,53 @@ export default function PlaceholdersAndVanishInputDemo() {
             </div>
             {/* Filter Buttons */}
             <div className="flex justify-center space-x-4 mb-4 flex-wrap md:space-y-0 space-y-2">
-              <button
+              <Button
+                size={"sm"}
                 className={cn(
                   "px-4 py-2 rounded-full",
-                  filter === "Show All" ? "bg-black text-white" : "bg-gray-200"
+                  filter === "Show All" ? "bg-black text-white font-bold uppercase" : "bg-black"
                 )}
                 onClick={() => handleFilterChange("Show All")}
               >
                 Show All
-              </button>
+              </Button>
               {docsConfig.sidebarNav.map((navItem, index) => (
-                <button
+                <Button
+                  size={"sm"}
                   key={index}
                   className={cn(
                     "px-4 py-2 rounded-full",
-                    filter === navItem.title ? "bg-black text-white" : "bg-gray-200"
+                    filter === navItem.title ? "bg-black text-white font-bold uppercase" : "bg-black"
                   )}
                   onClick={() => handleFilterChange(navItem.title)}
                 >
                   {navItem.title}
-                </button>
+                </Button>
               ))}
             </div>
             {/* Filtered Items */}
             <div className="w-full max-w-full space-y-4 mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8"> */}
+              <BentoGrid className="max-w-full px-4 mx-auto">
                 {filteredItems.length > 0 ? (
                   filteredItems.map((subItem, subIndex) => (
-                    <div
+                    <BentoGridItem
                       key={subIndex}
-                      className="flex flex-col items-center space-y-2 border-gray-800 p-4 rounded-lg"
-                    >
-                      <div className="p-2 bg-black rounded-full">
-                        <subItem.icon className="text-white h-6 w-6 mb-2" />
-                      </div>
-                      <h2 className="text-lg text-black">{subItem.title}</h2>
-                      <p className="text-sm">{subItem.description}</p>
-                    </div>
+                      title={subItem.title}
+                      description={subItem.description}
+                      header=<SkeletonThree items={subItem} />
+                      slug = {subItem.href}
+                      icon=<IconSignature className="h-4 w-4 text-neutral-500" />
+                      className={subIndex === 4 || subIndex === 6 ? "md:col-span-2" : ""}
+                    />
                   ))
                 ) : (
                   <div className="col-span-full text-center">
                     <p className="text-lg font-semibold text-gray-600">No results found.</p>
                   </div>
                 )}
-              </div>
+                {/* </div> */}
+              </BentoGrid>
             </div>
           </div>
         </div>
@@ -113,3 +111,91 @@ export default function PlaceholdersAndVanishInputDemo() {
     </section>
   );
 }
+
+// const SkeletonFive = ({items}:any) => {
+//   const variants = {
+//     initial: {
+//       x: 0,
+//     },
+//     animate: {
+//       x: 10,
+//       rotate: 5,
+//       transition: {
+//         duration: 0.2,
+//       },
+//     },
+//   };
+//   const variantsSecond = {
+//     initial: {
+//       x: 0,
+//     },
+//     animate: {
+//       x: -10,
+//       rotate: -5,
+//       transition: {
+//         duration: 0.2,
+//       },
+//     },
+//   };
+ 
+//   return (
+//     <motion.div
+//       initial="initial"
+//       whileHover="animate"
+//       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+//     >
+//       <motion.div
+//         variants={variants}
+//         className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
+//       >
+//         <items.icon className="w-8 h-8" />
+//         <p className="text-xs text-neutral-500">
+//             {items?.description}
+//         </p>
+//       </motion.div>
+//       <motion.div
+//         variants={variantsSecond}
+//         className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
+//       >
+//         <p className="text-xs text-neutral-500">
+//             {
+//               items?.category
+//             }
+//         </p>
+//         <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
+//       </motion.div>
+//     </motion.div>
+//   );
+// };
+
+
+const SkeletonThree = ({items}:any) => {
+  const variants = {
+    initial: {
+      backgroundPosition: "0 50%",
+    },
+    animate: {
+      backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
+    },
+  };
+  return (
+    <motion.div
+      initial="initial"
+      animate="animate"
+      variants={variants}
+      transition={{
+        duration: 5,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
+      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
+      style={{
+        background:
+          "linear-gradient(-45deg, #f5f5f5, #e0e0e0, #bdbdbd, #9e9e9e)",
+        backgroundSize: "400% 400%",
+      }}
+    >
+      <motion.div className="h-full w-full rounded-lg"></motion.div>
+    </motion.div>
+  );
+};

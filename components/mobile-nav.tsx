@@ -4,18 +4,14 @@ import * as React from "react"
 import Link, { LinkProps } from "next/link"
 import { useRouter } from "next/navigation"
 
-import { docsConfig } from "@/config/docs"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Home, LineChart, Package, Package2, ShoppingCart, Users, Zap } from "lucide-react"
-import { ModeToggle } from "./ModeToggle"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
 import { SignOutButton, UserButton, useUser } from "@clerk/nextjs"
-import { Separator } from "./ui/separator"
 import { Badge } from "./ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
+import { IconGitPullRequest, IconHome, IconSettings, IconSignature } from "@tabler/icons-react"
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
   const { isSignedIn, user, isLoaded } = useUser()
@@ -26,7 +22,7 @@ export function MobileNav() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <div className="h-5 w-6 md:hidden bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm"></div>
+        <IconSignature className="w-8 h-8" />
       </SheetTrigger>
       <SheetContent  side="left" className="flex flex-col">
         <nav className="grid gap-2 text-lg font-medium">
@@ -34,46 +30,40 @@ export function MobileNav() {
             href="#"
             className="flex items-center gap-2 text-lg font-semibold"
           >
-            <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <IconSignature className="h-6 w-6" />
+            <span className="sr-only">Why Me</span>
           </Link>
+          <Link
+            href="/Dashboard"
+            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+          >
+            <IconHome className="h-5 w-5" />
+            Dashboard
+          </Link>
+          
           <Link
             href="#"
             className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
           >
-            <Home className="h-5 w-5" />
-            Dashboard
+            <IconSettings className="h-5 w-5" />
+            Settings
+          </Link>
+          <Link
+            href="/dashboard/History"
+            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+          >
+            <LineChart className="h-5 w-5" />
+           History
           </Link>
           <Link
             href="#"
             className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
           >
-            <ShoppingCart className="h-5 w-5" />
-            Orders
+            <IconGitPullRequest className="h-5 w-5" />
+            Request
             <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
               6
             </Badge>
-          </Link>
-          <Link
-            href="#"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-          >
-            <Package className="h-5 w-5" />
-            Products
-          </Link>
-          <Link
-            href="#"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-          >
-            <Users className="h-5 w-5" />
-            Customers
-          </Link>
-          <Link
-            href="#"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-          >
-            <LineChart className="h-5 w-5" />
-            Analytics
           </Link>
         </nav>
         <div className="mt-auto">

@@ -24,6 +24,7 @@ sidebarNav: [
           description: "Generate compelling descriptions for your products to attract customers.",
           icon: FileTextIcon,
           items: [],
+          category: "Ecommerce"
         },
         {
           title: "SEO Product Title Enhancer",
@@ -31,6 +32,7 @@ sidebarNav: [
           description: "Optimize product titles to improve search engine visibility and click-through rates.",
           icon: StarIcon,
           items: [],
+          category : "Ecommerce"
         },
         {
           title: "Tagline Maker",
@@ -38,6 +40,7 @@ sidebarNav: [
           description: "Create catchy taglines and slogans for your products or campaigns.",
           icon: CombineIcon,
           items: [],
+          category : "Ecommerce"
         },
         {
           title: "Amazon Description Writer",
@@ -45,6 +48,7 @@ sidebarNav: [
           description: "Craft effective product descriptions specifically tailored for Amazon.",
           icon: FileTextIcon,
           items: [],
+          category : "Ecommerce"
         },
         {
           title: "Product Compare",
@@ -52,6 +56,7 @@ sidebarNav: [
           description: "Compare multiple products side by side to aid in decision-making.",
           icon: StarIcon,
           items: [],
+          category : "Ecommerce"
         },
         {
           title: "Thank You Note Maker",
@@ -59,6 +64,7 @@ sidebarNav: [
           description: "Automatically generate personalized thank you notes for customer interactions.",
           icon: BookOpenIcon,
           items: [],
+          category : "Ecommerce"
         },
         {
           title: "Return/Exchange Email Generator",
@@ -66,6 +72,7 @@ sidebarNav: [
           description: "Generate professional responses for refund, return, or exchange requests.",
           icon: BriefcaseIcon,
           items: [],
+          category : "Ecommerce"
         },
       ],
     },
@@ -78,6 +85,7 @@ sidebarNav: [
           description: "Generate engaging and SEO-friendly titles for your blog posts.",
           icon: StarIcon,
           items: [],
+          category : "Blog"
         },
         {
           title: "One-Click Blog Post",
@@ -85,6 +93,7 @@ sidebarNav: [
           description: "Create fully-formed blog posts with a single click for rapid content creation.",
           icon: BookOpenIcon,
           items: [],
+          category : "Blog"
         },
         {
           title: "Keyword Article Rewriter",
@@ -92,6 +101,7 @@ sidebarNav: [
           description: "Effortlessly rewrite articles incorporating targeted keywords for SEO.",
           icon: CombineIcon,
           items: [],
+          category : "Blog"
         },
         {
           title: "Human-Like Blog Post",
@@ -99,6 +109,7 @@ sidebarNav: [
           description: "Request and receive professionally written blog posts from human writers.",
           icon: BookOpenIcon,
           items: [],
+          category : "Blog"
         },
       ],
     },
@@ -111,6 +122,7 @@ sidebarNav: [
           description: "Generate snippets of code for various programming languages and frameworks.",
           icon: FileTextIcon,
           items: [],
+          category : "Development"
         },
       ],
     },
@@ -123,6 +135,7 @@ sidebarNav: [
           description: "Generate optimized meta titles and descriptions to enhance search engine visibility.",
           icon: StarIcon,
           items: [],
+          category : "SEO"
         },
         {
           title: "Clickbait Title Generator",
@@ -130,6 +143,7 @@ sidebarNav: [
           description: "Create attention-grabbing titles designed to increase click-through rates.",
           icon: StarIcon,
           items: [],
+          category : "SEO"
         },
       ],
     },
@@ -142,6 +156,7 @@ sidebarNav: [
           description: "Efficiently create detailed job descriptions tailored to your company's needs.",
           icon: BriefcaseIcon,
           items: [],
+          category : "HR Tools"
         },
         {
           title: "Interview Scheduling Email Generator",
@@ -149,6 +164,7 @@ sidebarNav: [
           description: "Automatically generate emails to schedule interviews with candidates.",
           icon: FileTextIcon,
           items: [],
+          category : "HR Tools"
         },
         {
           title: "Job Rejection Email Generator",
@@ -156,6 +172,7 @@ sidebarNav: [
           description: "Generate professional and respectful emails to decline job applicants.",
           icon: FileTextIcon,
           items: [],
+          category : "HR Tools"
         },
         {
           title: "Relieving Letter Maker",
@@ -163,6 +180,7 @@ sidebarNav: [
           description: "Create official relieving letters for employees leaving your organization.",
           icon: FileTextIcon,
           items: [],
+          category : "HR Tools"
         },
       ],
     },
@@ -175,6 +193,7 @@ sidebarNav: [
           description: "Simplify complex concepts into easy-to-understand explanations or summaries.",
           icon: BookOpenIcon,
           items: [],
+          category : "Education"
         },
         {
           title: "Reading Passage Creator",
@@ -182,6 +201,7 @@ sidebarNav: [
           description: "Generate reading passages or excerpts for educational purposes.",
           icon: BookOpenIcon,
           items: [],
+          category : "Education"
         },
       ],
     },
@@ -194,6 +214,7 @@ sidebarNav: [
           description: "Quickly generate frequently asked questions (FAQs) for your products or services.",
           icon: BookOpenIcon,
           items: [],
+          category : "Support"
         },
       ],
     },
@@ -206,6 +227,7 @@ sidebarNav: [
           description: "Effortlessly rewrite and paraphrase text while maintaining original meaning.",
           icon: CombineIcon,
           items: [],
+          category : "Text Rewriting"
         },
       ],
     },

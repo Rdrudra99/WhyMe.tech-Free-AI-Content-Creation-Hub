@@ -3,7 +3,6 @@ import FeatureSection from '@/components/FeatureSection'
 import AnimatedShinyText from '@/components/magicui/animated-shiny-text'
 import PricingSectionCards from '@/components/PricingSection'
 import { Button } from '@/components/ui/button'
-import { MarqueeDemo } from '@/components/Vmark'
 import { cn } from '@/lib/utils'
 import { ArrowRightIcon } from 'lucide-react'
 import Image from 'next/image'
@@ -17,7 +16,7 @@ const page = () => {
   return (
     <main className='w-full h-full'>
       {/* nav bar */}
-      <nav className="max-w-7xl  fixed top-4  mx-auto inset-x-0 z-50 w-[95%] lg:w-full" >
+      <nav className="max-w-7xl  fixed top-4 mx-auto inset-x-0 z-50 w-[95%] lg:w-full" >
         <div className="lg:block w-full">
           <div className="w-full flex relative justify-between md:px-4 py-2 rounded-full bg-white dark:bg-background transition duration-200">
             <div className="flex flex-row gap-2 items-center">

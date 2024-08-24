@@ -7,6 +7,8 @@ const nextConfig = {
       "instagram.fbbi5-1.fna.fbcdn.net",
       "scontent.cdninstagram.com",
       "media.licdn.com",
+      "pbs.twimg.com",
+      "ui.aceternity.com",
     ],
   },
 };

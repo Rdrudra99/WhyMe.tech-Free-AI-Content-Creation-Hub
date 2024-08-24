@@ -7,6 +7,7 @@ export interface NavItem {
   icon?: any; // Ensure icon is of type IconType
   label?: string;
   description?: string;
+  category?:string;
 }
 
 export interface NavItemWithChildren extends NavItem {
