@@ -4,27 +4,22 @@ import { CommandMenu } from "@/components/command-menu";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { docsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
-import { UserButton, useUser } from "@clerk/nextjs";
+import { SignOutButton, UserButton, useUser } from "@clerk/nextjs";
 import { IconClipboardCopy, IconSignature } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CombineIcon, Loader } from "lucide-react";
+import { Cloud, CombineIcon, CreditCard, Loader, LogOut, User } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function PlaceholdersAndVanishInputDemo() {
   const { isSignedIn, user, isLoaded } = useUser();
   const [inputData, setInputData] = useState(""); // Search query state
   const [filter, setFilter] = useState("Show All"); // Filter state
 
-  if (!isLoaded) {
-    // Handle loading state if needed
-    return (
-      <div className="flex justify-center items-center w-full h-screen">
-        <Loader className="animate-spin w-4 h-4" />
-      </div>
-    );
-  }
 
   const handleFilterChange = (filterTitle: string) => {
     setFilter(filterTitle); // Update filter state
@@ -41,7 +36,43 @@ export default function PlaceholdersAndVanishInputDemo() {
       <header className="w-full h-14px lg:h-[64px] hidden md:block">
         <div className="flex justify-end items-center h-full px-2 xl:px-7  space-x-4 border-b bg-background">
           <CommandMenu />
-          <UserButton />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Avatar className="h-8 w-8 cursor-pointer">
+                <AvatarImage src={user?.imageUrl || ""} alt="@shadcn" />
+                <AvatarFallback>RD</AvatarFallback>
+              </Avatar>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>
+                  <User className="mr-2 h-4 w-4" />
+                  <span>
+                    {user?.fullName}
+                  </span>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuSeparator />
+              <DropdownMenuItem disabled>
+                <Cloud className="mr-2 h-4 w-4" />
+                <span>
+                  {user?.lastSignInAt?.toString()}
+                </span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="cursor-pointer">
+                <SignOutButton redirectUrl="/">
+                  <div className="flex justify-center items-center">
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>Log out</span>
+                  </div>
+                </SignOutButton>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
       <div className="container px-4 md:px-6 py-6 md:py-12 lg:py-16 xl:py-24 overflow-y-scroll lg:h-[calc(100vh-64px)] overflow-hidden">
@@ -56,28 +87,40 @@ export default function PlaceholdersAndVanishInputDemo() {
               </p>
             </div>
             {/* Filter Buttons */}
-            <div className="flex justify-center space-x-4 mb-4 flex-wrap md:space-y-0 space-y-2">
+            <div className="flex justify-center items-center gap-2 md:gap-0 space-x-4 mb-4 flex-wrap md:space-y-0">
               <Button
                 size={"sm"}
                 className={cn(
-                  "px-4 py-2 rounded-full",
-                  filter === "Show All" ? "bg-black text-white font-bold uppercase" : "bg-black"
+                  filter === "Show All" ? "bg-black text-white " : "bg-black"
                 )}
                 onClick={() => handleFilterChange("Show All")}
               >
                 Show All
+                {
+                  filter === "Show All" ? (
+                    <span>
+                      <ArrowRightIcon className="w-4 h-4 ml-2" />
+                    </span>
+                  ) : null
+                }
               </Button>
               {docsConfig.sidebarNav.map((navItem, index) => (
                 <Button
                   size={"sm"}
                   key={index}
                   className={cn(
-                    "px-4 py-2 rounded-full",
-                    filter === navItem.title ? "bg-black text-white font-bold uppercase" : "bg-black"
+                    filter === navItem.title ? "bg-black text-white " : "bg-black"
                   )}
                   onClick={() => handleFilterChange(navItem.title)}
                 >
                   {navItem.title}
+                  {
+                    filter === navItem.title ? (
+                      <span>
+                        <ArrowRightIcon className="w-4 h-4 ml-2" />
+                      </span>
+                    ) : null
+                  }
                 </Button>
               ))}
             </div>
@@ -92,7 +135,7 @@ export default function PlaceholdersAndVanishInputDemo() {
                       title={subItem.title}
                       description={subItem.description}
                       header=<SkeletonThree items={subItem} />
-                      slug = {subItem.href}
+                      slug={subItem.href}
                       icon=<IconSignature className="h-4 w-4 text-neutral-500" />
                       className={subIndex === 4 || subIndex === 6 ? "md:col-span-2" : ""}
                     />
@@ -137,7 +180,7 @@ export default function PlaceholdersAndVanishInputDemo() {
 //       },
 //     },
 //   };
- 
+
 //   return (
 //     <motion.div
 //       initial="initial"
@@ -169,7 +212,7 @@ export default function PlaceholdersAndVanishInputDemo() {
 // };
 
 
-const SkeletonThree = ({items}:any) => {
+const SkeletonThree = ({ items }: any) => {
   const variants = {
     initial: {
       backgroundPosition: "0 50%",

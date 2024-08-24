@@ -7,64 +7,61 @@ import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Home, LineChart, Package, Package2, ShoppingCart, Users, Zap } from "lucide-react"
-import { SignOutButton, UserButton, useUser } from "@clerk/nextjs"
 import { Badge } from "./ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
-import { IconGitPullRequest, IconHome, IconSettings, IconSignature } from "@tabler/icons-react"
+import { IconAlpha, IconCode, IconHistory, IconHome, IconSettings, IconSignature } from "@tabler/icons-react"
+import { Separator } from "./ui/separator"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog"
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
-  const { isSignedIn, user, isLoaded } = useUser()
-  if (!isLoaded) {
-    // Handle loading state however you like
-    return null
-  }
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <IconSignature className="w-8 h-8" />
       </SheetTrigger>
-      <SheetContent  side="left" className="flex flex-col">
+      <SheetContent side="left" className="flex flex-col">
         <nav className="grid gap-2 text-lg font-medium">
-          <Link
-            href="#"
-            className="flex items-center gap-2 text-lg font-semibold"
-          >
-            <IconSignature className="h-6 w-6" />
-            <span className="sr-only">Why Me</span>
-          </Link>
-          <Link
-            href="/Dashboard"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-          >
-            <IconHome className="h-5 w-5" />
+          <MobileLink href="/" onOpenChange={setOpen} className="mx-[-0.65rem] flex items-center gap-4  px-3 py-2 text-black dark:text-white">
+            <IconSignature size={30} />
+            <span className="uppercase">
+              Why Me
+            </span>
+          </MobileLink>
+          <Separator className="w-full" />
+          <MobileLink href="/dashboard" onOpenChange={setOpen} className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground">
+            <IconHome size={20} />
             Dashboard
-          </Link>
-          
-          <Link
-            href="#"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-          >
-            <IconSettings className="h-5 w-5" />
-            Settings
-          </Link>
-          <Link
-            href="/dashboard/History"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-          >
-            <LineChart className="h-5 w-5" />
-           History
-          </Link>
-          <Link
-            href="#"
-            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-          >
-            <IconGitPullRequest className="h-5 w-5" />
-            Request
-            <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-              6
+          </MobileLink>
+          <MobileLink href="/history" onOpenChange={setOpen} className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground">
+            <IconHistory size={20} />
+            History
+          </MobileLink>
+          <MobileLink href="#" onOpenChange={setOpen} className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground">
+            <IconAlpha className="h-4 w-4" />
+            Assistant
+            <Badge className="ml-auto bg-muted text-black dark:text-white">
+              Pro
             </Badge>
-          </Link>
+          </MobileLink>
+          <MobileLink href="#" onOpenChange={setOpen} className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground">
+            <IconCode className="h-4 w-4" />
+            Playground
+            <Badge className="ml-auto bg-muted text-black dark:text-white">
+              Pro
+            </Badge>
+          </MobileLink>
+          <MobileLink href="#" onOpenChange={setOpen} className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground">
+            <IconSettings size={20} />
+            Request
+            <Badge className="ml-auto bg-muted text-black dark:text-white">
+              Pro
+            </Badge>
+          </MobileLink>
+          <MobileLink href="#" onOpenChange={setOpen} className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground">
+            <IconSettings size={20} />
+            Settings
+          </MobileLink>
         </nav>
         <div className="mt-auto">
           <Card>
@@ -76,9 +73,21 @@ export function MobileNav() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button size="sm" className="w-full">
-                Upgrade
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="sm" className="w-full">
+                    Upgrade
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <DialogHeader className='flex justify-center items-center space-y-5'>
+                    <DialogTitle>🚀 Upgrade Your Plan</DialogTitle>
+                    <DialogDescription className='text-center'>
+                      🌟 Unlock advanced features to generate more content with higher quality and greater customization. Choose the plan that best suits your needs and start scaling your content production today! 🎯
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </CardContent>
           </Card>
         </div>
@@ -117,3 +126,13 @@ function MobileLink({
     </Link>
   )
 }
+
+
+
+{/* <Link
+href="#"
+className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
+>
+<IconSettings className="h-5 w-5" />
+Settings
+</Link> */}

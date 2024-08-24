@@ -7,7 +7,7 @@ import { MemoizedReactMarkdown } from "@/components/markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import { cn } from "@/lib/utils";
-import { Lobster, Montserrat, Poppins } from "next/font/google";
+import { Lobster, Montserrat, Poppins, Roboto } from "next/font/google";
 import Link from "next/link";
 
 export interface TEMPLATE {
@@ -36,6 +36,10 @@ interface PROPS {
 }
 
 const poppins = Poppins({
+  weight: '400',
+  subsets: ['latin'],
+})
+const roboto = Roboto({
   weight: '400',
   subsets: ['latin'],
 })
@@ -156,7 +160,7 @@ const OutcomeSection = (props: PROPS) => {
                 </p>
               </div>
             ) : aioutput ? (
-              <div className={cn(`flex flex-1 flex-col px-2 xl:px-4 ${poppins.className}`)}>
+              <div className={cn(`flex flex-1 flex-col px-2 xl:px-4 ${roboto.className}`)}>
                 <div className="px-2 py-4 xl:px-3 xl:py-7">
                   <div className="flex-1 flex-col lg:flex">
                     <div className="flex flex-1 flex-col items-center justify-center space-y-4">

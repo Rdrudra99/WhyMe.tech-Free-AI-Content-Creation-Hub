@@ -10,6 +10,8 @@ import Link from 'next/link'
 import React from 'react'
 import { auth } from "@clerk/nextjs/server";
 import { ModeToggle } from '@/components/ModeToggle'
+import { IconSignature } from '@tabler/icons-react'
+
 
 const page = () => {
   const { userId } = auth();
@@ -20,21 +22,23 @@ const page = () => {
         <div className="lg:block w-full">
           <div className="w-full flex relative justify-between md:px-4 py-2 rounded-full bg-white dark:bg-background transition duration-200">
             <div className="flex flex-row gap-2 items-center">
-              <Link className="font-normal flex space-x-2 items-center text-sm mr-4  text-black px-2 py-1  relative z-20" href="/">
-                <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm">
-                </div>
-                <span className="font-medium text-black dark:text-white">Why Me</span>
+              <Link href="/" className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-black dark:text-white">
+                <IconSignature size={30} />
+                <span className='font-bold tracking-widest'>
+                  Why Me
+                </span>
               </Link>
             </div>
             {
               userId ? (
                 <div className='flex space-x-2'>
-                  <Link
-                    className="bg-neutral-900 relative z-10 hover:bg-black/90 border border-transparent text-white text-sm md:text-sm transition font-medium duration-200 rounded-full px-4 py-2 flex items-center justify-center shadow-[0px_-1px_0px_0px_#FFFFFF40_inset,_0px_1px_0px_0px_#FFFFFF40_inset]"
-                    href="/dashboard"
-                  >
-                    Dashboard
-                  </Link>
+                  <Button asChild variant={"link"} size={"sm"} className=''>
+                    <Link
+                      href="/dashboard"
+                    >
+                      Dashboard
+                    </Link>
+                  </Button>
                   <ModeToggle />
                 </div>
               ) : (
@@ -72,11 +76,11 @@ const page = () => {
           {/* get stated and contact button */}
           <div className="flex items-center gap-4 justify-center mt-6 relative z-10">
             <Link href={`/sign-up`}>
-              <Button className="bg-neutral-900 relative rounded-full z-10 hover:bg-black/90 border border-transparent text-white text-sm" >
+              <Button className="bg-neutral-900 relative  z-10 hover:bg-black/90 border border-transparent text-white text-sm" >
                 Get started
               </Button>
             </Link>
-            <Button variant={"outline"} className='rounded-full' >
+            <Button variant={"outline"} className='' >
               Contact us
             </Button>
           </div>

@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import { TEMPLATE } from "@/app/(dashboard)/dashboard/[slug]/page";
+import { IconSignature, IconSignatureOff } from "@tabler/icons-react";
 
 interface PROPS {
   selectedTemplate?: TEMPLATE;
@@ -104,16 +105,12 @@ const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
           <Button type="submit" size="sm" className="ml-auto w-full">
             {loading ? (
               <p className="flex justify-center items-center space-x-2">
-                <span className="animate-spin">
-                  ✨
-                </span>
+                <IconSignatureOff className="animate-spin" />
                 <span>Thinking...</span>
               </p>
             ) : (
               <p className="flex justify-center items-center space-x-2">
-                <span>
-                  ✨
-                </span>
+                <IconSignature />
                 <span>Generate</span>
               </p>
             )}

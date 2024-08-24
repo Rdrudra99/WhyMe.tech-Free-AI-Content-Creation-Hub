@@ -14,17 +14,26 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Package2, Bell, Home, ShoppingCart, Package, Users, LineChart } from 'lucide-react'
 import { ModeToggle } from '@/components/ModeToggle'
-import { IconGitPullRequest, IconHome, IconSettings, IconSignature } from '@tabler/icons-react'
-
+import { IconAlpha, IconCode, IconGitPullRequest, IconHome, IconSettings, IconSignature } from '@tabler/icons-react'
+import { BorderTopIcon, CodeIcon } from '@radix-ui/react-icons'
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
+import { currentUser } from '@clerk/nextjs/server'
 const montserrat = Montserrat({
     weight: '400',
     subsets: ['latin'],
 })
+const user = await currentUser()
+
+if(!user) {
+    <div className='h-screen'>
+        <IconSignature className='w-10 h-10 animate-spin' /> 
+    </div>
+}
 
 const layout = (
     { children }: Readonly<{ children: React.ReactNode; }>,
 ) => {
-    // const { isSignedIn, user, isLoaded } = useUser();
+    
     return (
         <div className={`min-h-screen w-full bg-background  text-foreground antialiased`}>
             <header className="sticky lg:hidden justify-between top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
@@ -54,16 +63,8 @@ const layout = (
                                     <IconHome className="h-4 w-4" />
                                     Dashboard
                                 </Link>
-                               
                                 <Link
-                                    href="#"
-                                    className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
-                                >
-                                    <IconSettings className="h-4 w-4" />
-                                    Settings{" "}
-                                </Link>
-                                <Link
-                                    href="/dashboard/History"
+                                    href="/dashboard/history"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
                                     <LineChart className="h-4 w-4" />
@@ -73,11 +74,38 @@ const layout = (
                                     href="#"
                                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
                                 >
+                                    <IconCode className="h-4 w-4" />
+                                    Playground
+                                    <Badge className="ml-auto bg-muted text-black dark:text-white">
+                                        Pro
+                                    </Badge>
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
+                                    <IconAlpha className="h-4 w-4" />
+                                    Assistant
+                                    <Badge className="ml-auto bg-muted text-black dark:text-white">
+                                        Pro
+                                    </Badge>
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
                                     <IconGitPullRequest className="h-4 w-4" />
                                     Request
-                                    <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                                        6
+                                    <Badge className="ml-auto bg-muted text-black dark:text-white">
+                                        Pro
                                     </Badge>
+                                </Link>
+                                <Link
+                                    href="#"
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
+                                    <IconSettings className="h-4 w-4" />
+                                    Settings{" "}
                                 </Link>
                             </nav>
                         </div>
@@ -91,9 +119,21 @@ const layout = (
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-                                    <Button size="sm" className="w-full">
-                                        Upgrade
-                                    </Button>
+                                    <Dialog>
+                                        <DialogTrigger asChild>
+                                            <Button size="sm" className="w-full">
+                                                Upgrade
+                                            </Button>
+                                        </DialogTrigger>
+                                        <DialogContent className="sm:max-w-[425px]">
+                                            <DialogHeader className='flex justify-center items-center space-y-5'>
+                                                <DialogTitle>🚀 Upgrade Your Plan</DialogTitle>
+                                                <DialogDescription className='text-center'>
+                                                    🌟 Unlock advanced features to generate more content with higher quality and greater customization. Choose the plan that best suits your needs and start scaling your content production today! 🎯
+                                                </DialogDescription>
+                                            </DialogHeader>
+                                        </DialogContent>
+                                    </Dialog>
                                 </CardContent>
                             </Card>
                         </div>
