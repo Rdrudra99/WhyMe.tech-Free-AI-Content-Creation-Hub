@@ -22,18 +22,18 @@ const montserrat = Montserrat({
     weight: '400',
     subsets: ['latin'],
 })
-const user = await currentUser()
 
-if(!user) {
-    <div className='h-screen'>
-        <IconSignature className='w-10 h-10 animate-spin' /> 
-    </div>
-}
 
-const layout = (
+const layout = async (
     { children }: Readonly<{ children: React.ReactNode; }>,
 ) => {
-    
+    const user = await currentUser()
+
+    if (!user) {
+        <div className='h-screen'>
+            <IconSignature className='w-10 h-10 animate-spin' />
+        </div>
+    }
     return (
         <div className={`min-h-screen w-full bg-background  text-foreground antialiased`}>
             <header className="sticky lg:hidden justify-between top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">

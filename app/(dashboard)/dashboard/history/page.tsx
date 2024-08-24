@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-export default async function History() {
+export default async function page() {
   try {
     const { userId } = auth();
     if (!userId) {
