@@ -19,7 +19,7 @@ export default async function page() {
     return (
       <div className="min-h-screen overflow-y-auto container mx-auto">
         <Table>
-          <TableCaption>A list of your recent invoices.</TableCaption>
+          <TableCaption>A list of your recent Data.</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Index</TableHead>
@@ -29,7 +29,7 @@ export default async function page() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {userHistory.map((history: any, index: number) => (
+            {userHistory.slice(-10).map((history: any, index: number) => (
               <TableRow key={history.id}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{history.slug}</TableCell>
@@ -40,6 +40,7 @@ export default async function page() {
               </TableRow>
             ))}
           </TableBody>
+
         </Table>
       </div>
     );

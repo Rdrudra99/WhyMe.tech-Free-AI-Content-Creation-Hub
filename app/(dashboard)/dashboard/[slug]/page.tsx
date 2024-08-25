@@ -9,7 +9,10 @@ import remarkMath from "remark-math";
 import { cn } from "@/lib/utils";
 import { Lobster, Montserrat, Poppins, Roboto } from "next/font/google";
 import Link from "next/link";
-
+import Markdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 export interface TEMPLATE {
   title: string;
   desc: string;
@@ -104,7 +107,7 @@ const OutcomeSection = (props: PROPS) => {
             {/* <h1 className="capitalize">
               {selectedTemplate?.title}
             </h1> */}
-            </header>
+          </header>
           {
             !aioutput ? (
               <div className="flex md:hidden flex-1 flex-col px-2 xl:px-4 md:mt-0 mt-4">
@@ -163,18 +166,28 @@ const OutcomeSection = (props: PROPS) => {
               <div className={cn(`flex flex-1 flex-col px-2 xl:px-4 ${roboto.className}`)}>
                 <div className="px-2 py-4 xl:px-3 xl:py-7">
                   <div className="flex-1 flex-col lg:flex">
-                    <div className="flex flex-1 flex-col items-center justify-center space-y-4">
-                      <MemoizedReactMarkdown
-                        className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
-                        remarkPlugins={[remarkGfm, remarkMath]}
+                    <div className="flex flex-1 flex-col space-y-4 overflow-hidden">
+                      <Markdown
+                        remarkPlugins={[remarkGfm]}
+                        rehypePlugins={[rehypeRaw]}
                         components={{
-                          p({ children }) {
-                            return <p className="mb-2 last:mb-0">{children}</p>
+                          code({ node, inline, className, children, ...props }: any) {
+                            const match = /language-(\w+)/.exec(className || '');
+
+                            return !inline && match ? (
+                              <SyntaxHighlighter style={dracula} PreTag="div" language={match[1]} {...props}>
+                                {String(children).replace(/\n$/, '')}
+                              </SyntaxHighlighter>
+                            ) : (
+                              <code className={className} {...props}>
+                                {children}
+                              </code>
+                            );
                           },
                         }}
                       >
                         {aioutput}
-                      </MemoizedReactMarkdown>
+                      </Markdown>
                     </div>
                   </div>
                 </div>
