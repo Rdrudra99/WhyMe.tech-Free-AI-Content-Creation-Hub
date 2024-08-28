@@ -8,21 +8,11 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ClerkProvider} from '@clerk/nextjs'
 import { DocsSidebarNav } from "@/components/sidebar-nav";
 import { docsConfig } from "@/config/docs";
-import { Lobster, Roboto , Lato , Oswald , Raleway , Montserrat, Poppins } from 'next/font/google'
+import { Space_Grotesk } from 'next/font/google'
  
-const roboto = Roboto({
-  weight: '400',
-  subsets: ['latin'],
-})
-const montserrat = Montserrat({
-  weight: '400',
-  subsets: ['latin'],
-})
- 
-const poppins = Poppins({
-  weight: '400',
-  subsets: ['latin'],
-})
+
+const spaceGrotesk = Space_Grotesk({subsets: ["latin"], weight: ["300", "400", "500", "600",  "700"]})
+
 
 export const metadata: Metadata = {
   title: "whyme • Rdrudra99",
@@ -78,7 +68,7 @@ export default function RootLayout({
         <body
           className={cn(
             "relative flex min-h-screen w-full bg-background  text-foreground antialiased",
-            roboto.className
+            spaceGrotesk.className
           )}
         >
           <ThemeProvider
