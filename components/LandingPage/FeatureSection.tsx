@@ -9,7 +9,7 @@ export default function FeatureSection() {
     return (
         <>
             {/* Icon Blocks */}
-            <div className="container py-24 lg:py-32">
+            <div className="max-w-7xl mx-auto py-24 lg:py-32 ">
                 {/* Grid */}
                 <div className="grid md:grid-cols-2 gap-12">
                     <div className="lg:w-3/4">

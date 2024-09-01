@@ -41,7 +41,6 @@ const reviews = [
   },
 ];
 
-
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
 
@@ -63,7 +62,7 @@ const ReviewCard = ({
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -83,15 +82,15 @@ const ReviewCard = ({
 export function MarqueeDemo() {
   return (
     <React.Fragment>
-      <div className="container overflow-hidden mx-auto">
-        <h2 className="w-full mx-auto text-center tracking-tight font-medium text-black dark:text-white text-3xl md:text-5xl md:leading-tight overflow-hidden">
-        Why Users Love Whyme.tech
+      <div className="mx-auto space-y-5 py-6 text-center">
+        <h2 className="text-blue-600 font-mono text-[14px] font-medium tracking-tight">
+          Testimonials
         </h2>
-        <h2 className="text-sm md:text-base my-4 text-gray-500 font-normal dark:text-muted-dark text-center max-w-lg mx-auto">
-        Whyme.tech delivers powerful content for e-commerce, blogs, and SEO, loved by users globally for its simplicity and impact.
+        <h2 className="mx-auto mb-2 max-w-3xl text-balance text-[42px] font-medium leading-tight tracking-tighter">
+          Do not take our word for it. Hear what our community has to say
         </h2>
       </div>
-      <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden  bg-background">
+      <div className="relative flex h-fit w-full flex-col items-center justify-center overflow-hidden  bg-background max-w-7xl mx-auto">
         <Marquee pauseOnHover className="[--duration:20s]">
           {firstRow.map((review) => (
             <ReviewCard key={review.username} {...review} />

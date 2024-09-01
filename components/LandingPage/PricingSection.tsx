@@ -115,7 +115,7 @@ const planFeatures: PlanFeature[] = [
 
 export default function PricingSectionCards() {
     return (
-        <div className="container py-24 lg:py-32 overflow-hidden">
+        <div className="container mx-auto">
             {/* Title */}
             <div className="container overflow-hidden mx-auto pb-10">
                 <h2 className="w-full mx-auto text-center tracking-tight font-medium text-black dark:text-white text-3xl md:text-5xl md:leading-tight overflow-hidden">

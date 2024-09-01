@@ -60,14 +60,14 @@ export default function RootLayout({
     <ClerkProvider
     appearance={{
       variables: {
-          colorPrimary: 'hsl(263.4, 70%, 50.4%)', // change this value (you can get it from you're css variables, make sure to include 'hsl' and commas)
+          colorPrimary: 'hsl(0,0,0,0)', // change this value (you can get it from you're css variables, make sure to include 'hsl' and commas)
               },
           }}
 >
       <html lang="en">
         <body
           className={cn(
-            "relative flex min-h-screen w-full bg-background  text-foreground antialiased",
+            "relative flex text-foreground bg-background mx-auto min-h-screen w-full scroll-smooth antialiased",
             spaceGrotesk.className
           )}
         >
@@ -77,8 +77,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
               <Toaster />
-            {/* <NextTopLoader color="#2299DD" showSpinner={false} speed={400} /> */}
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 overflow-hidden">{children}</main>
             <Analytics />
             <SpeedInsights />
           </ThemeProvider>
