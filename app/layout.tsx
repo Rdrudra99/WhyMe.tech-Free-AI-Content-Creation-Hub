@@ -9,7 +9,7 @@ import { ClerkProvider} from '@clerk/nextjs'
 import { DocsSidebarNav } from "@/components/sidebar-nav";
 import { docsConfig } from "@/config/docs";
 import { Space_Grotesk } from 'next/font/google'
- 
+
 
 const spaceGrotesk = Space_Grotesk({subsets: ["latin"], weight: ["300", "400", "500", "600",  "700"]})
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "whyme is a modern, fast, and lightweight content Generator tool website that helps you generate content for your website, blog, or social media.",
     keywords: [
       "whyme",
-      "Vyākhyā",
+      "Why ME",
       "AI",
       "content generator",
       "content",
