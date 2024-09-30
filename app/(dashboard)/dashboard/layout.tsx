@@ -1,23 +1,15 @@
 import { CommandMenu } from '@/components/command-menu'
 import { MobileNav } from '@/components/mobile-nav'
-import { DocsSidebarNav } from '@/components/sidebar-nav'
-import { docsConfig } from '@/config/docs'
-import { cn } from '@/lib/utils'
-import { UserButton } from '@clerk/nextjs'
-import { useUser } from '@clerk/clerk-react'
-import React from 'react'
-import { Montserrat } from 'next/font/google'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Package2, Bell, Home, ShoppingCart, Package, Users, LineChart } from 'lucide-react'
 import { ModeToggle } from '@/components/ModeToggle'
-import { IconAlpha, IconCode, IconGitPullRequest, IconHome, IconSettings, IconSignature } from '@tabler/icons-react'
-import { BorderTopIcon, CodeIcon } from '@radix-ui/react-icons'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { currentUser } from '@clerk/nextjs/server'
+import { IconAlpha, IconCode, IconGitPullRequest, IconHome, IconSettings, IconSignature } from '@tabler/icons-react'
+import { LineChart } from 'lucide-react'
+import { Montserrat } from 'next/font/google'
+import Link from 'next/link'
+import React from 'react'
 const montserrat = Montserrat({
     weight: '400',
     subsets: ['latin'],
@@ -27,19 +19,13 @@ const montserrat = Montserrat({
 const layout = async (
     { children }: Readonly<{ children: React.ReactNode; }>,
 ) => {
-    const user = await currentUser()
 
-    if (!user) {
-        <div className='h-screen'>
-            <IconSignature className='w-10 h-10 animate-spin' />
-        </div>
-    }
     return (
         <div className={`min-h-screen w-full bg-background  text-foreground antialiased`}>
             <header className="sticky lg:hidden justify-between top-0 z-10 flex h-16 w-full shrink-0 flex-row items-center gap-4 border-b bg-background px-2 xl:px-7">
                 <MobileNav />
                 <CommandMenu />
-                <UserButton />
+                {/* <UserButton /> */}
             </header>
             <div className='flex h-full w-full'>
                 {/* <DocsSidebarNav items={docsConfig.sidebarNav} /> */}

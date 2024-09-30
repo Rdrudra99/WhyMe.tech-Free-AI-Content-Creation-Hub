@@ -74,8 +74,7 @@ export default function RootLayout({
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
-            disableTransitionOnChange
-          >
+            disableTransitionOnChange>
               <Toaster />
             <main className="flex-1 overflow-hidden">{children}</main>
             <Analytics />
